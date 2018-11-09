@@ -22,6 +22,7 @@
 		3036A7B12196237F0084ECE9 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7AD2196237F0084ECE9 /* AlertPresenter.swift */; };
 		3036A7B6219626F70084ECE9 /* ODConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7B5219626F70084ECE9 /* ODConstants.swift */; };
 		3036A7B8219629850084ECE9 /* GenericRestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7B7219629850084ECE9 /* GenericRestService.swift */; };
+		3036A7BA219629E20084ECE9 /* LeagueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7B9219629E20084ECE9 /* LeagueService.swift */; };
 		E483B56F925E32C49FB79A1F /* Pods_Tournament.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		3036A7AD2196237F0084ECE9 /* AlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		3036A7B5219626F70084ECE9 /* ODConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODConstants.swift; sourceTree = "<group>"; };
 		3036A7B7219629850084ECE9 /* GenericRestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericRestService.swift; sourceTree = "<group>"; };
+		3036A7B9219629E20084ECE9 /* LeagueService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueService.swift; sourceTree = "<group>"; };
 		B2321F0212BDBBDE0754F962 /* Pods-Tournament.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				3036A7B7219629850084ECE9 /* GenericRestService.swift */,
+				3036A7B9219629E20084ECE9 /* LeagueService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				3036A7B02196237F0084ECE9 /* ImageRequest.swift in Sources */,
 				3036A7AE2196237F0084ECE9 /* ImageManager.swift in Sources */,
 				3036A767219618AF0084ECE9 /* ViewController.swift in Sources */,
+				3036A7BA219629E20084ECE9 /* LeagueService.swift in Sources */,
 				3036A798219621890084ECE9 /* League.swift in Sources */,
 				3036A7A7219622AD0084ECE9 /* UInt64Extensions.swift in Sources */,
 				3036A7B6219626F70084ECE9 /* ODConstants.swift in Sources */,

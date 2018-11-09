@@ -8,7 +8,7 @@
 
 import Foundation
 
-class League: Decodable {
+class League: Codable {
     let leagueid: Int
     var ticket: String?
     var banner: String?
