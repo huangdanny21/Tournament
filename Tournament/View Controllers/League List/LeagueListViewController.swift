@@ -7,19 +7,22 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class LeagueListViewController: UIViewController {
-    private let leagueService: LeagueService_Protocol
+    private let viewModel: LeagueListViewModel
     private let alertPresenter: AlertPresenter_Proto
-
+    private let disposeBag = DisposeBag()
+    
     lazy var leagueListView: LeagueListView = {
         return LeagueListView()
     }()
     
     // MARK: - Constructor
     
-    init(alertPresenter: AlertPresenter_Proto = AlertPresenter(), leagueService: LeagueService_Protocol = LeagueService()) {
-        self.leagueService = leagueService
+    init(alertPresenter: AlertPresenter_Proto = AlertPresenter(), viewModel: LeagueListViewModel = LeagueListViewModel()) {
+        self.viewModel = viewModel
         self.alertPresenter = alertPresenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,6 +40,20 @@ class LeagueListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Leagues"
+        bindTableView()
+    }
+    
+    // MARK: - Data
+    
+    private func bindTableView() {
+        viewModel
+            .leagueListData
+            .drive(leagueListView.leagueListTableView.rx.items(cellIdentifier: "Cell")) { _, repository, cell in
+//                cell.textLabel?.text = repository.name
+//                cell.detailTextLabel?.text = repository.url
+            }
+            .disposed(by: disposeBag)
+        
     }
 
 }
