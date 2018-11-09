@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3036A765219618AF0084ECE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A764219618AF0084ECE9 /* AppDelegate.swift */; };
-		3036A767219618AF0084ECE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A766219618AF0084ECE9 /* ViewController.swift */; };
-		3036A76A219618AF0084ECE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3036A768219618AF0084ECE9 /* Main.storyboard */; };
 		3036A76C219618B10084ECE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3036A76B219618B10084ECE9 /* Assets.xcassets */; };
-		3036A76F219618B10084ECE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3036A76D219618B10084ECE9 /* LaunchScreen.storyboard */; };
 		3036A77A219618B10084ECE9 /* TournamentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A779219618B10084ECE9 /* TournamentTests.swift */; };
 		3036A785219618B10084ECE9 /* TournamentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A784219618B10084ECE9 /* TournamentUITests.swift */; };
 		3036A798219621890084ECE9 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A797219621890084ECE9 /* League.swift */; };
@@ -23,6 +20,9 @@
 		3036A7B6219626F70084ECE9 /* ODConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7B5219626F70084ECE9 /* ODConstants.swift */; };
 		3036A7B8219629850084ECE9 /* GenericRestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7B7219629850084ECE9 /* GenericRestService.swift */; };
 		3036A7BA219629E20084ECE9 /* LeagueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7B9219629E20084ECE9 /* LeagueService.swift */; };
+		3036A7BC21962C820084ECE9 /* LeagueListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7BB21962C820084ECE9 /* LeagueListView.swift */; };
+		3036A7BE21962E210084ECE9 /* LeagueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7BD21962E210084ECE9 /* LeagueListViewController.swift */; };
+		3036A7C221962F770084ECE9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7C121962F770084ECE9 /* HomeViewController.swift */; };
 		E483B56F925E32C49FB79A1F /* Pods_Tournament.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,10 +48,7 @@
 		26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tournament.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3036A761219618AF0084ECE9 /* Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tournament.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3036A764219618AF0084ECE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3036A766219618AF0084ECE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3036A769219618AF0084ECE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3036A76B219618B10084ECE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3036A76E219618B10084ECE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3036A770219618B10084ECE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3036A775219618B10084ECE9 /* TournamentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TournamentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3036A779219618B10084ECE9 /* TournamentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentTests.swift; sourceTree = "<group>"; };
@@ -68,6 +65,9 @@
 		3036A7B5219626F70084ECE9 /* ODConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODConstants.swift; sourceTree = "<group>"; };
 		3036A7B7219629850084ECE9 /* GenericRestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericRestService.swift; sourceTree = "<group>"; };
 		3036A7B9219629E20084ECE9 /* LeagueService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueService.swift; sourceTree = "<group>"; };
+		3036A7BB21962C820084ECE9 /* LeagueListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueListView.swift; sourceTree = "<group>"; };
+		3036A7BD21962E210084ECE9 /* LeagueListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueListViewController.swift; sourceTree = "<group>"; };
+		3036A7C121962F770084ECE9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B2321F0212BDBBDE0754F962 /* Pods-Tournament.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,10 +130,7 @@
 				3036A793219618C40084ECE9 /* View */,
 				3036A792219618BD0084ECE9 /* Model */,
 				3036A764219618AF0084ECE9 /* AppDelegate.swift */,
-				3036A766219618AF0084ECE9 /* ViewController.swift */,
-				3036A768219618AF0084ECE9 /* Main.storyboard */,
 				3036A76B219618B10084ECE9 /* Assets.xcassets */,
-				3036A76D219618B10084ECE9 /* LaunchScreen.storyboard */,
 				3036A770219618B10084ECE9 /* Info.plist */,
 			);
 			path = Tournament;
@@ -168,6 +165,7 @@
 		3036A793219618C40084ECE9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3036A7BB21962C820084ECE9 /* LeagueListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,6 +173,8 @@
 		3036A794219618C70084ECE9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3036A7BD21962E210084ECE9 /* LeagueListViewController.swift */,
+				3036A7C121962F770084ECE9 /* HomeViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -346,9 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3036A76F219618B10084ECE9 /* LaunchScreen.storyboard in Resources */,
 				3036A76C219618B10084ECE9 /* Assets.xcassets in Resources */,
-				3036A76A219618AF0084ECE9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,13 +428,15 @@
 			files = (
 				3036A7B02196237F0084ECE9 /* ImageRequest.swift in Sources */,
 				3036A7AE2196237F0084ECE9 /* ImageManager.swift in Sources */,
-				3036A767219618AF0084ECE9 /* ViewController.swift in Sources */,
 				3036A7BA219629E20084ECE9 /* LeagueService.swift in Sources */,
+				3036A7BE21962E210084ECE9 /* LeagueListViewController.swift in Sources */,
 				3036A798219621890084ECE9 /* League.swift in Sources */,
 				3036A7A7219622AD0084ECE9 /* UInt64Extensions.swift in Sources */,
 				3036A7B6219626F70084ECE9 /* ODConstants.swift in Sources */,
 				3036A7B12196237F0084ECE9 /* AlertPresenter.swift in Sources */,
+				3036A7C221962F770084ECE9 /* HomeViewController.swift in Sources */,
 				3036A7B8219629850084ECE9 /* GenericRestService.swift in Sources */,
+				3036A7BC21962C820084ECE9 /* LeagueListView.swift in Sources */,
 				3036A765219618AF0084ECE9 /* AppDelegate.swift in Sources */,
 				3036A7AF2196237F0084ECE9 /* DecodeOperation.swift in Sources */,
 			);
@@ -472,25 +472,6 @@
 			targetProxy = 3036A781219618B10084ECE9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		3036A768219618AF0084ECE9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3036A769219618AF0084ECE9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3036A76D219618B10084ECE9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3036A76E219618B10084ECE9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3036A787219618B10084ECE9 /* Debug */ = {
