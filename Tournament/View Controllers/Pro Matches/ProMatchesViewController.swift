@@ -1,5 +1,5 @@
 //
-//  LeagueListViewController.swift
+//  ProMatchesViewController.swift
 //  Tournament
 //
 //  Created by Danny on 11/9/18.
@@ -10,18 +10,19 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class LeagueListViewController: UIViewController {
-    private let viewModel: LeagueListViewModel
+class ProMatchesViewController: UIViewController {
+
+    private let viewModel: ProMatchesViewModel
     private let alertPresenter: AlertPresenter_Proto
     private let disposeBag = DisposeBag()
     
-    lazy var leagueListView: LeagueListView = {
-        return LeagueListView()
+    lazy var proMatchesView: ProMatchesView = {
+        return ProMatchesView()
     }()
     
     // MARK: - Constructor
     
-    init(alertPresenter: AlertPresenter_Proto = AlertPresenter(), viewModel: LeagueListViewModel = LeagueListViewModel()) {
+    init(alertPresenter: AlertPresenter_Proto = AlertPresenter(), viewModel: ProMatchesViewModel = ProMatchesViewModel()) {
         self.viewModel = viewModel
         self.alertPresenter = alertPresenter
         super.init(nibName: nil, bundle: nil)
@@ -34,7 +35,7 @@ class LeagueListViewController: UIViewController {
     // MARK: - View Controller Life Cycle
     
     override func loadView() {
-        view = leagueListView
+        view = proMatchesView
     }
     
     override func viewDidLoad() {
@@ -47,13 +48,11 @@ class LeagueListViewController: UIViewController {
     
     private func bindTableView() {
         viewModel
-            .leagueListData
-            .drive(leagueListView.leagueListTableView.rx.items(cellIdentifier: "Cell")) { _, repository, cell in
-//                cell.textLabel?.text = repository.name
-//                cell.detailTextLabel?.text = repository.url
+            .proMatchesData
+            .drive(proMatchesView.tableView.rx.items(cellIdentifier: "Cell")) { _, proMatch, cell in
+                
             }
             .disposed(by: disposeBag)
         
     }
-
 }

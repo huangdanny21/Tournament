@@ -25,10 +25,11 @@ class HomeViewController: UITabBarController {
     // MARK: - Private
     
     private func addTabbarItems() {
-        let leagueVC = LeagueListViewController()
-        leagueVC.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
-        let navVC = UINavigationController(rootViewController: leagueVC)
-        let controllers = [navVC]
+        let proMatchVC = ProMatchesViewController()
+        proMatchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
+        let controllers = [proMatchVC].map({
+            UINavigationController(rootViewController: $0)
+        })
         viewControllers = controllers
     }
 }

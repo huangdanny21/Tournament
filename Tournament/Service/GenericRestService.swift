@@ -30,6 +30,7 @@ class GenericRestService<OUT: Codable>: GenericDecoder<OUT>  {
                     case .success(let json):
                         if let data = response.data {
                             let decoder = JSONDecoder()
+                            decoder.keyDecodingStrategy = .convertFromSnakeCase
                             do {
                                 let result = try decoder.decode(OUT.self, from: data)
                                observer.onNext(result)

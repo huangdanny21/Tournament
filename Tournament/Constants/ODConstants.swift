@@ -10,4 +10,5 @@ import Foundation
 
 struct OpenDotaUrlConstants {
     static let leagueListUrl = "https://api.opendota.com/api/leagues"
+    static let proMatchesUrl = "https://api.opendota.com/api/proMatches"
 }

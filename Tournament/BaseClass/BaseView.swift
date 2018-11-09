@@ -1,20 +1,14 @@
 //
-//  LeagueListView.swift
+//  BaseView.swift
 //  Tournament
 //
 //  Created by Danny on 11/9/18.
 //  Copyright © 2018 Danny. All rights reserved.
 //
 
-import SnapKit
+import UIKit
 
-class LeagueListView: UIView {
-    let leagueListTableView: UITableView = {
-        let tableView = UITableView()
-        tableView.tableFooterView = UIView()
-        return tableView
-    }()
-    
+class BaseView: UIView {
     // MARK: - Constructor
     
     convenience init() {
@@ -31,11 +25,8 @@ class LeagueListView: UIView {
         commonInit()
     }
     
-    private func commonInit() {
-        addSubview(leagueListTableView)
-        
-        leagueListTableView.snp.makeConstraints { (make) in
-            make.size.equalToSuperview()
-        }
+    public func commonInit() {
+        fatalError("This method is empty please implement it on a subclass")
+
     }
 }
