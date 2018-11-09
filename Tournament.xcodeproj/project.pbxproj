@@ -26,6 +26,7 @@
 		3036A7B02196237F0084ECE9 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7AC2196237F0084ECE9 /* ImageRequest.swift */; };
 		3036A7B12196237F0084ECE9 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7AD2196237F0084ECE9 /* AlertPresenter.swift */; };
 		3036A7B3219626080084ECE9 /* GenericHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7B2219626080084ECE9 /* GenericHTTPService.swift */; };
+		3036A7B6219626F70084ECE9 /* ODConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7B5219626F70084ECE9 /* ODConstants.swift */; };
 		E483B56F925E32C49FB79A1F /* Pods_Tournament.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		3036A7AC2196237F0084ECE9 /* ImageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 		3036A7AD2196237F0084ECE9 /* AlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		3036A7B2219626080084ECE9 /* GenericHTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericHTTPService.swift; sourceTree = "<group>"; };
+		3036A7B5219626F70084ECE9 /* ODConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODConstants.swift; sourceTree = "<group>"; };
 		B2321F0212BDBBDE0754F962 /* Pods-Tournament.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 		3036A763219618AF0084ECE9 /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
+				3036A7B4219626E50084ECE9 /* Constants */,
 				3036A7A82196237F0084ECE9 /* Util */,
 				3036A7A5219622AD0084ECE9 /* Extensions */,
 				3036A79C219622A20084ECE9 /* HTTP */,
@@ -230,6 +233,14 @@
 				3036A7AC2196237F0084ECE9 /* ImageRequest.swift */,
 			);
 			path = ImageManager;
+			sourceTree = "<group>";
+		};
+		3036A7B4219626E50084ECE9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				3036A7B5219626F70084ECE9 /* ODConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		36CB1DA0232AD8DF77613A19 /* Pods */ = {
@@ -445,6 +456,7 @@
 				3036A798219621890084ECE9 /* League.swift in Sources */,
 				3036A7A7219622AD0084ECE9 /* UInt64Extensions.swift in Sources */,
 				3036A7A3219622A20084ECE9 /* HTTPClient.swift in Sources */,
+				3036A7B6219626F70084ECE9 /* ODConstants.swift in Sources */,
 				3036A7B12196237F0084ECE9 /* AlertPresenter.swift in Sources */,
 				3036A7A4219622A20084ECE9 /* HTTPError.swift in Sources */,
 				3036A7A2219622A20084ECE9 /* HTTPRequest.swift in Sources */,
