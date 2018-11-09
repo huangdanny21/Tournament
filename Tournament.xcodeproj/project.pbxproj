@@ -15,18 +15,13 @@
 		3036A77A219618B10084ECE9 /* TournamentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A779219618B10084ECE9 /* TournamentTests.swift */; };
 		3036A785219618B10084ECE9 /* TournamentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A784219618B10084ECE9 /* TournamentUITests.swift */; };
 		3036A798219621890084ECE9 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A797219621890084ECE9 /* League.swift */; };
-		3036A79B2196221A0084ECE9 /* LeagueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A79A2196221A0084ECE9 /* LeagueService.swift */; };
-		3036A7A1219622A20084ECE9 /* HTTPResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A79D219622A20084ECE9 /* HTTPResponseHandler.swift */; };
-		3036A7A2219622A20084ECE9 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A79E219622A20084ECE9 /* HTTPRequest.swift */; };
-		3036A7A3219622A20084ECE9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A79F219622A20084ECE9 /* HTTPClient.swift */; };
-		3036A7A4219622A20084ECE9 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7A0219622A20084ECE9 /* HTTPError.swift */; };
 		3036A7A7219622AD0084ECE9 /* UInt64Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7A6219622AD0084ECE9 /* UInt64Extensions.swift */; };
 		3036A7AE2196237F0084ECE9 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7AA2196237F0084ECE9 /* ImageManager.swift */; };
 		3036A7AF2196237F0084ECE9 /* DecodeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7AB2196237F0084ECE9 /* DecodeOperation.swift */; };
 		3036A7B02196237F0084ECE9 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7AC2196237F0084ECE9 /* ImageRequest.swift */; };
 		3036A7B12196237F0084ECE9 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7AD2196237F0084ECE9 /* AlertPresenter.swift */; };
-		3036A7B3219626080084ECE9 /* GenericHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7B2219626080084ECE9 /* GenericHTTPService.swift */; };
 		3036A7B6219626F70084ECE9 /* ODConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7B5219626F70084ECE9 /* ODConstants.swift */; };
+		3036A7B8219629850084ECE9 /* GenericRestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7B7219629850084ECE9 /* GenericRestService.swift */; };
 		E483B56F925E32C49FB79A1F /* Pods_Tournament.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,18 +59,13 @@
 		3036A784219618B10084ECE9 /* TournamentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentUITests.swift; sourceTree = "<group>"; };
 		3036A786219618B10084ECE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3036A797219621890084ECE9 /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
-		3036A79A2196221A0084ECE9 /* LeagueService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueService.swift; sourceTree = "<group>"; };
-		3036A79D219622A20084ECE9 /* HTTPResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResponseHandler.swift; sourceTree = "<group>"; };
-		3036A79E219622A20084ECE9 /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
-		3036A79F219622A20084ECE9 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		3036A7A0219622A20084ECE9 /* HTTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		3036A7A6219622AD0084ECE9 /* UInt64Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UInt64Extensions.swift; sourceTree = "<group>"; };
 		3036A7AA2196237F0084ECE9 /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		3036A7AB2196237F0084ECE9 /* DecodeOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodeOperation.swift; sourceTree = "<group>"; };
 		3036A7AC2196237F0084ECE9 /* ImageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 		3036A7AD2196237F0084ECE9 /* AlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
-		3036A7B2219626080084ECE9 /* GenericHTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericHTTPService.swift; sourceTree = "<group>"; };
 		3036A7B5219626F70084ECE9 /* ODConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODConstants.swift; sourceTree = "<group>"; };
+		3036A7B7219629850084ECE9 /* GenericRestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericRestService.swift; sourceTree = "<group>"; };
 		B2321F0212BDBBDE0754F962 /* Pods-Tournament.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +123,6 @@
 				3036A7B4219626E50084ECE9 /* Constants */,
 				3036A7A82196237F0084ECE9 /* Util */,
 				3036A7A5219622AD0084ECE9 /* Extensions */,
-				3036A79C219622A20084ECE9 /* HTTP */,
 				3036A799219622120084ECE9 /* Service */,
 				3036A794219618C70084ECE9 /* View Controllers */,
 				3036A793219618C40084ECE9 /* View */,
@@ -191,21 +180,9 @@
 		3036A799219622120084ECE9 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				3036A79A2196221A0084ECE9 /* LeagueService.swift */,
-				3036A7B2219626080084ECE9 /* GenericHTTPService.swift */,
+				3036A7B7219629850084ECE9 /* GenericRestService.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		3036A79C219622A20084ECE9 /* HTTP */ = {
-			isa = PBXGroup;
-			children = (
-				3036A79D219622A20084ECE9 /* HTTPResponseHandler.swift */,
-				3036A79E219622A20084ECE9 /* HTTPRequest.swift */,
-				3036A79F219622A20084ECE9 /* HTTPClient.swift */,
-				3036A7A0219622A20084ECE9 /* HTTPError.swift */,
-			);
-			path = HTTP;
 			sourceTree = "<group>";
 		};
 		3036A7A5219622AD0084ECE9 /* Extensions */ = {
@@ -448,19 +425,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3036A7A1219622A20084ECE9 /* HTTPResponseHandler.swift in Sources */,
-				3036A7B3219626080084ECE9 /* GenericHTTPService.swift in Sources */,
 				3036A7B02196237F0084ECE9 /* ImageRequest.swift in Sources */,
 				3036A7AE2196237F0084ECE9 /* ImageManager.swift in Sources */,
 				3036A767219618AF0084ECE9 /* ViewController.swift in Sources */,
 				3036A798219621890084ECE9 /* League.swift in Sources */,
 				3036A7A7219622AD0084ECE9 /* UInt64Extensions.swift in Sources */,
-				3036A7A3219622A20084ECE9 /* HTTPClient.swift in Sources */,
 				3036A7B6219626F70084ECE9 /* ODConstants.swift in Sources */,
 				3036A7B12196237F0084ECE9 /* AlertPresenter.swift in Sources */,
-				3036A7A4219622A20084ECE9 /* HTTPError.swift in Sources */,
-				3036A7A2219622A20084ECE9 /* HTTPRequest.swift in Sources */,
-				3036A79B2196221A0084ECE9 /* LeagueService.swift in Sources */,
+				3036A7B8219629850084ECE9 /* GenericRestService.swift in Sources */,
 				3036A765219618AF0084ECE9 /* AppDelegate.swift in Sources */,
 				3036A7AF2196237F0084ECE9 /* DecodeOperation.swift in Sources */,
 			);

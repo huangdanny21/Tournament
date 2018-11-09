@@ -1,8 +1,8 @@
 //
-//  GenericHTTPService.swift
-//  Tournament
+//  OpenDotaService.swift
+//  Dota Central
 //
-//  Created by Danny on 11/9/18.
+//  Created by Danny on 8/28/18.
 //  Copyright © 2018 Danny. All rights reserved.
 //
 
@@ -32,7 +32,7 @@ class GenericRestService<OUT: Codable>: GenericDecoder<OUT>  {
                             let decoder = JSONDecoder()
                             do {
                                 let result = try decoder.decode(OUT.self, from: data)
-                                observer.onNext(result)
+                               observer.onNext(result)
                             }
                             catch {
                                 print("JSON: \(json)")
@@ -52,3 +52,4 @@ class GenericRestService<OUT: Codable>: GenericDecoder<OUT>  {
         })
     }
 }
+
