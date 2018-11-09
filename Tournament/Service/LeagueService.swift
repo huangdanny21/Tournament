@@ -8,8 +8,5 @@
 
 import Foundation
 import Alamofire
-
-protocol LeagueService_Protocol {
-    
-}
+import RxSwift
 
