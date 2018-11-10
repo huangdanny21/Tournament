@@ -37,7 +37,7 @@ class GenericRestService<OUT: Codable>: GenericDecoder<OUT>  {
                             }
                             catch {
                                 print("JSON: \(json)")
-                                observer.onError(error)
+                               observer.onError(error)
                             }
                         }
                         else {

@@ -25,6 +25,7 @@
 		3036A7D5219644180084ECE9 /* ProMatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7D4219644180084ECE9 /* ProMatchesViewModel.swift */; };
 		3036A7D7219644500084ECE9 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7D6219644500084ECE9 /* BaseView.swift */; };
 		3036A7DB219646F50084ECE9 /* ProMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7DA219646F50084ECE9 /* ProMatch.swift */; };
+		3036A7DD21964C3A0084ECE9 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7DC21964C3A0084ECE9 /* BaseTableViewCell.swift */; };
 		E483B56F925E32C49FB79A1F /* Pods_Tournament.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		3036A7D4219644180084ECE9 /* ProMatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProMatchesViewModel.swift; sourceTree = "<group>"; };
 		3036A7D6219644500084ECE9 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		3036A7DA219646F50084ECE9 /* ProMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProMatch.swift; sourceTree = "<group>"; };
+		3036A7DC21964C3A0084ECE9 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		B2321F0212BDBBDE0754F962 /* Pods-Tournament.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				3036A7D6219644500084ECE9 /* BaseView.swift */,
+				3036A7DC21964C3A0084ECE9 /* BaseTableViewCell.swift */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3036A7DD21964C3A0084ECE9 /* BaseTableViewCell.swift in Sources */,
 				3036A7B02196237F0084ECE9 /* ImageRequest.swift in Sources */,
 				3036A7AE2196237F0084ECE9 /* ImageManager.swift in Sources */,
 				3036A7A7219622AD0084ECE9 /* UInt64Extensions.swift in Sources */,

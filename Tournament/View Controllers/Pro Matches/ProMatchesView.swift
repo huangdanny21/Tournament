@@ -11,6 +11,7 @@ import SnapKit
 class ProMatchesView: BaseView {
     let tableView: UITableView = {
         let tableView = UITableView()
+        tableView.rowHeight = 100
         tableView.tableFooterView = UIView()
         return tableView
     }()
@@ -18,7 +19,14 @@ class ProMatchesView: BaseView {
     override func commonInit() {
         addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
-            make.size.equalToSuperview()
+            make.edges.equalToSuperview()
         }
+        registerCells()
+    }
+    
+    // MARK: - Private
+    
+    private func registerCells() {
+        tableView.register(ProMatchTableViewCell.self, forCellReuseIdentifier: "ProMatchTableViewCell")
     }
 }

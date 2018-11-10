@@ -12,10 +12,10 @@ class ProMatch: Codable {
     let matchId: Int
     let duration: Int
     let startTime: Int
-    let radiantTeamID: Int
-    let radiantName: String
-    let direTeamId: String
-    let direName: String
+    let radiantTeamId: Int?
+    let radiantName: String?
+    let direTeamId: Int?
+    let direName: String?
     let leagueid: Int
     let leagueName: String
     let seriesId: Int

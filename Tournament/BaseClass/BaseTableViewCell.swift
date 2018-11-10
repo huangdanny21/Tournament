@@ -1,5 +1,5 @@
 //
-//  BaseView.swift
+//  BaseTableViewCell.swift
 //  Tournament
 //
 //  Created by Danny on 11/9/18.
@@ -8,15 +8,12 @@
 
 import UIKit
 
-class BaseView: UIView {
+class BaseTableViewCell: UITableViewCell {
+
     // MARK: - Constructor
     
-    convenience init() {
-        self.init(frame: .zero)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: .default, reuseIdentifier: reuseIdentifier)
         commonInit()
     }
     
@@ -24,7 +21,7 @@ class BaseView: UIView {
         super.init(coder: aDecoder)
         commonInit()
     }
-    
+
     public func commonInit() {
         fatalError("This method is empty please implement it on a subclass")
     }
