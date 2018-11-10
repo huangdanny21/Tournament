@@ -23,7 +23,7 @@ extension ProMatchObjectViewModel: ProMatchObjectViewModel_Protocol {
     
     var score: String {
         get {
-            return "\(object.radiantScore)   :   \(object.direScore)"
+            return "\(object.radiantScore)    :    \(object.direScore)"
         }
     }
     

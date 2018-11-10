@@ -12,6 +12,7 @@ class MatchDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Match Detail"
     }
 
 }

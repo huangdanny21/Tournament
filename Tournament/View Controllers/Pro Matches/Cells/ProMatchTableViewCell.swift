@@ -9,19 +9,19 @@
 import UIKit
 
 class ProMatchTableViewCell: BaseTableViewCell {
-    let radiantTeamImageView: UIImageView = {
+    private let radiantTeamImageView: UIImageView = {
         let imageView = UIImageView()
         return imageView
     }()
     
-    let radiantTeamNameLabel: UILabel = {
+    private let radiantTeamNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)
         return label
     }()
     
-    let scoreLabel: UILabel = {
+    private let scoreLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 21, weight: UIFont.Weight.medium)
@@ -29,7 +29,7 @@ class ProMatchTableViewCell: BaseTableViewCell {
         return label
     }()
     
-    let startTimeLabel: UILabel = {
+    private let startTimeLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 15, weight: .light)
@@ -37,7 +37,7 @@ class ProMatchTableViewCell: BaseTableViewCell {
         return label
     }()
     
-    let leagueLabel: UILabel = {
+    private let leagueLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 13, weight: .light)
@@ -45,12 +45,12 @@ class ProMatchTableViewCell: BaseTableViewCell {
         return label
     }()
     
-    let direTeamImageView: UIImageView = {
+    private let direTeamImageView: UIImageView = {
         let imageView = UIImageView()
         return imageView
     }()
     
-    let direTeamNameLabel: UILabel = {
+    private let direTeamNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)

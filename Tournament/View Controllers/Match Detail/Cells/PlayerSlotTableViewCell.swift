@@ -9,17 +9,17 @@
 import UIKit
 
 class PlayerSlotTableViewCell: UITableViewCell {
-    let heroImageView: UIImageView = {
+    private let heroImageView: UIImageView = {
         let imageView = UIImageView()
         return imageView
     }()
     
-    let scoreLabel: UILabel = {
+    private let scoreLabel: UILabel = {
         let label = UILabel()
         return label
     }()
     
-    let kdaLabel: UILabel = {
+    private let kdaLabel: UILabel = {
         let label = UILabel()
         return label
     }()
