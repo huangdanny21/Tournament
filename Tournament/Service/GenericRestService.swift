@@ -11,6 +11,7 @@ import RxSwift
 import Alamofire
 
 enum ServiceError: Error {
+    case invalidUrl
     case decodingError
 }
 

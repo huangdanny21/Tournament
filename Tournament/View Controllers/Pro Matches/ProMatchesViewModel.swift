@@ -30,9 +30,9 @@ class ProMatchesViewModel {
             proMatchesSubject.onNext([])
             return
         }
-        let urlRequest = URLRequest(url: url)
+        let request = URLRequest(url: url)
         GenericRestService<[ProMatch]>
-            .fetchData(withURLRequest: urlRequest)
+            .fetchData(withURLRequest: request)
             .flatMap { (proMatches) -> Observable<[ProMatchObjectViewModel]> in
                 let objectViewModels = proMatches.map({ (match) -> ProMatchObjectViewModel in
                     return ProMatchObjectViewModel(withBaseObject: match)
