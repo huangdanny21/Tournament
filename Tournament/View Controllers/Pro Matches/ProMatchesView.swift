@@ -12,6 +12,7 @@ class ProMatchesView: BaseView {
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = 100
+        tableView.separatorInset = .zero
         tableView.tableFooterView = UIView()
         return tableView
     }()

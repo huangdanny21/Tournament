@@ -13,4 +13,14 @@ class PlayerSlotTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         return imageView
     }()
+    
+    let scoreLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    let kdaLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
 }

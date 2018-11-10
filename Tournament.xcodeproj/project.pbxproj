@@ -193,9 +193,9 @@
 		3036A792219618BD0084ECE9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3051C2EB2197684A00D9390C /* Object View Models */,
 				3036A7FD21966C190084ECE9 /* MatchPlayerMetaData.swift */,
 				3036A7DA219646F50084ECE9 /* ProMatch.swift */,
-				3036A7E221965F010084ECE9 /* ProMatchObjectViewModel.swift */,
 				3036A7F021966A120084ECE9 /* MatchDetail.swift */,
 			);
 			path = Model;
@@ -320,6 +320,14 @@
 				3036A7F821966BBA0084ECE9 /* MatchEnums.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		3051C2EB2197684A00D9390C /* Object View Models */ = {
+			isa = PBXGroup;
+			children = (
+				3036A7E221965F010084ECE9 /* ProMatchObjectViewModel.swift */,
+			);
+			path = "Object View Models";
 			sourceTree = "<group>";
 		};
 		36CB1DA0232AD8DF77613A19 /* Pods */ = {

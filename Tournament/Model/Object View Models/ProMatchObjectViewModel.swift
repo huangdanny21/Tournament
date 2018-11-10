@@ -9,6 +9,7 @@
 import Foundation
 
 protocol ProMatchObjectViewModel_Protocol {
+    var score: String { get }
     var radiantName: String { get }
     var direName: String { get }
     var startTime: String { get }
@@ -19,6 +20,12 @@ class ProMatchObjectViewModel: BaseObjectViewModel<ProMatch> {
 }
 
 extension ProMatchObjectViewModel: ProMatchObjectViewModel_Protocol {
+    
+    var score: String {
+        get {
+            return "\(object.radiantScore)   :   \(object.direScore)"
+        }
+    }
     
     var radiantName: String {
         get {

@@ -18,8 +18,8 @@ class ProMatch: Codable {
     let direName: String?
     let leagueid: Int
     let leagueName: String
-    let seriesId: Int
-    let seriesType: Int
+    let seriesId: Int?
+    let seriesType: Int?
     let radiantScore: Int
     let direScore: Int
     let radiantWin: Bool

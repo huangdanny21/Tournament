@@ -17,24 +17,31 @@ class ProMatchTableViewCell: BaseTableViewCell {
     let radiantTeamNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)
         return label
     }()
     
     let scoreLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 21, weight: UIFont.Weight.medium)
+        label.textColor = UIColor.lightGray
         return label
     }()
     
     let startTimeLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 15, weight: .light)
+        label.textColor = UIColor.lightGray
         return label
     }()
     
     let leagueLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 13, weight: .light)
+        label.textColor = UIColor.lightGray
         return label
     }()
     
@@ -46,6 +53,7 @@ class ProMatchTableViewCell: BaseTableViewCell {
     let direTeamNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)
         return label
     }()
     
@@ -63,8 +71,6 @@ class ProMatchTableViewCell: BaseTableViewCell {
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
-        //stackView.distribution = .equalCentering
-        //stackView.spacing = 5
         return stackView
     }()
     
@@ -102,7 +108,7 @@ class ProMatchTableViewCell: BaseTableViewCell {
     
     func set(withProMatchViewModel viewModel: ProMatchObjectViewModel) {
         radiantTeamNameLabel.text = viewModel.radiantName
-        scoreLabel.text = "WHO CARES"
+        scoreLabel.text = viewModel.score
         startTimeLabel.text = "\(viewModel.startTime)"
         leagueLabel.text = viewModel.object.leagueName
         direTeamNameLabel.text = viewModel.direName
