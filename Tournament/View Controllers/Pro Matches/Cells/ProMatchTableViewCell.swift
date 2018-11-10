@@ -100,11 +100,11 @@ class ProMatchTableViewCell: BaseTableViewCell {
     
     // MARK: - Public
     
-    func set(withProMatch proMatch: ProMatch) {
-        radiantTeamNameLabel.text = proMatch.radiantName ?? "Radiant"
+    func set(withProMatchViewModel viewModel: ProMatchObjectViewModel) {
+        radiantTeamNameLabel.text = viewModel.radiantName
         scoreLabel.text = "WHO CARES"
-        startTimeLabel.text = "\(proMatch.startTime)"
-        leagueLabel.text = proMatch.leagueName
-        direTeamNameLabel.text = proMatch.direName ?? "Dire"
+        startTimeLabel.text = "\(viewModel.startTime)"
+        leagueLabel.text = viewModel.object.leagueName
+        direTeamNameLabel.text = viewModel.direName
     }
 }

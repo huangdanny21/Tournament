@@ -11,10 +11,10 @@ import RxSwift
 import RxCocoa
 
 class ProMatchesViewModel {
-    private let proMatchesSubject = PublishSubject<[ProMatch]>()
+    private let proMatchesSubject = PublishSubject<[ProMatchObjectViewModel]>()
     private let disposeBag = DisposeBag()
     
-    let proMatchesData: Driver<[ProMatch]>
+    let proMatchesData: Driver<[ProMatchObjectViewModel]>
     
     // MARK: - Constructor
     
@@ -33,6 +33,12 @@ class ProMatchesViewModel {
         let urlRequest = URLRequest(url: url)
         GenericRestService<[ProMatch]>
             .fetchData(withURLRequest: urlRequest)
+            .flatMap { (proMatches) -> Observable<[ProMatchObjectViewModel]> in
+                let objectViewModels = proMatches.map({ (match) -> ProMatchObjectViewModel in
+                    return ProMatchObjectViewModel(withBaseObject: match)
+                })
+                return Observable.just(objectViewModels)
+            }
             .bind(to: proMatchesSubject)
             .disposed(by: disposeBag)
     }

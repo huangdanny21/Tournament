@@ -47,13 +47,11 @@ class ProMatchesViewController: UIViewController {
     // MARK: - Data
     
     private func bindTableView() {
-
         viewModel
             .proMatchesData
-            .drive(proMatchesView.tableView.rx.items(cellIdentifier: "ProMatchTableViewCell", cellType: ProMatchTableViewCell.self)) { _, proMatch, cell in
-                cell.set(withProMatch: proMatch)
+            .drive(proMatchesView.tableView.rx.items(cellIdentifier: "ProMatchTableViewCell", cellType: ProMatchTableViewCell.self)) { _ , proMatchVM, cell in
+                cell.set(withProMatchViewModel: proMatchVM)
             }
             .disposed(by: disposeBag)
-        
     }
 }
