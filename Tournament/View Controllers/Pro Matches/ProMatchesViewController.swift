@@ -40,7 +40,7 @@ class ProMatchesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Leagues"
+        title = "Pro Matches"
         bindTableView()
     }
     

@@ -26,7 +26,7 @@ class ProMatchesViewModel {
     // MARK: - API
     
     private func fetchProMatches() {
-        guard let url = URL(string: OpenDotaUrlConstants.proMatchesUrl) else {
+        guard let url = URL(string: OpenDotaUrlConstants.baseProMatchesUrl) else {
             proMatchesSubject.onNext([])
             return
         }
