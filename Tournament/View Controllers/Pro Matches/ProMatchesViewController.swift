@@ -20,7 +20,7 @@ class ProMatchesViewController: UIViewController {
         return ProMatchesView()
     }()
     
-    // MARK: - Constructor
+    // MARK: - Constructors
     
     init(alertPresenter: AlertPresenter_Proto = AlertPresenter(), viewModel: ProMatchesViewModel = ProMatchesViewModel()) {
         self.viewModel = viewModel
@@ -53,5 +53,14 @@ class ProMatchesViewController: UIViewController {
                 cell.set(withProMatchViewModel: proMatchVM)
             }
             .disposed(by: disposeBag)
+
+        proMatchesView.tableView.rx.modelSelected(ProMatchObjectViewModel.self)
+            .subscribe(onNext: { [weak self](viewModel) in
+                let matchDetailViewModel = MatchDetailViewModel(withMatchId: viewModel.object.matchId)
+                let matchDetailVC = MatchDetailViewController(viewModel: matchDetailViewModel)
+                self?.navigationController?.pushViewController(matchDetailVC, animated: true)
+            })
+            .disposed(by: disposeBag)
+
     }
 }
