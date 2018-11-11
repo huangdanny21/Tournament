@@ -29,19 +29,11 @@ class AdditionalUnit: Codable {
 }
 
 class MatchPickBan: Codable {
-    let isPicked: Bool
+    let isPick: Bool
     let heroId: Int
     let team: Int
     let order: Int
     let matchId: Int?
-    
-    private enum CodingKeys: String, CodingKey {
-        case isPicked = "is_pick"
-        case heroId = "hero_id"
-        case team = "team"
-        case order = "order"
-        case matchId = "match_id"
-    }
 }
 
 class MatchPlayerData: Codable {

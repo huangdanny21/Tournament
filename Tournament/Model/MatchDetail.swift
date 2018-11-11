@@ -11,11 +11,12 @@ import Foundation
 class MatchDetail: Codable {
     let matchId: Int
     let direScore: Int
-    let direTeamId: Int?
+    let direTeamId: Int
     let duration: Int
     let gameMode: GameMode
+    let leagueid: Int
     let lobbyType: LobbyType
-    let matchSequenceNumber: Int?
+    let matchSeqNum: Int?
     let pickBans: [MatchPickBan]?
     let radiantScore: Int
     let radiantTeamId: Int?
