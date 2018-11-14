@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxSwiftUtilities
 
 class MatchDetailViewController: UIViewController {
 
@@ -39,6 +40,7 @@ class MatchDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Match Detail"
+        bindLoadingIndicator()
         bindTableView()
     }
     
@@ -52,6 +54,17 @@ class MatchDetailViewController: UIViewController {
             }, onError: { (error) in
                 
             })
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindLoadingIndicator() {
+        let progress = MBProgressHUD()
+        progress.mode = .indeterminate
+        progress.label.text = "Loading..."
+        
+        viewModel
+            .activityIndicator.asDriver()
+            .drive(progress.rx_mbprogresshud_animating)
             .disposed(by: disposeBag)
     }
 }

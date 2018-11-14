@@ -9,19 +9,18 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxSwiftUtilities
 
 class MatchDetailViewModel {
     private let matchDetailSubject = PublishSubject<MatchDetailObjectViewModel>()
     private let disposeBag = DisposeBag()
     
     let matchDetailData: Observable<MatchDetailObjectViewModel>
-    
-    private let matchId: Int
-    
+    let activityIndicator = ActivityIndicator()
+
     // MARK: - Constructor
     
     init(withMatchId matchId: Int) {
-        self.matchId = matchId
         matchDetailData = matchDetailSubject.asObservable()
         fetchMatchDetail(withMatchId: matchId)
     }

@@ -21,6 +21,11 @@ class MatchDetailView: BaseView {
         return headerView
     }()
 
+    var objectViewModel: MatchDetailObjectViewModel? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     // MARK: - Init
     
@@ -30,6 +35,39 @@ class MatchDetailView: BaseView {
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        tableView.dataSource = self
     }
     
+    // MARK: - Private
+    
+    private func registerCells() {
+        tableView.register(PlayerSlotTableViewCell.self, forCellReuseIdentifier: "PlayerSlotTableViewCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+    }
+}
+
+extension MatchDetailView: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return objectViewModel?.numOfSection ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let objectViewModel = objectViewModel else {
+            return 0
+        }
+        if section == 0 {
+            return objectViewModel.radiantPlayers.count
+        }
+        else {
+            return objectViewModel.direPlayers.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let objectViewModel = objectViewModel else {
+            return tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerSlotTableViewCell", for: indexPath) as! PlayerSlotTableViewCell
+        return cell
+    }
 }

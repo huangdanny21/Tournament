@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 import RxSwiftUtilities
 
-
 class ProMatchesViewModel {
     private let proMatchesSubject = PublishSubject<[ProMatchObjectViewModel]>()
     private let disposeBag = DisposeBag()

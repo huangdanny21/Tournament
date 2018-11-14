@@ -48,6 +48,7 @@
 		3059F90E219CAD98003F1050 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3059F90D219CAD98003F1050 /* DateUtil.swift */; };
 		3059F915219CB8DC003F1050 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F914219CB8DC003F1050 /* MBProgressHUD.m */; };
 		3059F917219CB981003F1050 /* MBProgressHUDExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3059F916219CB981003F1050 /* MBProgressHUDExtensions.swift */; };
+		3059F91B219CC961003F1050 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3059F91A219CC961003F1050 /* CircleImageView.swift */; };
 		E483B56F925E32C49FB79A1F /* Pods_Tournament.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +121,7 @@
 		3059F913219CB8DC003F1050 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		3059F914219CB8DC003F1050 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		3059F916219CB981003F1050 /* MBProgressHUDExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBProgressHUDExtensions.swift; sourceTree = "<group>"; };
+		3059F91A219CC961003F1050 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		B2321F0212BDBBDE0754F962 /* Pods-Tournament.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -285,6 +287,7 @@
 				3036A7D6219644500084ECE9 /* BaseView.swift */,
 				3036A7DC21964C3A0084ECE9 /* BaseTableViewCell.swift */,
 				3036A7E421965F2F0084ECE9 /* BaseObjectViewModel.swift */,
+				3059F91A219CC961003F1050 /* CircleImageView.swift */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				3036A7B12196237F0084ECE9 /* AlertPresenter.swift in Sources */,
 				3036A7C221962F770084ECE9 /* HomeViewController.swift in Sources */,
 				3036A7EB219668520084ECE9 /* PlayerSlotTableViewCell.swift in Sources */,
+				3059F91B219CC961003F1050 /* CircleImageView.swift in Sources */,
 				3036A7D1219643FE0084ECE9 /* ProMatchesView.swift in Sources */,
 				3036A7FE21966C190084ECE9 /* MatchPlayerMetaData.swift in Sources */,
 				3036A7D5219644180084ECE9 /* ProMatchesViewModel.swift in Sources */,
