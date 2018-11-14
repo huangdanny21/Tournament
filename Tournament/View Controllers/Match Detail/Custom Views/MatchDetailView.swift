@@ -11,6 +11,7 @@ import UIKit
 class MatchDetailView: BaseView {
     let tableView: UITableView = {
         let tableView = UITableView()
+        tableView.separatorInset = .zero
         tableView.tableFooterView = UIView()
         tableView.rowHeight = 100
         return tableView
@@ -23,6 +24,7 @@ class MatchDetailView: BaseView {
 
     var objectViewModel: MatchDetailObjectViewModel? {
         didSet {
+            headerView.objectViewModel = objectViewModel
             tableView.reloadData()
         }
     }
@@ -31,10 +33,12 @@ class MatchDetailView: BaseView {
     
     override func commonInit() {
         addSubview(tableView)
-        tableView.tableHeaderView = headerView
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        registerCells()
+        tableView.tableHeaderView = headerView
+        tableView.rowHeight = 100
         tableView.dataSource = self
     }
     
@@ -68,6 +72,14 @@ extension MatchDetailView: UITableViewDataSource {
             return tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerSlotTableViewCell", for: indexPath) as! PlayerSlotTableViewCell
+        var data: MatchPlayerData?
+        if indexPath.section == 0 {
+            data = objectViewModel.radiantPlayers[indexPath.row]
+        }
+        else {
+            data = objectViewModel.direPlayers[indexPath.row]
+        }
+        cell.playerData = data
         return cell
     }
 }

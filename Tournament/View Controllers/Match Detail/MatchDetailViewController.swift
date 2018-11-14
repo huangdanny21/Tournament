@@ -50,7 +50,7 @@ class MatchDetailViewController: UIViewController {
         viewModel
             .matchDetailData
             .subscribe(onNext: { [weak self](objectViewModel) in
-                self?.matchDetailView.headerView.objectViewModel = objectViewModel
+                self?.matchDetailView.objectViewModel = objectViewModel
             }, onError: { (error) in
                 
             })
