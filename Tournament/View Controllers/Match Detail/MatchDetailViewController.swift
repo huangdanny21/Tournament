@@ -39,5 +39,22 @@ class MatchDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Match Detail"
+        bindTableView()
+    }
+    
+    // MARK: - Data
+    
+    private func bindTableView() {
+        viewModel
+            .matchDetailData
+            .subscribe(onSuccess: { [weak self](objectViewModel) in
+                print("Success getting Match detail")
+                self?.matchDetailView.headerView.objectViewModel = objectViewModel
+            }) { (error) in
+                print("Failed getting Match detail")
+
+            }
+            .disposed(by: disposeBag)
+            
     }
 }

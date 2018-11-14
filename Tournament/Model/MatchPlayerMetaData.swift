@@ -44,7 +44,7 @@ class MatchPlayerData: Codable {
     let assists: Int
     let deaths: Int
     let denies: Int
-    let gpm: Int
+    let goldPerMin: Int
     let heroId: Int
     let backPackZero: Int
     let backPackOne: Int

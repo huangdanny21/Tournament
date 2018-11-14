@@ -8,17 +8,19 @@
 
 import UIKit
 
-class MatchDetailHeaderView: UITableViewHeaderFooterView {
+class MatchDetailHeaderView: BaseView {
     
     // MARK: - Start Date View
     
     private let startDateTitleLabel: UILabel = {
         let label = UILabel()
+        label.textColor = UIColor.lightGray
         return label
     }()
     
     private let startDateLabel: UILabel = {
         let label = UILabel()
+        label.textColor = UIColor.white
         return label
     }()
     
@@ -35,11 +37,13 @@ class MatchDetailHeaderView: UITableViewHeaderFooterView {
     
     private let durationTitleLabel: UILabel = {
         let label = UILabel()
+        label.textColor = UIColor.lightGray
         return label
     }()
     
     private let durationLabel: UILabel = {
         let label = UILabel()
+        label.textColor = UIColor.white
         return label
     }()
     
@@ -56,11 +60,13 @@ class MatchDetailHeaderView: UITableViewHeaderFooterView {
     
     private let skillTitleLabel: UILabel = {
         let label = UILabel()
+        label.textColor = UIColor.lightGray
         return label
     }()
     
     private let skillLabel: UILabel = {
         let label = UILabel()
+        label.textColor = UIColor.white
         return label
     }()
     
@@ -75,18 +81,20 @@ class MatchDetailHeaderView: UITableViewHeaderFooterView {
     
     // MARK: - Lobby View
     
-    private let lobbyTitleLabel: UILabel = {
+    private let gameModeTitleLabel: UILabel = {
         let label = UILabel()
+        label.textColor = UIColor.lightGray
         return label
     }()
     
-    private let lobbyLabel: UILabel = {
+    private let gameModeLabel: UILabel = {
         let label = UILabel()
+        label.textColor = UIColor.white
         return label
     }()
     
     private lazy var lobbyStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [self.lobbyTitleLabel, self.lobbyLabel])
+        let stackView = UIStackView(arrangedSubviews: [self.gameModeTitleLabel, self.gameModeLabel])
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalCentering
@@ -103,20 +111,26 @@ class MatchDetailHeaderView: UITableViewHeaderFooterView {
         return stackView
     }()
     
-    // MARK: - Constructor
-    
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    var objectViewModel: MatchDetailObjectViewModel? {
+        didSet {
+            guard let objectViewModel = objectViewModel else {
+                return
+            }
+            startDateLabel.text = objectViewModel.startDate
+            durationLabel.text = objectViewModel.duration
+            skillLabel.text = objectViewModel.skillLevel
+            gameModeLabel.text = objectViewModel.gameMode
+        }
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    // MARK: - Init
+    
+    override func commonInit() {
+        backgroundColor = UIColor.black
+        
+        addSubview(stackView)
+        stackView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
     }
-    
-    // MARK: - Public
-    
-    func set(matchDetailOVM: MatchDetailObjectViewModel) {
-        //startDateLabel.text =
-    }
-    
 }

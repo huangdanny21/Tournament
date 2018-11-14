@@ -40,6 +40,5 @@ class MatchDetailViewModel {
             .bind(to: matchDetailSubject)
             .disposed(by: disposeBag)
     }
-    
 }
 

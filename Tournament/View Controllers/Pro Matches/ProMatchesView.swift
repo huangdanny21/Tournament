@@ -17,6 +17,12 @@ class ProMatchesView: BaseView {
         return tableView
     }()
     
+    let activityIndicatorView: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        return spinner
+    }()
+    
     override func commonInit() {
         addSubview(tableView)
         tableView.snp.makeConstraints { (make) in

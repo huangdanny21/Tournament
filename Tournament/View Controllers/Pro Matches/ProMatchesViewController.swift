@@ -61,6 +61,5 @@ class ProMatchesViewController: UIViewController {
                 self?.navigationController?.pushViewController(matchDetailVC, animated: true)
             })
             .disposed(by: disposeBag)
-
     }
 }

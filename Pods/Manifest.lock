@@ -5,6 +5,9 @@ PODS:
   - RxCocoa (4.3.1):
     - RxSwift (~> 4.0)
   - RxSwift (4.3.1)
+  - RxSwiftUtilities (2.0.1):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
   - SnapKit (4.0.1)
 
 DEPENDENCIES:
@@ -12,6 +15,7 @@ DEPENDENCIES:
   - AlamofireImage (~> 3.4)
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
+  - RxSwiftUtilities
   - SnapKit (~> 4.0.0)
 
 SPEC REPOS:
@@ -20,6 +24,7 @@ SPEC REPOS:
     - AlamofireImage
     - RxCocoa
     - RxSwift
+    - RxSwiftUtilities
     - SnapKit
 
 SPEC CHECKSUMS:
@@ -27,8 +32,9 @@ SPEC CHECKSUMS:
   AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
+  RxSwiftUtilities: 0edb01ef16c527c10fb352485b62cbd951e4a04d
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
 
-PODFILE CHECKSUM: 6ab825fa7dfe9f67827ac96b2734aa2a64ec25c6
+PODFILE CHECKSUM: aabe0c2067225f34f22000b5c03d028a231fe95d
 
 COCOAPODS: 1.5.3

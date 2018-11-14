@@ -12,5 +12,7 @@ target 'Tournament' do
   pod 'AlamofireImage', '~> 3.4'
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
+  pod "RxSwiftUtilities"
+
 
 end

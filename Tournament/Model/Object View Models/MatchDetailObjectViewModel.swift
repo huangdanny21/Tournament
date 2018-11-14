@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MatchDetailObjectViewModel_Protocol {
-    var startTime: String { get }
+    var startDate: String { get }
     var duration: String { get }
     var skillLevel: String { get }
     var gameMode: String { get }
@@ -20,7 +20,7 @@ class MatchDetailObjectViewModel: BaseObjectViewModel<MatchDetail> {
 }
 
 extension MatchDetailObjectViewModel: MatchDetailObjectViewModel_Protocol {
-    var startTime: String {
+    var startDate: String {
         get {
             if let timeInterval = Double(exactly: object.startTime) {
                 return Date(timeIntervalSince1970: timeInterval).timeAgoSinceNow
