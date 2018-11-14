@@ -23,8 +23,13 @@ class MatchDetail: Codable {
     let radiantWin: Bool
     let skill: SkillLevel?
     let startTime: Int
+    let seriesId: Int?
     let seriesType: Int?
+    let league: League
+    let radiantTeam: Team?
+    let direTeam: Team?
     let players: [MatchPlayerData]?
     let patch: Int
     let region: Int
+    let replayUrl: String
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3023F9CB2197DEE8004CAF6F /* BattleCupMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3023F9CA2197DEE8004CAF6F /* BattleCupMetadata.swift */; };
 		3036A765219618AF0084ECE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A764219618AF0084ECE9 /* AppDelegate.swift */; };
 		3036A76C219618B10084ECE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3036A76B219618B10084ECE9 /* Assets.xcassets */; };
 		3036A77A219618B10084ECE9 /* TournamentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A779219618B10084ECE9 /* TournamentTests.swift */; };
@@ -44,6 +45,7 @@
 		3051C2F421977F7100D9390C /* MatchDetailObjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3051C2F321977F7100D9390C /* MatchDetailObjectViewModel.swift */; };
 		3051C2F62197943000D9390C /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3051C2F52197943000D9390C /* League.swift */; };
 		3051C2F82197964400D9390C /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3051C2F72197964400D9390C /* Team.swift */; };
+		3059F90E219CAD98003F1050 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3059F90D219CAD98003F1050 /* DateUtil.swift */; };
 		E483B56F925E32C49FB79A1F /* Pods_Tournament.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,7 @@
 /* Begin PBXFileReference section */
 		080A074E54246D31DC6CC5DB /* Pods-Tournament.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.release.xcconfig"; sourceTree = "<group>"; };
 		26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tournament.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3023F9CA2197DEE8004CAF6F /* BattleCupMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleCupMetadata.swift; sourceTree = "<group>"; };
 		3036A761219618AF0084ECE9 /* Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tournament.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3036A764219618AF0084ECE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3036A76B219618B10084ECE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		3051C2F321977F7100D9390C /* MatchDetailObjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailObjectViewModel.swift; sourceTree = "<group>"; };
 		3051C2F52197943000D9390C /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		3051C2F72197964400D9390C /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		3059F90D219CAD98003F1050 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		B2321F0212BDBBDE0754F962 /* Pods-Tournament.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +210,7 @@
 				3036A7F021966A120084ECE9 /* MatchDetail.swift */,
 				3051C2F52197943000D9390C /* League.swift */,
 				3051C2F72197964400D9390C /* Team.swift */,
+				3023F9CA2197DEE8004CAF6F /* BattleCupMetadata.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			children = (
 				3036A7A92196237F0084ECE9 /* ImageManager */,
 				3036A7AD2196237F0084ECE9 /* AlertPresenter.swift */,
+				3059F90D219CAD98003F1050 /* DateUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -555,6 +561,7 @@
 				3036A7F121966A120084ECE9 /* MatchDetail.swift in Sources */,
 				3051C2F82197964400D9390C /* Team.swift in Sources */,
 				3036A7AE2196237F0084ECE9 /* ImageManager.swift in Sources */,
+				3023F9CB2197DEE8004CAF6F /* BattleCupMetadata.swift in Sources */,
 				3036A7A7219622AD0084ECE9 /* UInt64Extensions.swift in Sources */,
 				3036A7D7219644500084ECE9 /* BaseView.swift in Sources */,
 				3036A7FA21966BBA0084ECE9 /* FactionSlot.swift in Sources */,
@@ -577,6 +584,7 @@
 				3051C2F421977F7100D9390C /* MatchDetailObjectViewModel.swift in Sources */,
 				3036A7CF219643550084ECE9 /* ProMatchesViewController.swift in Sources */,
 				3036A7AF2196237F0084ECE9 /* DecodeOperation.swift in Sources */,
+				3059F90E219CAD98003F1050 /* DateUtil.swift in Sources */,
 				3051C2F62197943000D9390C /* League.swift in Sources */,
 				3036A7DB219646F50084ECE9 /* ProMatch.swift in Sources */,
 			);
