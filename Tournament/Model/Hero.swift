@@ -24,7 +24,7 @@ class Hero: Codable {
     let name: String
     let localizedName: String
     let primaryAttr: Attribute
-    let attack_type: AttackType
+    let attackType: AttackType
     let roles: [String]
     let legs: Int?
     
@@ -35,7 +35,7 @@ class Hero: Codable {
         localizedName = ""
         name = ""
         primaryAttr = .agi
-        attack_type = .Melee
+        attackType = .Melee
         roles = []
         legs = nil
     }
