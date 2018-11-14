@@ -49,6 +49,11 @@
 		3059F915219CB8DC003F1050 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F914219CB8DC003F1050 /* MBProgressHUD.m */; };
 		3059F917219CB981003F1050 /* MBProgressHUDExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3059F916219CB981003F1050 /* MBProgressHUDExtensions.swift */; };
 		3059F91B219CC961003F1050 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3059F91A219CC961003F1050 /* CircleImageView.swift */; };
+		3059F91E219CD37B003F1050 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3059F91D219CD37B003F1050 /* Hero.swift */; };
+		3059F920219CD38B003F1050 /* HeroList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3059F91F219CD38B003F1050 /* HeroList.swift */; };
+		3059F922219CD3A2003F1050 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3059F921219CD3A2003F1050 /* ItemList.swift */; };
+		3059F925219CD3EE003F1050 /* item_ids.json in Resources */ = {isa = PBXBuildFile; fileRef = 3059F924219CD3EE003F1050 /* item_ids.json */; };
+		3059F927219CD49A003F1050 /* LocalJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3059F926219CD49A003F1050 /* LocalJSONParser.swift */; };
 		E483B56F925E32C49FB79A1F /* Pods_Tournament.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +127,11 @@
 		3059F914219CB8DC003F1050 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		3059F916219CB981003F1050 /* MBProgressHUDExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBProgressHUDExtensions.swift; sourceTree = "<group>"; };
 		3059F91A219CC961003F1050 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		3059F91D219CD37B003F1050 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		3059F91F219CD38B003F1050 /* HeroList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroList.swift; sourceTree = "<group>"; };
+		3059F921219CD3A2003F1050 /* ItemList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
+		3059F924219CD3EE003F1050 /* item_ids.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = item_ids.json; sourceTree = "<group>"; };
+		3059F926219CD49A003F1050 /* LocalJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalJSONParser.swift; sourceTree = "<group>"; };
 		B2321F0212BDBBDE0754F962 /* Pods-Tournament.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,18 +186,20 @@
 		3036A763219618AF0084ECE9 /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
-				3059F911219CB8C9003F1050 /* 3rdParty */,
 				3036A770219618B10084ECE9 /* Info.plist */,
 				3036A764219618AF0084ECE9 /* AppDelegate.swift */,
+				3036A7F221966AB90084ECE9 /* ExampleJSON.swift */,
 				3036A76B219618B10084ECE9 /* Assets.xcassets */,
+				3059F911219CB8C9003F1050 /* 3rdParty */,
 				3036A7C6219639EF0084ECE9 /* BaseClass */,
 				3036A7B4219626E50084ECE9 /* Constants */,
 				3036A7A5219622AD0084ECE9 /* Extensions */,
+				3059F923219CD3EE003F1050 /* JSONS */,
 				3036A792219618BD0084ECE9 /* Model */,
 				3036A799219622120084ECE9 /* Service */,
+				3059F91C219CD326003F1050 /* Singletons */,
 				3036A7A82196237F0084ECE9 /* Util */,
 				3036A794219618C70084ECE9 /* View Controllers */,
-				3036A7F221966AB90084ECE9 /* ExampleJSON.swift */,
 			);
 			path = Tournament;
 			sourceTree = "<group>";
@@ -213,6 +225,7 @@
 		3036A792219618BD0084ECE9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3059F91D219CD37B003F1050 /* Hero.swift */,
 				3051C2EB2197684A00D9390C /* Object View Models */,
 				3036A7FD21966C190084ECE9 /* MatchPlayerMetaData.swift */,
 				3036A7DA219646F50084ECE9 /* ProMatch.swift */,
@@ -255,6 +268,7 @@
 		3036A7A82196237F0084ECE9 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				3059F926219CD49A003F1050 /* LocalJSONParser.swift */,
 				3036A7A92196237F0084ECE9 /* ImageManager */,
 				3036A7AD2196237F0084ECE9 /* AlertPresenter.swift */,
 				3059F90D219CAD98003F1050 /* DateUtil.swift */,
@@ -367,6 +381,23 @@
 				3059F912219CB8DB003F1050 /* Tournament-Bridging-Header.h */,
 			);
 			path = 3rdParty;
+			sourceTree = "<group>";
+		};
+		3059F91C219CD326003F1050 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				3059F91F219CD38B003F1050 /* HeroList.swift */,
+				3059F921219CD3A2003F1050 /* ItemList.swift */,
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+		3059F923219CD3EE003F1050 /* JSONS */ = {
+			isa = PBXGroup;
+			children = (
+				3059F924219CD3EE003F1050 /* item_ids.json */,
+			);
+			path = JSONS;
 			sourceTree = "<group>";
 		};
 		36CB1DA0232AD8DF77613A19 /* Pods */ = {
@@ -494,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3036A76C219618B10084ECE9 /* Assets.xcassets in Resources */,
+				3059F925219CD3EE003F1050 /* item_ids.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,10 +613,13 @@
 				3036A7B02196237F0084ECE9 /* ImageRequest.swift in Sources */,
 				3036A7FC21966BBA0084ECE9 /* MatchEnums.swift in Sources */,
 				3036A7FB21966BBA0084ECE9 /* LobbyType.swift in Sources */,
+				3059F920219CD38B003F1050 /* HeroList.swift in Sources */,
 				3036A7F321966AB90084ECE9 /* ExampleJSON.swift in Sources */,
 				3036A7F121966A120084ECE9 /* MatchDetail.swift in Sources */,
 				3051C2F82197964400D9390C /* Team.swift in Sources */,
+				3059F922219CD3A2003F1050 /* ItemList.swift in Sources */,
 				3059F917219CB981003F1050 /* MBProgressHUDExtensions.swift in Sources */,
+				3059F927219CD49A003F1050 /* LocalJSONParser.swift in Sources */,
 				3036A7AE2196237F0084ECE9 /* ImageManager.swift in Sources */,
 				3023F9CB2197DEE8004CAF6F /* BattleCupMetadata.swift in Sources */,
 				3036A7A7219622AD0084ECE9 /* UInt64Extensions.swift in Sources */,
@@ -610,6 +645,7 @@
 				3036A7E321965F010084ECE9 /* ProMatchObjectViewModel.swift in Sources */,
 				3051C2F421977F7100D9390C /* MatchDetailObjectViewModel.swift in Sources */,
 				3036A7CF219643550084ECE9 /* ProMatchesViewController.swift in Sources */,
+				3059F91E219CD37B003F1050 /* Hero.swift in Sources */,
 				3036A7AF2196237F0084ECE9 /* DecodeOperation.swift in Sources */,
 				3059F90E219CAD98003F1050 /* DateUtil.swift in Sources */,
 				3051C2F62197943000D9390C /* League.swift in Sources */,
