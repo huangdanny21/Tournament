@@ -9,12 +9,15 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import RxSwiftUtilities
+
 
 class ProMatchesViewModel {
     private let proMatchesSubject = PublishSubject<[ProMatchObjectViewModel]>()
     private let disposeBag = DisposeBag()
     
     let proMatchesData: Driver<[ProMatchObjectViewModel]>
+    let activityIndicator = ActivityIndicator()
     
     // MARK: - Constructor
     
@@ -39,6 +42,7 @@ class ProMatchesViewModel {
                 })
                 return Observable.just(objectViewModels)
             }
+            .trackActivity(activityIndicator)
             .bind(to: proMatchesSubject)
             .disposed(by: disposeBag)
     }

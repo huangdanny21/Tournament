@@ -18,7 +18,8 @@ class ProMatchesView: BaseView {
     }()
     
     let activityIndicatorView: UIActivityIndicatorView = {
-        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        let spinner = UIActivityIndicatorView(style: .gray)
+        spinner.hidesWhenStopped = true
         spinner.translatesAutoresizingMaskIntoConstraints = false
         return spinner
     }()
@@ -29,6 +30,11 @@ class ProMatchesView: BaseView {
             make.edges.equalToSuperview()
         }
         registerCells()
+        
+        addSubview(activityIndicatorView)
+        activityIndicatorView.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+        }
     }
     
     // MARK: - Private

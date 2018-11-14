@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxSwiftUtilities
 
 class ProMatchesViewController: UIViewController {
 
@@ -47,6 +48,27 @@ class ProMatchesViewController: UIViewController {
     // MARK: - Data
     
     private func bindTableView() {
+        
+        viewModel
+            .activityIndicator.asDriver()
+            .drive(proMatchesView.activityIndicatorView.rx.isAnimating)
+            .disposed(by: disposeBag)
+        
+//        viewModel
+//            .activityIndicator.asObservable()
+//            .subscribe(onNext: { [weak self](isRunning) in
+//                if isRunning {
+//                    self?.showSpinner()
+//                }
+//                else {
+//                    self?.hideSpinner()
+//                }
+//            }, onError: { (error) in
+//                self?.hideSpinner()
+//            })
+//            .disposed(by: disposeBag)
+        
+        
         viewModel
             .proMatchesData
             .drive(proMatchesView.tableView.rx.items(cellIdentifier: "ProMatchTableViewCell", cellType: ProMatchTableViewCell.self)) { _ , proMatchVM, cell in
@@ -61,5 +83,15 @@ class ProMatchesViewController: UIViewController {
                 self?.navigationController?.pushViewController(matchDetailVC, animated: true)
             })
             .disposed(by: disposeBag)
+    }
+    
+    // MARK: - Loading
+    
+    private func showSpinner() {
+        proMatchesView.activityIndicatorView.startAnimating()
+    }
+    
+    private func hideSpinner() {
+        proMatchesView.activityIndicatorView.stopAnimating()
     }
 }
