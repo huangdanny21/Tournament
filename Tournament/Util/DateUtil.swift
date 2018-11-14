@@ -15,7 +15,6 @@ class DateUtil {
         formatter.unitsStyle = .full
         
         let formattedString = formatter.string(from: TimeInterval(interval))!
-        print(formattedString)
         return formattedString
     }
 }

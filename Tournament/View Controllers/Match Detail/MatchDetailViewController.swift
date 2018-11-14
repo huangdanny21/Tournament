@@ -47,14 +47,11 @@ class MatchDetailViewController: UIViewController {
     private func bindTableView() {
         viewModel
             .matchDetailData
-            .subscribe(onSuccess: { [weak self](objectViewModel) in
-                print("Success getting Match detail")
+            .subscribe(onNext: { [weak self](objectViewModel) in
                 self?.matchDetailView.headerView.objectViewModel = objectViewModel
-            }) { (error) in
-                print("Failed getting Match detail")
-
-            }
+            }, onError: { (error) in
+                
+            })
             .disposed(by: disposeBag)
-            
     }
 }

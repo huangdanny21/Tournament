@@ -14,13 +14,19 @@ class MatchDetailHeaderView: BaseView {
     
     private let startDateTitleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.lightGray
+        label.textAlignment = .center
+        label.text = "MATCH ENDED"
+        label.textColor = UIColor.lightText
+        label.font = UIFont.systemFont(ofSize: 13, weight: .thin)
         return label
     }()
     
     private let startDateLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
         label.textColor = UIColor.white
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.numberOfLines = 2
         return label
     }()
     
@@ -28,8 +34,7 @@ class MatchDetailHeaderView: BaseView {
         let stackView = UIStackView(arrangedSubviews: [self.startDateTitleLabel, self.startDateLabel])
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .equalCentering
-        stackView.spacing = 5
+        stackView.distribution = .fillEqually
         return stackView
     }()
     
@@ -37,13 +42,19 @@ class MatchDetailHeaderView: BaseView {
     
     private let durationTitleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.lightGray
+        label.text = "DURATION"
+        label.textAlignment = .center
+        label.textColor = UIColor.lightText
+        label.font = UIFont.systemFont(ofSize: 13, weight: .thin)
         return label
     }()
     
     private let durationLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
         label.textColor = UIColor.white
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.numberOfLines = 2
         return label
     }()
     
@@ -51,8 +62,7 @@ class MatchDetailHeaderView: BaseView {
         let stackView = UIStackView(arrangedSubviews: [self.durationTitleLabel, self.durationLabel])
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .equalCentering
-        stackView.spacing = 5
+        stackView.distribution = .fillEqually
         return stackView
     }()
     
@@ -60,13 +70,19 @@ class MatchDetailHeaderView: BaseView {
     
     private let skillTitleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.lightGray
+        label.text = "SKILL BRACKET"
+        label.textAlignment = .center
+        label.textColor = UIColor.lightText
+        label.font = UIFont.systemFont(ofSize: 13, weight: .thin)
         return label
     }()
     
     private let skillLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
         label.textColor = UIColor.white
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.numberOfLines = 2
         return label
     }()
     
@@ -74,8 +90,7 @@ class MatchDetailHeaderView: BaseView {
         let stackView = UIStackView(arrangedSubviews: [self.skillTitleLabel, self.skillLabel])
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .equalCentering
-        stackView.spacing = 5
+        stackView.distribution = .fillEqually
         return stackView
     }()
     
@@ -83,13 +98,19 @@ class MatchDetailHeaderView: BaseView {
     
     private let gameModeTitleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.lightGray
+        label.text = "GAME MODE"
+        label.textAlignment = .center
+        label.textColor = UIColor.lightText
+        label.font = UIFont.systemFont(ofSize: 13, weight: .thin)
         return label
     }()
     
     private let gameModeLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
         label.textColor = UIColor.white
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.numberOfLines = 2
         return label
     }()
     
@@ -97,8 +118,7 @@ class MatchDetailHeaderView: BaseView {
         let stackView = UIStackView(arrangedSubviews: [self.gameModeTitleLabel, self.gameModeLabel])
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .equalCentering
-        stackView.spacing = 5
+        stackView.distribution = .fillEqually
         return stackView
     }()
     
@@ -106,8 +126,7 @@ class MatchDetailHeaderView: BaseView {
         let stackView = UIStackView(arrangedSubviews: [self.startDateStackView, self.durationStackView, self.skillStackView, self.lobbyStackView])
         stackView.axis = .horizontal
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .equalCentering
-        //stackView.spacing = 5
+        stackView.distribution = .fillEqually
         return stackView
     }()
     
@@ -127,10 +146,13 @@ class MatchDetailHeaderView: BaseView {
     
     override func commonInit() {
         backgroundColor = UIColor.black
-        
         addSubview(stackView)
+        
         stackView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.top.equalToSuperview().offset(10)
+            make.bottom.equalToSuperview().offset(-10)
         }
     }
 }

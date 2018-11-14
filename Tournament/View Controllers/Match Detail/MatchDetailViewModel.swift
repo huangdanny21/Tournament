@@ -14,18 +14,21 @@ class MatchDetailViewModel {
     private let matchDetailSubject = PublishSubject<MatchDetailObjectViewModel>()
     private let disposeBag = DisposeBag()
     
-    let matchDetailData: Single<MatchDetailObjectViewModel>
+    let matchDetailData: Observable<MatchDetailObjectViewModel>
+    
+    private let matchId: Int
     
     // MARK: - Constructor
     
     init(withMatchId matchId: Int) {
-        matchDetailData = matchDetailSubject.asSingle()
+        self.matchId = matchId
+        matchDetailData = matchDetailSubject.asObservable()
         fetchMatchDetail(withMatchId: matchId)
     }
     
     // MARK: - API
     
-    private func fetchMatchDetail(withMatchId matchId: Int) {
+    func fetchMatchDetail(withMatchId matchId: Int) {
         guard let url = URL(string: OpenDotaUrlConstants.baseMatchUrl+"\(matchId)") else {
             matchDetailSubject.onError(ServiceError.invalidUrl)
             return

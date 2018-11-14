@@ -46,15 +46,15 @@ class MatchPlayerData: Codable {
     let denies: Int
     let goldPerMin: Int
     let heroId: Int
-    let backPackZero: Int
-    let backPackOne: Int
-    let backPackTwo: Int
-    let itemZero: Int
-    let itemOne: Int
-    let itemTwo: Int
-    let itemThree: Int
-    let itemFour: Int
-    let itemFive: Int
+    let backpack0: Int
+    let backpack1: Int
+    let backpack2: Int
+    let item0: Int
+    let item1: Int
+    let item2: Int
+    let item3: Int
+    let item4: Int
+    let item5: Int
     let kills: Int
     let level: Int
     let personaName: String?
