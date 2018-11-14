@@ -47,6 +47,7 @@
 		3051C2F82197964400D9390C /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3051C2F72197964400D9390C /* Team.swift */; };
 		3059F90E219CAD98003F1050 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3059F90D219CAD98003F1050 /* DateUtil.swift */; };
 		3059F915219CB8DC003F1050 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F914219CB8DC003F1050 /* MBProgressHUD.m */; };
+		3059F917219CB981003F1050 /* MBProgressHUDExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3059F916219CB981003F1050 /* MBProgressHUDExtensions.swift */; };
 		E483B56F925E32C49FB79A1F /* Pods_Tournament.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +119,7 @@
 		3059F912219CB8DB003F1050 /* Tournament-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tournament-Bridging-Header.h"; sourceTree = "<group>"; };
 		3059F913219CB8DC003F1050 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		3059F914219CB8DC003F1050 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		3059F916219CB981003F1050 /* MBProgressHUDExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBProgressHUDExtensions.swift; sourceTree = "<group>"; };
 		B2321F0212BDBBDE0754F962 /* Pods-Tournament.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -243,6 +245,7 @@
 			children = (
 				3036A7A6219622AD0084ECE9 /* UInt64Extensions.swift */,
 				3036A7E021965E5A0084ECE9 /* DateExtension.swift */,
+				3059F916219CB981003F1050 /* MBProgressHUDExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				3036A7F321966AB90084ECE9 /* ExampleJSON.swift in Sources */,
 				3036A7F121966A120084ECE9 /* MatchDetail.swift in Sources */,
 				3051C2F82197964400D9390C /* Team.swift in Sources */,
+				3059F917219CB981003F1050 /* MBProgressHUDExtensions.swift in Sources */,
 				3036A7AE2196237F0084ECE9 /* ImageManager.swift in Sources */,
 				3023F9CB2197DEE8004CAF6F /* BattleCupMetadata.swift in Sources */,
 				3036A7A7219622AD0084ECE9 /* UInt64Extensions.swift in Sources */,

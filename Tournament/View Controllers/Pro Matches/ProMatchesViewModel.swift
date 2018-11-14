@@ -16,13 +16,13 @@ class ProMatchesViewModel {
     private let proMatchesSubject = PublishSubject<[ProMatchObjectViewModel]>()
     private let disposeBag = DisposeBag()
     
-    let proMatchesData: Driver<[ProMatchObjectViewModel]>
+    let proMatchesData: Observable<[ProMatchObjectViewModel]>
     let activityIndicator = ActivityIndicator()
     
     // MARK: - Constructor
     
     init() {
-        proMatchesData = proMatchesSubject.asDriver(onErrorJustReturn: [])
+        proMatchesData = proMatchesSubject.asObservable()
         fetchProMatches()
     }
     
@@ -42,7 +42,6 @@ class ProMatchesViewModel {
                 })
                 return Observable.just(objectViewModels)
             }
-            .trackActivity(activityIndicator)
             .bind(to: proMatchesSubject)
             .disposed(by: disposeBag)
     }

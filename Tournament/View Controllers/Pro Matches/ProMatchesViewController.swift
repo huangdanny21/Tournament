@@ -42,36 +42,17 @@ class ProMatchesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Pro Matches"
+        bindLoadingIndicator()
         bindTableView()
     }
     
     // MARK: - Data
     
     private func bindTableView() {
-        
-        viewModel
-            .activityIndicator.asDriver()
-            .drive(proMatchesView.activityIndicatorView.rx.isAnimating)
-            .disposed(by: disposeBag)
-        
-//        viewModel
-//            .activityIndicator.asObservable()
-//            .subscribe(onNext: { [weak self](isRunning) in
-//                if isRunning {
-//                    self?.showSpinner()
-//                }
-//                else {
-//                    self?.hideSpinner()
-//                }
-//            }, onError: { (error) in
-//                self?.hideSpinner()
-//            })
-//            .disposed(by: disposeBag)
-        
-        
         viewModel
             .proMatchesData
-            .drive(proMatchesView.tableView.rx.items(cellIdentifier: "ProMatchTableViewCell", cellType: ProMatchTableViewCell.self)) { _ , proMatchVM, cell in
+            .trackActivity(viewModel.activityIndicator)
+            .bind(to: proMatchesView.tableView.rx.items(cellIdentifier: "ProMatchTableViewCell", cellType: ProMatchTableViewCell.self)) { _ , proMatchVM, cell in
                 cell.set(withProMatchViewModel: proMatchVM)
             }
             .disposed(by: disposeBag)
@@ -85,13 +66,14 @@ class ProMatchesViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    // MARK: - Loading
-    
-    private func showSpinner() {
-        proMatchesView.activityIndicatorView.startAnimating()
-    }
-    
-    private func hideSpinner() {
-        proMatchesView.activityIndicatorView.stopAnimating()
+    private func bindLoadingIndicator() {
+        let progress = MBProgressHUD()
+        progress.mode = .indeterminate
+        progress.label.text = "Loading..."
+        
+        viewModel
+            .activityIndicator.asDriver()
+            .drive(progress.rx_mbprogresshud_animating)
+            .disposed(by: disposeBag)
     }
 }

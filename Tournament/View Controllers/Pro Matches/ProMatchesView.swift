@@ -17,24 +17,12 @@ class ProMatchesView: BaseView {
         return tableView
     }()
     
-    let activityIndicatorView: UIActivityIndicatorView = {
-        let spinner = UIActivityIndicatorView(style: .gray)
-        spinner.hidesWhenStopped = true
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        return spinner
-    }()
-    
     override func commonInit() {
         addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
         registerCells()
-        
-        addSubview(activityIndicatorView)
-        activityIndicatorView.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-        }
     }
     
     // MARK: - Private
