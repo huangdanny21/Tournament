@@ -52,23 +52,26 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     // MARK: - Right Side
     
-    private let scoreLabel: UILabel = {
+    private let kdaLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
-        label.text = "1/1/1"
+        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        label.textAlignment = .right
         return label
     }()
     
-    private let kdaLabel: UILabel = {
+    private let scoreLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
-        label.text = "KDA: 1.0"
+        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        label.textAlignment = .right
+        label.textColor = UIColor.gray
         return label
     }()
     
     private lazy var scoreStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [self.scoreLabel, self.kdaLabel])
+        let stackView = UIStackView(arrangedSubviews: [self.kdaLabel, self.scoreLabel])
         stackView.axis = .vertical
+        stackView.distribution = .fillProportionally
+        stackView.spacing = 15
         return stackView
     }()
     
@@ -185,6 +188,8 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         userNameLabel.text = playerData.name ?? "Username"
         userNameLabel.textColor = playerData.isRadiant ? UIColor.green : UIColor.red
         laneLabel.text = playerData.lane?.description
+        kdaLabel.text = "KDA: \(playerData.kda)"
+        scoreLabel.text = "\(playerData.kills)/\(playerData.deaths)/\(playerData.assists)"
     }
     
     private func populateHero(_ hero: Hero) {
