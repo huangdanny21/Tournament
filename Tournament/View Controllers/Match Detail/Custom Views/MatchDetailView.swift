@@ -40,6 +40,7 @@ class MatchDetailView: BaseView {
         }
         registerCells()
         tableView.tableHeaderView = headerView
+        tableView.delegate = self
         tableView.dataSource = self
     }
     
@@ -48,6 +49,24 @@ class MatchDetailView: BaseView {
     private func registerCells() {
         tableView.register(PlayerSlotTableViewCell.self, forCellReuseIdentifier: "PlayerSlotTableViewCell")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+    }
+}
+
+extension MatchDetailView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
+        view.backgroundColor = section == 0 ? UIColor.green : UIColor.red
+        
+        let label = UILabel(frame: CGRect(x: 5, y: 0, width: tableView.frame.width-10, height: 40))
+        label.textColor = UIColor.white
+        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        label.text = section == 0 ? "Radiant" : "Dire"
+        view.addSubview(label)
+        return view
     }
 }
 

@@ -175,7 +175,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.distribution = .fill
-        stackView.spacing = 2.5
+        stackView.spacing = 5
         return stackView
     }()
     
