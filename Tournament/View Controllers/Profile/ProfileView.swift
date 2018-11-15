@@ -9,5 +9,7 @@
 import SnapKit
 
 class ProfileView: BaseView {
-    
+    override func commonInit() {
+        
+    }
 }

@@ -11,5 +11,7 @@ import RxSwift
 import RxSwiftUtilities
 
 class SignUpViewModel {
-    
+    init() {
+        
+    }
 }

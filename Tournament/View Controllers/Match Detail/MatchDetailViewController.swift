@@ -16,7 +16,7 @@ class MatchDetailViewController: UIViewController {
     private let viewModel: MatchDetailViewModel
     private let disposeBag = DisposeBag()
     
-    lazy var matchDetailView: MatchDetailView = {
+    private lazy var matchDetailView: MatchDetailView = {
         return MatchDetailView()
     }()
     
