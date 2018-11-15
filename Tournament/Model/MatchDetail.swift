@@ -31,5 +31,5 @@ class MatchDetail: Codable {
     let players: [MatchPlayerData]?
     let patch: Int
     let region: Int
-    let replayUrl: String
+    let replayUrl: String?
 }

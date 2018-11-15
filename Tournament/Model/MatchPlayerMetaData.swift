@@ -57,7 +57,7 @@ class MatchPlayerData: Codable {
     let item5: Int
     let kills: Int
     let level: Int
-    let personaName: String?
+    let personaname: String?
     let name: String?
     let radiantWin: Bool
     let startTime: Int
@@ -70,6 +70,6 @@ class MatchPlayerData: Codable {
     let leaverStatus: Int
     let kda: Int
     let lane: Lane?
-    let laneRole: Int
+    let laneRole: Int?
 }
 

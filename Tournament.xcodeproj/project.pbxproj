@@ -64,6 +64,12 @@
 		30A72C2B219D272C003D56B8 /* BattleCupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A72C2A219D272C003D56B8 /* BattleCupViewController.swift */; };
 		30A72C2D219D2735003D56B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A72C2C219D2735003D56B8 /* ProfileViewController.swift */; };
 		30A72C2F219D29E7003D56B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30A72C2E219D29E7003D56B8 /* GoogleService-Info.plist */; };
+		30D1CEE9219E188900123AAC /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEE8219E188900123AAC /* ProfileViewModel.swift */; };
+		30D1CEEB219E1AB100123AAC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEEA219E1AB100123AAC /* ProfileView.swift */; };
+		30D1CEEF219E1EE300123AAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEEE219E1EE300123AAC /* LoginViewController.swift */; };
+		30E42614219D2D5E00296618 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42613219D2D5E00296618 /* SignUpView.swift */; };
+		30E42616219D2FE100296618 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42615219D2FE100296618 /* SignUpViewController.swift */; };
+		30E42618219D2FF200296618 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42617219D2FF200296618 /* SignUpViewModel.swift */; };
 		E483B56F925E32C49FB79A1F /* Pods_Tournament.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +158,12 @@
 		30A72C2A219D272C003D56B8 /* BattleCupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleCupViewController.swift; sourceTree = "<group>"; };
 		30A72C2C219D2735003D56B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		30A72C2E219D29E7003D56B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		30D1CEE8219E188900123AAC /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		30D1CEEA219E1AB100123AAC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		30D1CEEE219E1EE300123AAC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		30E42613219D2D5E00296618 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		30E42615219D2FE100296618 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		30E42617219D2FF200296618 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		B2321F0212BDBBDE0754F962 /* Pods-Tournament.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,8 +218,8 @@
 		3036A763219618AF0084ECE9 /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
-				3036A770219618B10084ECE9 /* Info.plist */,
 				30A72C2E219D29E7003D56B8 /* GoogleService-Info.plist */,
+				3036A770219618B10084ECE9 /* Info.plist */,
 				3036A764219618AF0084ECE9 /* AppDelegate.swift */,
 				3036A76B219618B10084ECE9 /* Assets.xcassets */,
 				3059F911219CB8C9003F1050 /* 3rdParty */,
@@ -245,12 +257,12 @@
 		3036A792219618BD0084ECE9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3051C2EB2197684A00D9390C /* Object View Models */,
 				3023F9CA2197DEE8004CAF6F /* BattleCupMetadata.swift */,
 				3059F91D219CD37B003F1050 /* Hero.swift */,
 				3051C2F52197943000D9390C /* League.swift */,
 				3036A7F021966A120084ECE9 /* MatchDetail.swift */,
 				3036A7FD21966C190084ECE9 /* MatchPlayerMetaData.swift */,
-				3051C2EB2197684A00D9390C /* Object View Models */,
 				3036A7DA219646F50084ECE9 /* ProMatch.swift */,
 				3051C2F72197964400D9390C /* Team.swift */,
 				30A72C24219D0C37003D56B8 /* Player.swift */,
@@ -261,12 +273,13 @@
 		3036A794219618C70084ECE9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				30D1CEED219E1ED500123AAC /* Login */,
+				30E42612219D2D3E00296618 /* Sign Up */,
 				30A72C29219D271D003D56B8 /* Profile */,
 				30A72C28219D2712003D56B8 /* Battlecup */,
 				3059F928219CD519003F1050 /* Start */,
 				3036A7E6219668130084ECE9 /* Match Detail */,
 				3036A7CC219643200084ECE9 /* Pro Matches */,
-				3036A7C121962F770084ECE9 /* HomeViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -295,8 +308,8 @@
 		3036A7A82196237F0084ECE9 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				3059F926219CD49A003F1050 /* LocalJSONParser.swift */,
 				3036A7A92196237F0084ECE9 /* ImageManager */,
+				3059F926219CD49A003F1050 /* LocalJSONParser.swift */,
 				3036A7AD2196237F0084ECE9 /* AlertPresenter.swift */,
 				3059F90D219CAD98003F1050 /* DateUtil.swift */,
 			);
@@ -432,6 +445,7 @@
 		3059F928219CD519003F1050 /* Start */ = {
 			isa = PBXGroup;
 			children = (
+				3036A7C121962F770084ECE9 /* HomeViewController.swift */,
 				3059F929219CD526003F1050 /* StartUpViewController.swift */,
 				3059F92B219CD574003F1050 /* StartUpViewModel.swift */,
 			);
@@ -450,8 +464,28 @@
 			isa = PBXGroup;
 			children = (
 				30A72C2C219D2735003D56B8 /* ProfileViewController.swift */,
+				30D1CEE8219E188900123AAC /* ProfileViewModel.swift */,
+				30D1CEEA219E1AB100123AAC /* ProfileView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		30D1CEED219E1ED500123AAC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				30D1CEEE219E1EE300123AAC /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		30E42612219D2D3E00296618 /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				30E42613219D2D5E00296618 /* SignUpView.swift */,
+				30E42615219D2FE100296618 /* SignUpViewController.swift */,
+				30E42617219D2FF200296618 /* SignUpViewModel.swift */,
+			);
+			path = "Sign Up";
 			sourceTree = "<group>";
 		};
 		36CB1DA0232AD8DF77613A19 /* Pods */ = {
@@ -674,6 +708,8 @@
 				3036A7B02196237F0084ECE9 /* ImageRequest.swift in Sources */,
 				3059F92A219CD526003F1050 /* StartUpViewController.swift in Sources */,
 				3036A7FC21966BBA0084ECE9 /* MatchEnums.swift in Sources */,
+				30D1CEE9219E188900123AAC /* ProfileViewModel.swift in Sources */,
+				30E42616219D2FE100296618 /* SignUpViewController.swift in Sources */,
 				3036A7FB21966BBA0084ECE9 /* LobbyType.swift in Sources */,
 				3059F920219CD38B003F1050 /* HeroList.swift in Sources */,
 				30A72C20219CF4D2003D56B8 /* Role.swift in Sources */,
@@ -682,6 +718,7 @@
 				30A72C27219D0D01003D56B8 /* PlayerService.swift in Sources */,
 				3059F922219CD3A2003F1050 /* ItemList.swift in Sources */,
 				3059F92C219CD574003F1050 /* StartUpViewModel.swift in Sources */,
+				30D1CEEB219E1AB100123AAC /* ProfileView.swift in Sources */,
 				3059F917219CB981003F1050 /* MBProgressHUDExtensions.swift in Sources */,
 				3059F927219CD49A003F1050 /* LocalJSONParser.swift in Sources */,
 				3036A7AE2196237F0084ECE9 /* ImageManager.swift in Sources */,
@@ -699,15 +736,18 @@
 				3036A7D1219643FE0084ECE9 /* ProMatchesView.swift in Sources */,
 				3036A7FE21966C190084ECE9 /* MatchPlayerMetaData.swift in Sources */,
 				3036A7D5219644180084ECE9 /* ProMatchesViewModel.swift in Sources */,
+				30D1CEEF219E1EE300123AAC /* LoginViewController.swift in Sources */,
 				30A72C2D219D2735003D56B8 /* ProfileViewController.swift in Sources */,
 				3036A7EF219668780084ECE9 /* MatchDetailViewModel.swift in Sources */,
 				3059F915219CB8DC003F1050 /* MBProgressHUD.m in Sources */,
+				30E42614219D2D5E00296618 /* SignUpView.swift in Sources */,
 				3036A7B8219629850084ECE9 /* GenericRestService.swift in Sources */,
 				3059F92E219CD5A9003F1050 /* HeroService.swift in Sources */,
 				3036A765219618AF0084ECE9 /* AppDelegate.swift in Sources */,
 				3036A7F921966BBA0084ECE9 /* GameMode.swift in Sources */,
 				3036A7E8219668270084ECE9 /* MatchDetailViewController.swift in Sources */,
 				3051C2EE21976D3900D9390C /* MatchDetailHeaderView.swift in Sources */,
+				30E42618219D2FF200296618 /* SignUpViewModel.swift in Sources */,
 				3036A7E121965E5A0084ECE9 /* DateExtension.swift in Sources */,
 				3036A7D32196440E0084ECE9 /* ProMatchTableViewCell.swift in Sources */,
 				30A72C1E219CE512003D56B8 /* SizeConstants.swift in Sources */,

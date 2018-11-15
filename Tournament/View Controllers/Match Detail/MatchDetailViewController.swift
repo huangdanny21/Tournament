@@ -49,6 +49,7 @@ class MatchDetailViewController: UIViewController {
     private func bindTableView() {
         viewModel
             .matchDetailData
+            .trackActivity(viewModel.activityIndicator)
             .subscribe(onNext: { [weak self](objectViewModel) in
                 self?.matchDetailView.objectViewModel = objectViewModel
             }, onError: { (error) in
@@ -58,7 +59,7 @@ class MatchDetailViewController: UIViewController {
     }
     
     private func bindLoadingIndicator() {
-        let progress = MBProgressHUD()
+        let progress = MBProgressHUD(view: matchDetailView)
         progress.mode = .indeterminate
         progress.label.text = "Loading..."
         

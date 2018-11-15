@@ -7,24 +7,43 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileViewController: UIViewController {
+    
+    private var handle: AuthStateDidChangeListenerHandle?
 
+    // MARK: - View Controller Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        handle = Auth.auth().addStateDidChangeListener { [weak self](auth, user) in
+            if let user = user {
+                self?.displaySignInState(withUser: user)
+            }
+            else {
+                self?.displaySignOutState()
+            }
+        }
     }
-    */
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
+    
+    // MARK: - State
+    
+    private func displaySignOutState() {
+        
+    }
+    
+    private func displaySignInState(withUser user: User) {
+        
+    }
+    
 }

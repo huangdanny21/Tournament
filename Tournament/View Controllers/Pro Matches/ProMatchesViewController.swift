@@ -67,7 +67,7 @@ class ProMatchesViewController: UIViewController {
     }
     
     private func bindLoadingIndicator() {
-        let progress = MBProgressHUD()
+        let progress = MBProgressHUD(view: proMatchesView.tableView)
         progress.mode = .indeterminate
         progress.label.text = "Loading..."
         

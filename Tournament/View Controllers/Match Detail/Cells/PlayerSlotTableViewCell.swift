@@ -253,7 +253,14 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
             heroImageView.image = UIImage(named: hero.name)
         }
         populateItems(playerData)
-        userNameLabel.text = playerData.name ?? "Username"
+        
+        if let personaName = playerData.personaname {
+            userNameLabel.text = personaName
+        }
+        else if let name = playerData.name {
+            userNameLabel.text = name
+        }
+        
         userNameLabel.textColor = playerData.isRadiant ? UIColor.green : UIColor.red
         laneLabel.text = playerData.lane?.description
         kdaLabel.text = "\(playerData.kda)"

@@ -12,6 +12,7 @@ enum Lane: Int, Codable {
     case safelane = 1
     case midlane
     case offlane
+    case roaming
     
     var description: String {
         get {
@@ -22,6 +23,8 @@ enum Lane: Int, Codable {
                 return "Midlane"
             case .offlane:
                 return "Offlane"
+            case .roaming:
+                return "Roaming"
             }
         }
     }
