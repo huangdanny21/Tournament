@@ -18,30 +18,20 @@ class CircleImageView: UIImageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    private func commonInit() {
-        self.layer.borderColor = UIColor.white.cgColor
-        self.layer.cornerRadius = self.frame.size.width/2
-        self.layer.borderWidth = 1
-        self.layer.masksToBounds = false
-        self.clipsToBounds = true
     }
     
     // MARK: - View Life Cycle
     
     override func layoutSubviews() {
         super.layoutSubviews()
-//        self.layer.borderColor = UIColor.white.cgColor
-//        self.layer.cornerRadius = self.frame.size.width/2
-//        self.layer.borderWidth = 1
-//        self.layer.masksToBounds = false
-//        self.clipsToBounds = true
+        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.cornerRadius = self.frame.size.width/2
+        self.layer.borderWidth = 1
+        self.layer.masksToBounds = false
+        self.clipsToBounds = true
     }
 }

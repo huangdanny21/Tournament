@@ -9,13 +9,12 @@
 import RxSwift
 
 class PlayerService {
-    @discardableResult class func getPlayer(forAccountId accountId: Int) -> Single<Player> {
+    @discardableResult class func getPlayer(forAccountId accountId: Int) -> Observable<Player> {
         guard let url = URL(string: OpenDotaUrlConstants.basePlayerInfoUrl+"\(accountId)") else {
-            return Single.error(ServiceError.invalidUrl)
+            return Observable.error(ServiceError.invalidUrl)
         }
         let request = URLRequest(url: url)
         return GenericRestService<Player>
                 .fetchData(withURLRequest: request)
-                .asSingle()
     }
 }

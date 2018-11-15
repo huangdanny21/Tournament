@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PlayerSlotTableViewCell: BaseTableViewCell {
     
@@ -14,6 +16,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private let heroImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
@@ -21,7 +24,8 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private let userNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         label.textAlignment = .left
         return label
     }()
@@ -29,13 +33,15 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     private let laneLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.gray
-        label.font = UIFont.italicSystemFont(ofSize: 15)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.italicSystemFont(ofSize: 12)
         label.textAlignment = .left
         return label
     }()
 
     private lazy var metaDataStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.userNameLabel, self.laneLabel])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
         stackView.spacing = 15
@@ -44,6 +50,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private lazy var leftStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.heroImageView, self.metaDataStackView])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.spacing = 5
@@ -54,14 +61,16 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private let kdaLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         label.textAlignment = .right
         return label
     }()
     
     private let scoreLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         label.textAlignment = .right
         label.textColor = UIColor.gray
         return label
@@ -69,6 +78,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private lazy var scoreStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.kdaLabel, self.scoreLabel])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
         stackView.spacing = 15
@@ -77,7 +87,9 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private let userImageView: CircleImageView = {
         let imageView = CircleImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
+        imageView.backgroundColor = UIColor.black
         return imageView
     }()
     
@@ -85,6 +97,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
 
     private let itemZeroImageView: UIImageView = {
        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = UIColor.lightGray
         imageView.clipsToBounds = true
         return imageView
@@ -92,6 +105,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private let itemOneImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = UIColor.lightGray
         imageView.clipsToBounds = true
         return imageView
@@ -99,6 +113,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private let itemTwoImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = UIColor.lightGray
         imageView.clipsToBounds = true
         return imageView
@@ -106,6 +121,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private let itemThreeImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = UIColor.lightGray
         imageView.clipsToBounds = true
         return imageView
@@ -113,6 +129,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private let itemFourImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = UIColor.lightGray
         imageView.clipsToBounds = true
         return imageView
@@ -120,6 +137,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private let itemFiveImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = UIColor.lightGray
         imageView.clipsToBounds = true
         return imageView
@@ -127,6 +145,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private lazy var itemRowOneStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.itemZeroImageView, self.itemOneImageView, self.itemTwoImageView])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.spacing = 2.5
@@ -135,6 +154,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private lazy var itemRowTwoStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.itemThreeImageView, self.itemFourImageView, self.itemFiveImageView])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.spacing = 2.5
@@ -143,6 +163,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private lazy var itemsStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.itemRowOneStackView, self.itemRowTwoStackView])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.spacing = 2.5
@@ -151,23 +172,20 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private lazy var rightStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.scoreStackView, self.itemsStackView, self.userImageView])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.spacing = 5
+        stackView.distribution = .fill
+        stackView.spacing = 2.5
         return stackView
     }()
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.leftStackView, self.rightStackView])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.spacing = 5
         return stackView
-    }()
-    
-    let activityIndicatorView: UIActivityIndicatorView = {
-        let spinner = UIActivityIndicatorView(style: .whiteLarge)
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        return spinner
     }()
     
     // MARK: - Data
@@ -184,23 +202,24 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     weak var imageManager: ImageManager?
     var request : ImageRequest?
     
+    private var disposeBag = DisposeBag()
+    
     // MARK: - Init
     
     override func commonInit() {
         addSubview(stackView)
         
-        backgroundColor = UIColor.purple
+        stackView.snp.makeConstraints { (make) in
+            make.edges.equalTo(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+        }
+        
+        itemsStackView.snp.makeConstraints { (make) in
+            make.width.equalToSuperview().multipliedBy(0.4)
+        }
         
         userImageView.snp.makeConstraints { (make) in
             make.height.equalToSuperview()
-            make.width.equalTo(self.userImageView.bounds.size.height)
-        }
-        
-        stackView.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(10)
-            make.right.equalToSuperview().offset(-10)
-            make.top.equalToSuperview().offset(10)
-            make.bottom.equalToSuperview().offset(-10)
+            make.width.equalTo(userImageView.snp.height)
         }
     }
     
@@ -221,27 +240,26 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         laneLabel.text = nil
         kdaLabel.text = nil
         request?.cancel()
+        disposeBag = DisposeBag()
     }
     
+    deinit {
+        disposeBag = DisposeBag()
+    }
     // MARK: - Populate
     
     private func populate(withData playerData: MatchPlayerData) {
         if let hero = HeroList.shared.getHero(forId: "\(playerData.heroId)") {
-            populateHero(hero)
+            heroImageView.image = UIImage(named: hero.name)
         }
         populateItems(playerData)
         userNameLabel.text = playerData.name ?? "Username"
         userNameLabel.textColor = playerData.isRadiant ? UIColor.green : UIColor.red
         laneLabel.text = playerData.lane?.description
-        kdaLabel.text = "KDA: \(playerData.kda)"
+        kdaLabel.text = "\(playerData.kda)"
         scoreLabel.text = "\(playerData.kills)/\(playerData.deaths)/\(playerData.assists)"
-        //loadImage(withUrl: play)
+        loadUserImage(withAccountId: playerData.accountId)
     }
-    
-    private func populateHero(_ hero: Hero) {
-        heroImageView.image = UIImage(named: hero.name)
-    }
-    
     private func populateItems(_ playerData: MatchPlayerData) {
         if let itemZeroImageName = ItemList.shared.getItemImageName(forId: "\(playerData.item0)") {
             itemZeroImageView.image = UIImage(named: itemZeroImageName)
@@ -265,6 +283,16 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     // MARK: - Image Retrieve
     
+    private func loadUserImage(withAccountId accountId: Int) {
+        PlayerService
+            .getPlayer(forAccountId: accountId)
+            .subscribe(onNext: { [weak self](player) in
+                self?.loadImage(withUrl: player.profile.avatarmedium ?? "")
+            }, onError: { (error) in
+            })
+            .disposed(by: disposeBag)
+    }
+    
     private func loadImage(withUrl url: String) {
         if let image = imageManager?.cachedImage(for: url) {
             userImageView.image = image
@@ -274,9 +302,8 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     }
     
     private func downloadImage(withUrl url: String) {
-        activityIndicatorView.startAnimating()
         request = imageManager?.retrieveImage(for: url) { [weak self]image in
-            self?.userImageView.image = imageManager
+            self?.userImageView.image = image
         }
     }
 }
