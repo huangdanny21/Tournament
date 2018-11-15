@@ -38,5 +38,26 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Sign Up"
+        addCloseButton()
+    }
+    
+    // MARK: - Private
+    
+    private func addCloseButton() {
+        let closeButton = UIButton(type: .custom)
+        closeButton.frame = CGRect(x: 0.0, y: 0.0, width: 20, height: 20)
+        closeButton.setImage(UIImage(named:"small_x_icon"), for: .normal)
+        closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
+        
+        let menuBarItem = UIBarButtonItem(customView: closeButton)
+        let currWidth = menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 30)
+        currWidth?.isActive = true
+        let currHeight = menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 30)
+        currHeight?.isActive = true
+        self.navigationItem.leftBarButtonItem = menuBarItem
+    }
+    
+    @objc private func close() {
+        navigationController?.dismiss(animated: true, completion: nil)
     }
 }
