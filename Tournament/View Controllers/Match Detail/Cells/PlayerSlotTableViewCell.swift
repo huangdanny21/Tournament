@@ -85,36 +85,42 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
 
     private let itemZeroImageView: UIImageView = {
        let imageView = UIImageView()
+        imageView.backgroundColor = UIColor.lightGray
         imageView.clipsToBounds = true
         return imageView
     }()
     
     private let itemOneImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.backgroundColor = UIColor.lightGray
         imageView.clipsToBounds = true
         return imageView
     }()
     
     private let itemTwoImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.backgroundColor = UIColor.lightGray
         imageView.clipsToBounds = true
         return imageView
     }()
     
     private let itemThreeImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.backgroundColor = UIColor.lightGray
         imageView.clipsToBounds = true
         return imageView
     }()
     
     private let itemFourImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.backgroundColor = UIColor.lightGray
         imageView.clipsToBounds = true
         return imageView
     }()
     
     private let itemFiveImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.backgroundColor = UIColor.lightGray
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -123,7 +129,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         let stackView = UIStackView(arrangedSubviews: [self.itemZeroImageView, self.itemOneImageView, self.itemTwoImageView])
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
-        stackView.spacing = 3
+        stackView.spacing = 2.5
         return stackView
     }()
     
@@ -131,7 +137,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         let stackView = UIStackView(arrangedSubviews: [self.itemThreeImageView, self.itemFourImageView, self.itemFiveImageView])
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
-        stackView.spacing = 3
+        stackView.spacing = 2.5
         return stackView
     }()
     
@@ -139,13 +145,14 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         let stackView = UIStackView(arrangedSubviews: [self.itemRowOneStackView, self.itemRowTwoStackView])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
-        stackView.spacing = 3
+        stackView.spacing = 2.5
         return stackView
     }()
     
     private lazy var rightStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.scoreStackView, self.itemsStackView, self.userImageView])
         stackView.axis = .horizontal
+        stackView.spacing = 5
         return stackView
     }()
     
@@ -153,6 +160,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         let stackView = UIStackView(arrangedSubviews: [self.leftStackView, self.rightStackView])
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
+        stackView.spacing = 5
         return stackView
     }()
     
@@ -172,6 +180,11 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         
         backgroundColor = UIColor.purple
         
+        userImageView.snp.makeConstraints { (make) in
+            make.height.equalToSuperview()
+            make.width.equalTo(self.userImageView.bounds.size.height)
+        }
+        
         stackView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
@@ -179,12 +192,32 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
             make.bottom.equalToSuperview().offset(-10)
         }
     }
+    
+    // MARK: - Cell Life Cycle
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        heroImageView.image = nil
+        userImageView.image = nil
+        itemZeroImageView.image = UIImage(named: "small_x_icon")
+        itemOneImageView.image = UIImage(named: "small_x_icon")
+        itemTwoImageView.image = UIImage(named: "small_x_icon")
+        itemThreeImageView.image = UIImage(named: "small_x_icon")
+        itemFourImageView.image = UIImage(named: "small_x_icon")
+        itemFiveImageView.image = UIImage(named: "small_x_icon")
+        userNameLabel.text = nil
+        scoreLabel.text = nil
+        laneLabel.text = nil
+        kdaLabel.text = nil
+    }
+    
     // MARK: - Populate
     
     private func populate(withData playerData: MatchPlayerData) {
         if let hero = HeroList.shared.getHero(forId: "\(playerData.heroId)") {
             populateHero(hero)
         }
+        populateItems(playerData)
         userNameLabel.text = playerData.name ?? "Username"
         userNameLabel.textColor = playerData.isRadiant ? UIColor.green : UIColor.red
         laneLabel.text = playerData.lane?.description
@@ -196,4 +229,24 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         heroImageView.image = UIImage(named: hero.name)
     }
     
+    private func populateItems(_ playerData: MatchPlayerData) {
+        if let itemZeroImageName = ItemList.shared.getItemImageName(forId: "\(playerData.item0)") {
+            itemZeroImageView.image = UIImage(named: itemZeroImageName)
+        }
+        if let itemOneImageName = ItemList.shared.getItemImageName(forId: "\(playerData.item1)") {
+            itemOneImageView.image = UIImage(named: itemOneImageName)
+        }
+        if let itemTwoImageName = ItemList.shared.getItemImageName(forId: "\(playerData.item2)") {
+            itemTwoImageView.image = UIImage(named: itemTwoImageName)
+        }
+        if let itemThreeImageName = ItemList.shared.getItemImageName(forId: "\(playerData.item3)") {
+            itemThreeImageView.image = UIImage(named: itemThreeImageName)
+        }
+        if let itemFourImageName = ItemList.shared.getItemImageName(forId: "\(playerData.item4)") {
+            itemFourImageView.image = UIImage(named: itemFourImageName)
+        }
+        if let itemFiveImageName = ItemList.shared.getItemImageName(forId: "\(playerData.item5)") {
+            itemFiveImageView.image = UIImage(named: itemFiveImageName)
+        }
+    }
 }
