@@ -164,7 +164,15 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         return stackView
     }()
     
-    var playerData: MatchPlayerData? {
+    let activityIndicatorView: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: .whiteLarge)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        return spinner
+    }()
+    
+    // MARK: - Data
+    
+    weak var playerData: MatchPlayerData? {
         didSet {
             guard let data = playerData else {
                 return
@@ -172,6 +180,9 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
             self.populate(withData: data)
         }
     }
+    
+    weak var imageManager: ImageManager?
+    var request : ImageRequest?
     
     // MARK: - Init
     
@@ -209,6 +220,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         scoreLabel.text = nil
         laneLabel.text = nil
         kdaLabel.text = nil
+        request?.cancel()
     }
     
     // MARK: - Populate
@@ -223,6 +235,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         laneLabel.text = playerData.lane?.description
         kdaLabel.text = "KDA: \(playerData.kda)"
         scoreLabel.text = "\(playerData.kills)/\(playerData.deaths)/\(playerData.assists)"
+        loadImage(withUrl: playerData.)
     }
     
     private func populateHero(_ hero: Hero) {
@@ -247,6 +260,23 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         }
         if let itemFiveImageName = ItemList.shared.getItemImageName(forId: "\(playerData.item5)") {
             itemFiveImageView.image = UIImage(named: itemFiveImageName)
+        }
+    }
+    
+    // MARK: - Image Retrieve
+    
+    private func loadImage(withUrl url: String) {
+        if let image = imageManager?.cachedImage(for: url) {
+            userImageView.image = image
+            return
+        }
+        downloadImage(withUrl: url)
+    }
+    
+    private func downloadImage(withUrl url: String) {
+        activityIndicatorView.startAnimating()
+        request = imageManager?.retrieveImage(for: url) { [weak self]image in
+            self?.userImageView.image = imageManager
         }
     }
 }

@@ -29,6 +29,8 @@ class MatchDetailView: BaseView {
         }
     }
     
+    fileprivate let imageManager = ImageManager()
+    
     // MARK: - Init
     
     override func commonInit() {
@@ -78,6 +80,7 @@ extension MatchDetailView: UITableViewDataSource {
         else {
             data = objectViewModel.direPlayers[indexPath.row]
         }
+        cell.imageManager = imageManager
         cell.playerData = data
         return cell
     }
