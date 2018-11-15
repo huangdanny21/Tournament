@@ -13,6 +13,7 @@ class SignUpViewController: UIViewController {
 
     private let viewModel: SignUpViewModel
     private let disposeBag = DisposeBag()
+    private let alertPresenter: AlertPresenter_Proto
     
     private lazy var signUpView: SignUpView = {
        return SignUpView()
@@ -20,8 +21,9 @@ class SignUpViewController: UIViewController {
     
     // MARK: - Constructors
     
-    init(viewModel: SignUpViewModel = SignUpViewModel()) {
+    init(alertPresenter: AlertPresenter_Proto = AlertPresenter(), viewModel: SignUpViewModel = SignUpViewModel()) {
         self.viewModel = viewModel
+        self.alertPresenter = alertPresenter
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -39,6 +41,25 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         title = "Sign Up"
         addCloseButton()
+        bindRx()
+    }
+    
+    // MARK: - Binding
+    
+    private func bindRx() {
+        signUpView.signUpButton.rx.tap
+            .subscribe(onNext: { [weak self]() in
+                self?.viewModel.signUp(withEmail: self?.signUpView.emailTextField.text, password: self?.signUpView.passwordTextField.text, confirmPassword: self?.signUpView.confirmPasswordTextField.text)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .signUpError
+            .subscribe(onNext: { [unowned self](message) in
+                self.alertPresenter.present(from: self, title: "", message: message, dismissButtonTitle: "Ok")
+            })
+            .disposed(by: disposeBag)
+        
     }
     
     // MARK: - Private

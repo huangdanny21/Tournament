@@ -9,7 +9,7 @@
 import SnapKit
 
 class SignUpView: BaseView {
-    private let emailTextField: UITextField = {
+    let emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Email"
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +21,7 @@ class SignUpView: BaseView {
         return textField
     }()
     
-    private let passwordTextField: UITextField = {
+    let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Password"
 
@@ -33,7 +33,7 @@ class SignUpView: BaseView {
         return textField
     }()
     
-    private let confirmPasswordTextField: UITextField = {
+    let confirmPasswordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Confirm Password"
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +52,7 @@ class SignUpView: BaseView {
         return stackView
     }()
     
-    private let signUpButton: UIButton = {
+    let signUpButton: UIButton = {
         let button = UIButton(type: .custom)
         button.backgroundColor = UIColor.darkText
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
@@ -81,7 +81,6 @@ class SignUpView: BaseView {
     
     override func commonInit() {
         addSubview(loginLabel)
-        
         loginLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
@@ -89,16 +88,13 @@ class SignUpView: BaseView {
         }
         
         addSubview(stackView)
-        
-        emailTextField.snp.makeConstraints { (make) in
-            make.height.equalTo(50)
-        }
-        
         stackView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
             make.bottom.equalTo(self.loginLabel.snp.top).offset(-10)
         }
+        emailTextField.snp.makeConstraints { (make) in
+            make.height.equalTo(50)
+        }
     }
-    
 }
