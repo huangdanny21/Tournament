@@ -9,14 +9,18 @@
 import Foundation
 import RxSwift
 import RxSwiftUtilities
+import Firebase
 
 class SignUpViewModel {
     
-    private let didSignUpSubject = PublishSubject<Void>()
+    private let didSignUpSubject = PublishSubject<User>()
     private let signUpErrorSubject = PublishSubject<String>()
 
-    let didSignUp: Observable<Void>
+    let didSignUp: Observable<User>
     let signUpError: Observable<String>
+    let activityIndicator = ActivityIndicator()
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - Constructor
     
@@ -48,7 +52,14 @@ class SignUpViewModel {
     }
     
     private func signUp(withEmail email: String, password: String) {
-        
+        SignUpService
+            .createUser(withEmail: email, password: password)
+            .trackActivity(activityIndicator)
+            .subscribe(onNext: { [weak self](user) in
+                self?.didSignUpSubject.onNext(user)
+            }, onError: { (error) in
+                self.signUpErrorSubject.onNext(error.localizedDescription)
+            })
+            .disposed(by: disposeBag)
     }
-    
 }

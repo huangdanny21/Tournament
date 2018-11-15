@@ -69,6 +69,10 @@
 		30D1CEEF219E1EE300123AAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEEE219E1EE300123AAC /* LoginViewController.swift */; };
 		30D1CEF1219E240A00123AAC /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEF0219E240A00123AAC /* UIViewExtensions.swift */; };
 		30D1CEF3219E28C000123AAC /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEF2219E28C000123AAC /* UITextFieldExtensions.swift */; };
+		30D1CEF5219E394B00123AAC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEF4219E394B00123AAC /* LoginView.swift */; };
+		30D1CEF7219E395600123AAC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEF6219E395600123AAC /* LoginViewModel.swift */; };
+		30D1CEF9219E3AE100123AAC /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEF8219E3AE100123AAC /* SignUpService.swift */; };
+		30D1CEFB219E3C2400123AAC /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEFA219E3C2400123AAC /* CurrentUser.swift */; };
 		30E42614219D2D5E00296618 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42613219D2D5E00296618 /* SignUpView.swift */; };
 		30E42616219D2FE100296618 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42615219D2FE100296618 /* SignUpViewController.swift */; };
 		30E42618219D2FF200296618 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42617219D2FF200296618 /* SignUpViewModel.swift */; };
@@ -165,6 +169,10 @@
 		30D1CEEE219E1EE300123AAC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		30D1CEF0219E240A00123AAC /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		30D1CEF2219E28C000123AAC /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
+		30D1CEF4219E394B00123AAC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		30D1CEF6219E395600123AAC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		30D1CEF8219E3AE100123AAC /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		30D1CEFA219E3C2400123AAC /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		30E42613219D2D5E00296618 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		30E42615219D2FE100296618 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		30E42617219D2FF200296618 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -295,6 +303,7 @@
 				3059F92D219CD5A9003F1050 /* HeroService.swift */,
 				3059F92F219CD666003F1050 /* ItemService.swift */,
 				30A72C26219D0D01003D56B8 /* PlayerService.swift */,
+				30D1CEF8219E3AE100123AAC /* SignUpService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -436,6 +445,7 @@
 			children = (
 				3059F91F219CD38B003F1050 /* HeroList.swift */,
 				3059F921219CD3A2003F1050 /* ItemList.swift */,
+				30D1CEFA219E3C2400123AAC /* CurrentUser.swift */,
 			);
 			path = Singletons;
 			sourceTree = "<group>";
@@ -480,6 +490,8 @@
 			isa = PBXGroup;
 			children = (
 				30D1CEEE219E1EE300123AAC /* LoginViewController.swift */,
+				30D1CEF4219E394B00123AAC /* LoginView.swift */,
+				30D1CEF6219E395600123AAC /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -724,6 +736,7 @@
 				30A72C27219D0D01003D56B8 /* PlayerService.swift in Sources */,
 				3059F922219CD3A2003F1050 /* ItemList.swift in Sources */,
 				3059F92C219CD574003F1050 /* StartUpViewModel.swift in Sources */,
+				30D1CEF9219E3AE100123AAC /* SignUpService.swift in Sources */,
 				30D1CEEB219E1AB100123AAC /* ProfileView.swift in Sources */,
 				3059F917219CB981003F1050 /* MBProgressHUDExtensions.swift in Sources */,
 				3059F927219CD49A003F1050 /* LocalJSONParser.swift in Sources */,
@@ -750,11 +763,14 @@
 				3036A7B8219629850084ECE9 /* GenericRestService.swift in Sources */,
 				3059F92E219CD5A9003F1050 /* HeroService.swift in Sources */,
 				3036A765219618AF0084ECE9 /* AppDelegate.swift in Sources */,
+				30D1CEF5219E394B00123AAC /* LoginView.swift in Sources */,
 				30D1CEF1219E240A00123AAC /* UIViewExtensions.swift in Sources */,
 				3036A7F921966BBA0084ECE9 /* GameMode.swift in Sources */,
+				30D1CEFB219E3C2400123AAC /* CurrentUser.swift in Sources */,
 				3036A7E8219668270084ECE9 /* MatchDetailViewController.swift in Sources */,
 				3051C2EE21976D3900D9390C /* MatchDetailHeaderView.swift in Sources */,
 				30E42618219D2FF200296618 /* SignUpViewModel.swift in Sources */,
+				30D1CEF7219E395600123AAC /* LoginViewModel.swift in Sources */,
 				3036A7E121965E5A0084ECE9 /* DateExtension.swift in Sources */,
 				3036A7D32196440E0084ECE9 /* ProMatchTableViewCell.swift in Sources */,
 				30A72C1E219CE512003D56B8 /* SizeConstants.swift in Sources */,

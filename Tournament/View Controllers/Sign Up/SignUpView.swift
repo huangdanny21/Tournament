@@ -61,13 +61,13 @@ class SignUpView: BaseView {
         return button
     }()
     
-    private let loginLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        label.textAlignment = .center
-        label.textColor = UIColor.lightText
-        label.text = "Have an account? Login here >"
-        return label
+    let loginButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        button.titleLabel?.textAlignment = .center
+        button.titleLabel?.textColor = UIColor.lightGray
+        button.setTitle("Have an account? Login here >", for: .normal)
+        return button
     }()
     
     private lazy var stackView: UIStackView = {
@@ -80,8 +80,8 @@ class SignUpView: BaseView {
     // MARK: - Init
     
     override func commonInit() {
-        addSubview(loginLabel)
-        loginLabel.snp.makeConstraints { (make) in
+        addSubview(loginButton)
+        loginButton.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-50)
@@ -91,7 +91,7 @@ class SignUpView: BaseView {
         stackView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
-            make.bottom.equalTo(self.loginLabel.snp.top).offset(-10)
+            make.bottom.equalTo(self.loginButton.snp.top).offset(-10)
         }
         emailTextField.snp.makeConstraints { (make) in
             make.height.equalTo(50)

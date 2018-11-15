@@ -8,13 +8,14 @@
 
 import UIKit
 import RxSwift
+import Firebase
 
 class SignUpViewController: UIViewController {
 
     private let viewModel: SignUpViewModel
-    private let disposeBag = DisposeBag()
     private let alertPresenter: AlertPresenter_Proto
-    
+    private let disposeBag = DisposeBag()
+
     private lazy var signUpView: SignUpView = {
        return SignUpView()
     }()
@@ -47,9 +48,32 @@ class SignUpViewController: UIViewController {
     // MARK: - Binding
     
     private func bindRx() {
+        let progress = MBProgressHUD(view: signUpView)
+        progress.mode = .indeterminate
+        progress.label.text = "Creating..."
+        
+        viewModel
+            .activityIndicator.asDriver()
+            .drive(progress.rx_mbprogresshud_animating)
+            .disposed(by: disposeBag)
+        
+        signUpView.loginButton.rx.tap
+            .subscribe(onNext: { [weak self]() in
+                let loginVC = LoginViewController()
+                self?.navigationController?.pushViewController(loginVC, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
         signUpView.signUpButton.rx.tap
             .subscribe(onNext: { [weak self]() in
                 self?.viewModel.signUp(withEmail: self?.signUpView.emailTextField.text, password: self?.signUpView.passwordTextField.text, confirmPassword: self?.signUpView.confirmPasswordTextField.text)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .didSignUp
+            .subscribe(onNext: { [weak self](user) in
+                self?.signedUpSucessFully(withUser: user)
             })
             .disposed(by: disposeBag)
         
@@ -59,10 +83,14 @@ class SignUpViewController: UIViewController {
                 self.alertPresenter.present(from: self, title: "", message: message, dismissButtonTitle: "Ok")
             })
             .disposed(by: disposeBag)
-        
     }
     
     // MARK: - Private
+    
+    private func signedUpSucessFully(withUser user: User) {
+        CurrentUser.shared.setUser(user)
+        navigationController?.dismiss(animated: true, completion: nil)
+    }
     
     private func addCloseButton() {
         let closeButton = UIButton(type: .custom)
