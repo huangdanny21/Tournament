@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navVC = UINavigationController(rootViewController: startUpVC)
         window?.rootViewController = navVC
         window?.makeKeyAndVisible()
+        UITabBar.appearance().tintColor = UIColor.darkText
         return true
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

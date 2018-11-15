@@ -25,11 +25,16 @@ class HomeViewController: UITabBarController {
     // MARK: - Private
     
     private func addTabbarItems() {
+        let battleCupVC = BattleCupViewController()
         let proMatchVC = ProMatchesViewController()
-        proMatchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
-        let controllers = [proMatchVC].map({
+        let profileVC = ProfileViewController()
+        battleCupVC.tabBarItem = UITabBarItem(title: "Battle Cup", image: UIImage(named: "tournament_icon"), tag: 0)
+        proMatchVC.tabBarItem = UITabBarItem(title: "Pro Matches", image: UIImage(named: "duel_icon"), tag: 1)
+        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "profile_icon"), tag: 2)
+        let controllers = [battleCupVC, proMatchVC, profileVC].map({
             UINavigationController(rootViewController: $0)
         })
         viewControllers = controllers
+        selectedIndex = 1
     }
 }
