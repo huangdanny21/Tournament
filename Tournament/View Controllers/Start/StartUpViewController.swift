@@ -21,7 +21,7 @@ class StartUpViewController: UIViewController {
             .toHomeObservable
             .subscribe(onNext: { [weak self]() in
                 let homeVC = HomeViewController()
-                self?.navigationController?.pushViewController(homeVC, animated: true)
+                self?.navigationController?.pushViewController(homeVC, animated: false)
             })
             .disposed(by: disposeBag)
     }

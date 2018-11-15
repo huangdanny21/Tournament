@@ -27,12 +27,10 @@ class StartUpViewModel {
         Observable
             .zip(HeroService.getHeroList(), ItemService.getLocalItems())
             .subscribe(onNext: { (result) in
-                print("success")
                 HeroList.shared.setHeroes(withHeroes: result.0)
                 ItemList.shared.setItems(withItems: result.1)
                 self.goToHomeSubject.onNext(())
             }, onError: { (error) in
-                print("failed")
                 self.goToHomeSubject.onNext(())
             })
             .disposed(by: disposeBag)

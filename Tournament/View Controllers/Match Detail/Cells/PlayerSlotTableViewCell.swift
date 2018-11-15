@@ -14,19 +14,23 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     
     private let heroImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
     }()
     
     private let userNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Username"
+        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        label.textAlignment = .left
         return label
     }()
     
     private let laneLabel: UILabel = {
         let label = UILabel()
-        label.text = "Roaming"
+        label.textColor = UIColor.gray
+        label.font = UIFont.italicSystemFont(ofSize: 15)
+        label.textAlignment = .left
         return label
     }()
 
@@ -34,30 +38,37 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         let stackView = UIStackView(arrangedSubviews: [self.userNameLabel, self.laneLabel])
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
+        stackView.spacing = 15
         return stackView
     }()
     
     private lazy var leftStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.heroImageView, self.metaDataStackView])
         stackView.axis = .horizontal
-        stackView.distribution = .fill
+        stackView.distribution = .fillEqually
+        stackView.spacing = 5
         return stackView
     }()
     
-    // MARK: - Right Size
+    // MARK: - Right Side
     
     private let scoreLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .left
+        label.text = "1/1/1"
         return label
     }()
     
     private let kdaLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .left
+        label.text = "KDA: 1.0"
         return label
     }()
     
     private lazy var scoreStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.scoreLabel, self.kdaLabel])
+        stackView.axis = .vertical
         return stackView
     }()
     
@@ -129,6 +140,19 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         return stackView
     }()
     
+    private lazy var rightStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [self.scoreStackView, self.itemsStackView, self.userImageView])
+        stackView.axis = .horizontal
+        return stackView
+    }()
+    
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [self.leftStackView, self.rightStackView])
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        return stackView
+    }()
+    
     var playerData: MatchPlayerData? {
         didSet {
             guard let data = playerData else {
@@ -141,17 +165,30 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
     // MARK: - Init
     
     override func commonInit() {
-        addSubview(leftStackView)
-        leftStackView.snp.makeConstraints { (make) in
+        addSubview(stackView)
+        
+        backgroundColor = UIColor.purple
+        
+        stackView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
             make.top.equalToSuperview().offset(10)
             make.bottom.equalToSuperview().offset(-10)
         }
     }
-    
     // MARK: - Populate
     
     private func populate(withData playerData: MatchPlayerData) {
-        
+        if let hero = HeroList.shared.getHero(forId: "\(playerData.heroId)") {
+            populateHero(hero)
+        }
+        userNameLabel.text = playerData.name ?? "Username"
+        userNameLabel.textColor = playerData.isRadiant ? UIColor.green : UIColor.red
+        laneLabel.text = playerData.lane?.description
     }
+    
+    private func populateHero(_ hero: Hero) {
+        heroImageView.image = UIImage(named: hero.name)
+    }
+    
 }

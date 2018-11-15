@@ -29,8 +29,7 @@ extension MatchDetailObjectViewModel: MatchDetailObjectViewModel_Protocol {
             guard let players = object.players else {
                 return []
             }
-            let radiantPlayers = Array(players.prefix(4))
-            print("Radiant Players Count: \(radiantPlayers.count)")
+            let radiantPlayers = Array(players.prefix(5))
             return radiantPlayers
         }
     }
@@ -41,7 +40,6 @@ extension MatchDetailObjectViewModel: MatchDetailObjectViewModel_Protocol {
                 return []
             }
             let direPlayers = Array(players.suffix(from: 5))
-            print("Dire Players Count: \(radiantPlayers.count)")
             return direPlayers
         }
     }

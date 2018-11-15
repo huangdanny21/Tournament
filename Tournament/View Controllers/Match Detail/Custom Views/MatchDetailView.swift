@@ -13,7 +13,7 @@ class MatchDetailView: BaseView {
         let tableView = UITableView()
         tableView.separatorInset = .zero
         tableView.tableFooterView = UIView()
-        tableView.rowHeight = 100
+        tableView.rowHeight = 70
         return tableView
     }()
     
@@ -38,7 +38,6 @@ class MatchDetailView: BaseView {
         }
         registerCells()
         tableView.tableHeaderView = headerView
-        tableView.rowHeight = 100
         tableView.dataSource = self
     }
     

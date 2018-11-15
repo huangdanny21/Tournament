@@ -58,6 +58,8 @@
 		3059F92C219CD574003F1050 /* StartUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3059F92B219CD574003F1050 /* StartUpViewModel.swift */; };
 		3059F92E219CD5A9003F1050 /* HeroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3059F92D219CD5A9003F1050 /* HeroService.swift */; };
 		3059F930219CD666003F1050 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3059F92F219CD666003F1050 /* ItemService.swift */; };
+		30A72C1E219CE512003D56B8 /* SizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A72C1D219CE512003D56B8 /* SizeConstants.swift */; };
+		30A72C20219CF4D2003D56B8 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A72C1F219CF4D2003D56B8 /* Role.swift */; };
 		E483B56F925E32C49FB79A1F /* Pods_Tournament.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +142,8 @@
 		3059F92B219CD574003F1050 /* StartUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUpViewModel.swift; sourceTree = "<group>"; };
 		3059F92D219CD5A9003F1050 /* HeroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroService.swift; sourceTree = "<group>"; };
 		3059F92F219CD666003F1050 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
+		30A72C1D219CE512003D56B8 /* SizeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeConstants.swift; sourceTree = "<group>"; };
+		30A72C1F219CF4D2003D56B8 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		B2321F0212BDBBDE0754F962 /* Pods-Tournament.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -233,14 +237,14 @@
 		3036A792219618BD0084ECE9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3023F9CA2197DEE8004CAF6F /* BattleCupMetadata.swift */,
 				3059F91D219CD37B003F1050 /* Hero.swift */,
-				3051C2EB2197684A00D9390C /* Object View Models */,
+				3051C2F52197943000D9390C /* League.swift */,
+				3036A7F021966A120084ECE9 /* MatchDetail.swift */,
 				3036A7FD21966C190084ECE9 /* MatchPlayerMetaData.swift */,
 				3036A7DA219646F50084ECE9 /* ProMatch.swift */,
-				3036A7F021966A120084ECE9 /* MatchDetail.swift */,
-				3051C2F52197943000D9390C /* League.swift */,
 				3051C2F72197964400D9390C /* Team.swift */,
-				3023F9CA2197DEE8004CAF6F /* BattleCupMetadata.swift */,
+				3051C2EB2197684A00D9390C /* Object View Models */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,6 +306,7 @@
 			children = (
 				3036A7F421966BBA0084ECE9 /* Enums */,
 				3036A7B5219626F70084ECE9 /* ODConstants.swift */,
+				30A72C1D219CE512003D56B8 /* SizeConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 				3036A7F621966BBA0084ECE9 /* FactionSlot.swift */,
 				3036A7F721966BBA0084ECE9 /* LobbyType.swift */,
 				3036A7F821966BBA0084ECE9 /* MatchEnums.swift */,
+				30A72C1F219CF4D2003D56B8 /* Role.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -635,6 +641,7 @@
 				3036A7FC21966BBA0084ECE9 /* MatchEnums.swift in Sources */,
 				3036A7FB21966BBA0084ECE9 /* LobbyType.swift in Sources */,
 				3059F920219CD38B003F1050 /* HeroList.swift in Sources */,
+				30A72C20219CF4D2003D56B8 /* Role.swift in Sources */,
 				3036A7F321966AB90084ECE9 /* ExampleJSON.swift in Sources */,
 				3036A7F121966A120084ECE9 /* MatchDetail.swift in Sources */,
 				3051C2F82197964400D9390C /* Team.swift in Sources */,
@@ -665,6 +672,7 @@
 				3051C2EE21976D3900D9390C /* MatchDetailHeaderView.swift in Sources */,
 				3036A7E121965E5A0084ECE9 /* DateExtension.swift in Sources */,
 				3036A7D32196440E0084ECE9 /* ProMatchTableViewCell.swift in Sources */,
+				30A72C1E219CE512003D56B8 /* SizeConstants.swift in Sources */,
 				3036A7E321965F010084ECE9 /* ProMatchObjectViewModel.swift in Sources */,
 				3051C2F421977F7100D9390C /* MatchDetailObjectViewModel.swift in Sources */,
 				3059F930219CD666003F1050 /* ItemService.swift in Sources */,
