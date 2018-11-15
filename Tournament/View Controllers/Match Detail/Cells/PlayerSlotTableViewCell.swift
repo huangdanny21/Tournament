@@ -235,7 +235,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         laneLabel.text = playerData.lane?.description
         kdaLabel.text = "KDA: \(playerData.kda)"
         scoreLabel.text = "\(playerData.kills)/\(playerData.deaths)/\(playerData.assists)"
-        loadImage(withUrl: playerData.)
+        //loadImage(withUrl: play)
     }
     
     private func populateHero(_ hero: Hero) {

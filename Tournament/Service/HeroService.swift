@@ -10,7 +10,7 @@ import RxSwift
 
 class HeroService {
     @discardableResult class func getHeroList() -> Observable<[Hero]> {
-        guard let url = URL(string: "https://api.opendota.com/api/heroes") else {
+        guard let url = URL(string: OpenDotaUrlConstants.getHeroListUrl) else {
             return Observable.just([])
         }
         let request = URLRequest(url: url)
