@@ -88,7 +88,6 @@ class SignUpViewController: UIViewController {
     // MARK: - Private
     
     private func signedUpSucessFully(withUser user: User) {
-        CurrentUser.shared.setUser(user)
         navigationController?.dismiss(animated: true, completion: nil)
     }
     

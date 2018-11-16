@@ -13,6 +13,7 @@ import RxSwift
 class ProfileViewController: UIViewController {
     
     private let viewModel: ProfileViewModel
+    private let alertPresenter: AlertPresenter_Proto
     private let disposeBag = DisposeBag()
 
     private var handle: AuthStateDidChangeListenerHandle?
@@ -23,8 +24,9 @@ class ProfileViewController: UIViewController {
     
     // MARK: - Constructors
 
-    init(viewModel: ProfileViewModel = ProfileViewModel()) {
+    init(alertPresenter: AlertPresenter_Proto = AlertPresenter(), viewModel: ProfileViewModel = ProfileViewModel()) {
         self.viewModel = viewModel
+        self.alertPresenter = alertPresenter
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -41,6 +43,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
+        addSignOutButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,4 +75,29 @@ class ProfileViewController: UIViewController {
         
     }
     
+    // MARK: - Private
+    
+    private func addSignOutButton() {
+        let logoutButton = UIButton(type: .custom)
+        logoutButton.frame = CGRect(x: 0.0, y: 0.0, width: 20, height: 20)
+        logoutButton.setImage(UIImage(named:"power_down_icon"), for: .normal)
+        logoutButton.addTarget(self, action: #selector(signOut), for: .touchUpInside)
+        
+        let menuBarItem = UIBarButtonItem(customView: logoutButton)
+        let currWidth = menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 30)
+        currWidth?.isActive = true
+        let currHeight = menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 30)
+        currHeight?.isActive = true
+        self.navigationItem.rightBarButtonItem = menuBarItem
+    }
+    
+    @objc private func signOut() {
+        do {
+            try Auth.auth().signOut()
+            alertPresenter.present(from: self, title: "", message: "Logged out successfully", dismissButtonTitle: "Ok")
+        }
+        catch {
+            alertPresenter.present(from: self, title: "", message: error.localizedDescription, dismissButtonTitle: "Ok")
+        }
+    }
 }

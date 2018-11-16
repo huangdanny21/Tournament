@@ -11,13 +11,25 @@ import Firebase
 
 class CurrentUser {
     private var user: User?
-    private init() {}
+    private var handle: AuthStateDidChangeListenerHandle?
     static let shared = CurrentUser()
+
+    // MARK: - Constructor
     
-    // MARK: - Setter
-    
-    func setUser(_ user: User){
-        self.user = user
+    private init() {
+        handle = Auth.auth().addStateDidChangeListener { [weak self](auth, user) in
+            if let user = user {
+                self?.user = user
+            }
+            else {
+                self?.user = nil
+            }
+        }
     }
     
+    // MARK: - Dispose
+    
+    func dispose() {
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
 }

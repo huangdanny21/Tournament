@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -46,7 +47,41 @@ class LoginViewController: UIViewController {
     // MARK: - Binding
     
     private func bindRx() {
+        let progress = MBProgressHUD(view: loginView)
+        progress.mode = .indeterminate
+        progress.label.text = "Logging in..."
         
+        viewModel
+            .activityIndicator.asDriver()
+            .drive(progress.rx_mbprogresshud_animating)
+            .disposed(by: disposeBag)
+        
+        loginView.loginButton.rx.tap
+            .subscribe(onNext: { [weak self]() in
+                self?.viewModel.login(withEmail: self?.loginView.emailTextField.text, password: self?.loginView.passwordTextField.text)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .didLogin
+            .subscribe(onNext: { [weak self](user) in
+                self?.loginSucessFully(withUser: user)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .loginError
+            .subscribe(onNext: { [unowned self](message) in
+                self.alertPresenter.present(from: self, title: "", message: message, dismissButtonTitle: "Ok")
+            })
+            .disposed(by: disposeBag)
+        
+    }
+    
+    // MARK: - Private
+    
+    private func loginSucessFully(withUser user: User) {
+        navigationController?.dismiss(animated: true, completion: nil)
     }
     
 }
