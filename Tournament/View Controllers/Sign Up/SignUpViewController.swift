@@ -58,23 +58,24 @@ class SignUpViewController: BaseKeyboardViewController {
         
         signUpView.signUpButton.rx.tap
             .subscribe(onNext: { [weak self]() in
-                self?.viewModel.signUp(withEmail: self?.signUpView.emailTextField.text, password: self?.signUpView.passwordTextField.text, confirmPassword: self?.signUpView.confirmPasswordTextField.text)
+                self?.viewModel.signUp(withUsername: self?.signUpView.usernameTextField.text, email: self?.signUpView.emailTextField.text, password: self?.signUpView.passwordTextField.text, confirmPassword: self?.signUpView.confirmPasswordTextField.text)
             })
             .disposed(by: disposeBag)
         
         viewModel
             .signUp
-            .subscribe(onNext: { [weak self](user) in
-                self?.navigationController?.dismiss(animated: true, completion: nil)
+            .subscribe(onNext: { [unowned self](userResult) in
+                if let user = userResult.user {
+                    self.didSignUpSuccessFully(withUsername: self.signUpView.usernameTextField.text ?? "", user: user)
+                }
+                else if let error = userResult.error {
+                    self.alertPresenter.present(from: self, title: "", message: error.localizedDescription, dismissButtonTitle: "Ok")
+                }
+                else {
+                    self.alertPresenter.present(from: self, title: "", message: GenericError.unknown.localizedDescription, dismissButtonTitle: "Ok")
+                }
             }, onError: { [unowned self](error) in
                 self.alertPresenter.present(from: self, title: "", message: error.localizedDescription, dismissButtonTitle: "Ok")
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel
-            .signUpError
-            .subscribe(onNext: { [unowned self](message) in
-                self.alertPresenter.present(from: self, title: "", message: message, dismissButtonTitle: "Ok")
             })
             .disposed(by: disposeBag)
     }
@@ -91,6 +92,24 @@ class SignUpViewController: BaseKeyboardViewController {
     }
     
     // MARK: - Private
+    
+    private func didSignUpSuccessFully(withUsername username: String, user: User) {
+        let docRef = Firestore.firestore().collection("users").document(username)
+        let docData: [String: Any] = [
+            "username" : username,
+            "uid": user.uid,
+            "email": user.email ?? NSNull(),
+            "created_at": FieldValue.serverTimestamp()
+        ]
+        
+        docRef.setData(docData)
+        
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = username
+        changeRequest?.commitChanges { [weak self](error) in
+            self?.navigationController?.dismiss(animated: true, completion: nil)
+        }
+    }
     
     private func addCloseButton() {
         let closeButton = UIButton(type: .custom)

@@ -64,6 +64,8 @@
 		30A72C2B219D272C003D56B8 /* BattleCupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A72C2A219D272C003D56B8 /* BattleCupViewController.swift */; };
 		30A72C2D219D2735003D56B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A72C2C219D2735003D56B8 /* ProfileViewController.swift */; };
 		30A72C2F219D29E7003D56B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30A72C2E219D29E7003D56B8 /* GoogleService-Info.plist */; };
+		30ACA98B219EAAAA006A2793 /* SignUpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ACA98A219EAAAA006A2793 /* SignUpError.swift */; };
+		30ACA98E219EBFE7006A2793 /* GenericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ACA98D219EBFE7006A2793 /* GenericError.swift */; };
 		30D1CEE9219E188900123AAC /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEE8219E188900123AAC /* ProfileViewModel.swift */; };
 		30D1CEEB219E1AB100123AAC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEEA219E1AB100123AAC /* ProfileView.swift */; };
 		30D1CEEF219E1EE300123AAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEEE219E1EE300123AAC /* LoginViewController.swift */; };
@@ -169,6 +171,8 @@
 		30A72C2A219D272C003D56B8 /* BattleCupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleCupViewController.swift; sourceTree = "<group>"; };
 		30A72C2C219D2735003D56B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		30A72C2E219D29E7003D56B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		30ACA98A219EAAAA006A2793 /* SignUpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpError.swift; sourceTree = "<group>"; };
+		30ACA98D219EBFE7006A2793 /* GenericError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericError.swift; sourceTree = "<group>"; };
 		30D1CEE8219E188900123AAC /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		30D1CEEA219E1AB100123AAC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		30D1CEEE219E1EE300123AAC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -357,6 +361,7 @@
 		3036A7B4219626E50084ECE9 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				30ACA989219EAA9D006A2793 /* Errors */,
 				3036A7F421966BBA0084ECE9 /* Enums */,
 				3036A7B5219626F70084ECE9 /* ODConstants.swift */,
 				30A72C1D219CE512003D56B8 /* SizeConstants.swift */,
@@ -499,6 +504,15 @@
 				30D1CEE8219E188900123AAC /* ProfileViewModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		30ACA989219EAA9D006A2793 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				30ACA98A219EAAAA006A2793 /* SignUpError.swift */,
+				30ACA98D219EBFE7006A2793 /* GenericError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		30D1CEED219E1ED500123AAC /* Login */ = {
@@ -779,11 +793,13 @@
 				30D1CEF9219E3AE100123AAC /* SignUpService.swift in Sources */,
 				30D1CEEB219E1AB100123AAC /* ProfileView.swift in Sources */,
 				3059F917219CB981003F1050 /* MBProgressHUDExtensions.swift in Sources */,
+				30ACA98B219EAAAA006A2793 /* SignUpError.swift in Sources */,
 				3059F927219CD49A003F1050 /* LocalJSONParser.swift in Sources */,
 				3036A7AE2196237F0084ECE9 /* ImageManager.swift in Sources */,
 				3023F9CB2197DEE8004CAF6F /* BattleCupMetadata.swift in Sources */,
 				30A72C25219D0C37003D56B8 /* Player.swift in Sources */,
 				3036A7A7219622AD0084ECE9 /* UInt64Extensions.swift in Sources */,
+				30ACA98E219EBFE7006A2793 /* GenericError.swift in Sources */,
 				3036A7D7219644500084ECE9 /* BaseView.swift in Sources */,
 				3036A7FA21966BBA0084ECE9 /* FactionSlot.swift in Sources */,
 				3036A7B6219626F70084ECE9 /* ODConstants.swift in Sources */,

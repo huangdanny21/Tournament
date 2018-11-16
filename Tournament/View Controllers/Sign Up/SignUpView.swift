@@ -9,15 +9,29 @@
 import SnapKit
 
 class SignUpView: BaseView {
-    let emailTextField: UITextField = {
+    let usernameTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Email"
+        textField.placeholder = "Username"
+        textField.text = "huangdanny21"
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = UIColor.white
         textField.setLeftPaddingPoints(10)
         textField.setRightPaddingPoints(10)
         textField.addBottomSeperator()
         textField.roundedTopCorners(radius: 10)
+        textField.autocapitalizationType = UITextAutocapitalizationType.none
+        return textField
+    }()
+    
+    let emailTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Email"
+        textField.text = "huangdanny21@gmail.com"
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.backgroundColor = UIColor.white
+        textField.setLeftPaddingPoints(10)
+        textField.setRightPaddingPoints(10)
+        textField.addBottomSeperator()
         //textField.keyboardType = .emailAddress
         textField.autocapitalizationType = UITextAutocapitalizationType.none
         return textField
@@ -26,6 +40,7 @@ class SignUpView: BaseView {
     let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Password"
+        textField.text = "one2three"
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = UIColor.white
         textField.setLeftPaddingPoints(10)
@@ -39,6 +54,7 @@ class SignUpView: BaseView {
     let confirmPasswordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Confirm Password"
+        textField.text = "one2three"
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = UIColor.white
         textField.setLeftPaddingPoints(10)
@@ -50,7 +66,7 @@ class SignUpView: BaseView {
     }()
     
     private lazy var textFieldStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [self.emailTextField, self.passwordTextField, self.confirmPasswordTextField])
+        let stackView = UIStackView(arrangedSubviews: [usernameTextField, emailTextField, passwordTextField, confirmPasswordTextField])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.spacing = 0
@@ -78,7 +94,7 @@ class SignUpView: BaseView {
     }()
     
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [self.textFieldStackView, signUpButton])
+        let stackView = UIStackView(arrangedSubviews: [textFieldStackView, signUpButton])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 10
@@ -103,7 +119,7 @@ class SignUpView: BaseView {
             make.right.equalToSuperview().offset(-10)
             make.bottom.equalTo(self.loginButton.snp.top).offset(-10)
         }
-        emailTextField.snp.makeConstraints { (make) in
+        usernameTextField.snp.makeConstraints { (make) in
             make.height.equalTo(50)
         }
     }
