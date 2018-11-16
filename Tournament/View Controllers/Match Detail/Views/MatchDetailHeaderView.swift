@@ -9,7 +9,6 @@
 import UIKit
 
 class MatchDetailHeaderView: BaseView {
-    
     // MARK: - Start Date View
     
     private let startDateTitleLabel: UILabel = {
