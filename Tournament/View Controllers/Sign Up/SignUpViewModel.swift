@@ -55,7 +55,6 @@ class SignUpViewModel {
         SignUpService
             .createUser(withEmail: email, password: password)
             .trackActivity(activityIndicator)
-            .asObservable()
             .bind(to: signUpSubject)
             .disposed(by: disposeBag)
     }

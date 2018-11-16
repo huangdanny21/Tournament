@@ -11,11 +11,13 @@ import UIKit
 class ProMatchTableViewCell: BaseTableViewCell {
     private let radiantTeamImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private let radiantTeamNameLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)
         return label
@@ -23,6 +25,7 @@ class ProMatchTableViewCell: BaseTableViewCell {
     
     private let scoreLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 21, weight: UIFont.Weight.medium)
         label.textColor = UIColor.lightGray
@@ -31,6 +34,7 @@ class ProMatchTableViewCell: BaseTableViewCell {
     
     private let startTimeLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 15, weight: .light)
         label.textColor = UIColor.lightGray
@@ -39,6 +43,7 @@ class ProMatchTableViewCell: BaseTableViewCell {
     
     private let leagueLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 13, weight: .light)
         label.textColor = UIColor.lightGray
@@ -47,11 +52,13 @@ class ProMatchTableViewCell: BaseTableViewCell {
     
     private let direTeamImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private let direTeamNameLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)
         return label

@@ -10,14 +10,14 @@ import RxSwift
 import Firebase
 
 class LoginService {
-    @discardableResult class func login(withEmail email: String, password: String) -> Single<User> {
-        return Single<User>.create(subscribe: { (single) -> Disposable in
+    @discardableResult class func login(withEmail email: String, password: String) -> Observable<User> {
+        return Observable<User>.create({ (observer) -> Disposable in
             Auth.auth().signIn(withEmail: email, password: password, completion: { (result, error) in
                 if let user = result?.user {
-                    single(.success(user))
+                    observer.onNext(user)
                 }
                 else if let error = error {
-                    single(.error(error))
+                    observer.onError(error)
                 }
             })
 

@@ -11,6 +11,7 @@ import SnapKit
 class ProMatchesView: BaseView {
     let tableView: UITableView = {
         let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.rowHeight = 100
         tableView.separatorInset = .zero
         tableView.tableFooterView = UIView()

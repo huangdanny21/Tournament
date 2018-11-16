@@ -11,6 +11,7 @@ import UIKit
 class MatchDetailView: BaseView {
     let tableView: UITableView = {
         let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorInset = .zero
         tableView.tableFooterView = UIView()
         tableView.rowHeight = 60

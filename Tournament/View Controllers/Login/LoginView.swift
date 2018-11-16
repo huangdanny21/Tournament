@@ -32,6 +32,7 @@ class LoginView: BaseView {
         textField.setRightPaddingPoints(10)
         textField.roundedBottomCorners(radius: 10)
         //textField.isSecureTextEntry = true
+        textField.autocapitalizationType = UITextAutocapitalizationType.none
         return textField
     }()
     

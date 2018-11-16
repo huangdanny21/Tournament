@@ -46,7 +46,6 @@ class LoginViewModel {
         LoginService
             .login(withEmail: email, password: password)
             .trackActivity(activityIndicator)
-            .asObservable()
             .bind(to: loginSubject)
             .disposed(by: disposeBag)
     }

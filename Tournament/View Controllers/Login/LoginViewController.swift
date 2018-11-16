@@ -43,21 +43,13 @@ class LoginViewController: BaseKeyboardViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Login"
+        bindLoadingIndicator()
         bindRx()
     }
     
     // MARK: - Binding
     
     private func bindRx() {
-        let progress = MBProgressHUD(view: loginView)
-        progress.mode = .indeterminate
-        progress.label.text = "Logging in..."
-        
-        viewModel
-            .activityIndicator.asDriver()
-            .drive(progress.rx_mbprogresshud_animating)
-            .disposed(by: disposeBag)
-        
         loginView.loginButton.rx.tap
             .subscribe(onNext: { [weak self]() in
                 self?.viewModel.login(withEmail: self?.loginView.emailTextField.text, password: self?.loginView.passwordTextField.text)
@@ -66,7 +58,6 @@ class LoginViewController: BaseKeyboardViewController {
         
         viewModel
             .login
-            .trackActivity(viewModel.activityIndicator)
             .subscribe(onNext: { [weak self](user) in
                 self?.navigationController?.dismiss(animated: true, completion: nil)
                 }, onError: { [unowned self](error) in
@@ -83,6 +74,18 @@ class LoginViewController: BaseKeyboardViewController {
     }
     
     // MARK: - Private
+    
+    private func bindLoadingIndicator() {
+        let progress = MBProgressHUD(view: loginView)
+        progress.mode = .indeterminate
+        progress.label.text = "Logging in..."
+        
+        viewModel
+            .activityIndicator.asDriver()
+            .drive(progress.rx_mbprogresshud_animating)
+            .disposed(by: disposeBag)
+    }
+    
     private func loginSucessFully(withUser user: User) {
         navigationController?.dismiss(animated: true, completion: nil)
     }

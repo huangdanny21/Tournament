@@ -32,6 +32,7 @@ class SignUpView: BaseView {
         textField.setRightPaddingPoints(10)
         textField.addBottomSeperator()
         //textField.isSecureTextEntry = true
+        textField.autocapitalizationType = UITextAutocapitalizationType.none
         return textField
     }()
     
@@ -44,6 +45,7 @@ class SignUpView: BaseView {
         textField.setRightPaddingPoints(10)
         textField.roundedBottomCorners(radius: 10)
         //textField.isSecureTextEntry = true
+        textField.autocapitalizationType = UITextAutocapitalizationType.none
         return textField
     }()
     
@@ -57,6 +59,7 @@ class SignUpView: BaseView {
     
     let signUpButton: UIButton = {
         let button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = UIColor.darkText
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         button.setTitle("Sign Up", for: .normal)
@@ -66,6 +69,7 @@ class SignUpView: BaseView {
     
     let loginButton: UIButton = {
         let button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         button.titleLabel?.textAlignment = .center
         button.titleLabel?.textColor = UIColor.lightGray
@@ -75,6 +79,7 @@ class SignUpView: BaseView {
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.textFieldStackView, signUpButton])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 10
         return stackView

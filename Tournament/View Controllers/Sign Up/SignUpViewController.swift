@@ -42,21 +42,13 @@ class SignUpViewController: BaseKeyboardViewController {
         super.viewDidLoad()
         title = "Sign Up"
         addCloseButton()
+        bindLoadingIndicator()
         bindRx()
     }
     
     // MARK: - Binding
     
     private func bindRx() {
-        let progress = MBProgressHUD(view: signUpView)
-        progress.mode = .indeterminate
-        progress.label.text = "Signing up..."
-        
-        viewModel
-            .activityIndicator.asDriver()
-            .drive(progress.rx_mbprogresshud_animating)
-            .disposed(by: disposeBag)
-        
         signUpView.loginButton.rx.tap
             .subscribe(onNext: { [weak self]() in
                 let loginVC = LoginViewController()
@@ -72,7 +64,6 @@ class SignUpViewController: BaseKeyboardViewController {
         
         viewModel
             .signUp
-            .trackActivity(viewModel.activityIndicator)
             .subscribe(onNext: { [weak self](user) in
                 self?.navigationController?.dismiss(animated: true, completion: nil)
             }, onError: { [unowned self](error) in
@@ -85,6 +76,17 @@ class SignUpViewController: BaseKeyboardViewController {
             .subscribe(onNext: { [unowned self](message) in
                 self.alertPresenter.present(from: self, title: "", message: message, dismissButtonTitle: "Ok")
             })
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindLoadingIndicator() {
+        let progress = MBProgressHUD(view: signUpView)
+        progress.mode = .indeterminate
+        progress.label.text = "Signing up..."
+        
+        viewModel
+            .activityIndicator.asObservable()
+            .bind(to: progress.rx_mbprogresshud_animating)
             .disposed(by: disposeBag)
     }
     
