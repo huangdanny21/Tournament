@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import Firebase
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: BaseKeyboardViewController {
 
     private let viewModel: SignUpViewModel
     private let alertPresenter: AlertPresenter_Proto
@@ -43,18 +43,6 @@ class SignUpViewController: UIViewController {
         title = "Sign Up"
         addCloseButton()
         bindRx()
-        hideKeyboard()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Binding
@@ -62,7 +50,7 @@ class SignUpViewController: UIViewController {
     private func bindRx() {
         let progress = MBProgressHUD(view: signUpView)
         progress.mode = .indeterminate
-        progress.label.text = "Creating..."
+        progress.label.text = "Signing up..."
         
         viewModel
             .activityIndicator.asDriver()
@@ -83,9 +71,12 @@ class SignUpViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel
-            .didSignUp
+            .signUp
+            .trackActivity(viewModel.activityIndicator)
             .subscribe(onNext: { [weak self](user) in
                 self?.navigationController?.dismiss(animated: true, completion: nil)
+            }, onError: { [unowned self](error) in
+                self.alertPresenter.present(from: self, title: "", message: error.localizedDescription, dismissButtonTitle: "Ok")
             })
             .disposed(by: disposeBag)
         
@@ -98,22 +89,6 @@ class SignUpViewController: UIViewController {
     }
     
     // MARK: - Private
-    
-    @objc private func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    @objc private func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += keyboardSize.height
-            }
-        }
-    }
     
     private func addCloseButton() {
         let closeButton = UIButton(type: .custom)

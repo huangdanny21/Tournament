@@ -10,16 +10,18 @@ import RxSwift
 import Firebase
 
 class SignUpService {
-    @discardableResult class func createUser(withEmail email: String, password: String) -> Observable<User> {
-        return Observable.create({ (observer) -> Disposable in
-            Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+    
+    @discardableResult class func createUser(withEmail email: String, password: String) -> Single<User> {
+        return Single<User>.create(subscribe: { (single) -> Disposable in
+            Auth.auth().createUser(withEmail: email, password: password, completion: { (result, error) in
                 if let user = result?.user {
-                    observer.onNext(user)
+                    single(.success(user))
                 }
                 else if let error = error {
-                    observer.onError(error)
+                    single(.error(error))
                 }
-            }
+            })
+            
             return Disposables.create()
         })
     }

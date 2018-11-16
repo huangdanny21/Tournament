@@ -75,6 +75,7 @@
 		30D1CEFB219E3C2400123AAC /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEFA219E3C2400123AAC /* CurrentUser.swift */; };
 		30D1CEFD219E401400123AAC /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEFC219E401400123AAC /* LoginService.swift */; };
 		30D1CEFF219E4E2100123AAC /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEFE219E4E2100123AAC /* UIViewControllerExtensions.swift */; };
+		30D1CF01219E50C700123AAC /* BaseKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CF00219E50C700123AAC /* BaseKeyboardViewController.swift */; };
 		30E42614219D2D5E00296618 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42613219D2D5E00296618 /* SignUpView.swift */; };
 		30E42616219D2FE100296618 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42615219D2FE100296618 /* SignUpViewController.swift */; };
 		30E42618219D2FF200296618 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42617219D2FF200296618 /* SignUpViewModel.swift */; };
@@ -177,6 +178,7 @@
 		30D1CEFA219E3C2400123AAC /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		30D1CEFC219E401400123AAC /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		30D1CEFE219E4E2100123AAC /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		30D1CF00219E50C700123AAC /* BaseKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseKeyboardViewController.swift; sourceTree = "<group>"; };
 		30E42613219D2D5E00296618 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		30E42615219D2FE100296618 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		30E42617219D2FF200296618 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				3036A7DC21964C3A0084ECE9 /* BaseTableViewCell.swift */,
 				3036A7E421965F2F0084ECE9 /* BaseObjectViewModel.swift */,
 				3059F91A219CC961003F1050 /* CircleImageView.swift */,
+				30D1CF00219E50C700123AAC /* BaseKeyboardViewController.swift */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -775,6 +778,7 @@
 				30D1CEF1219E240A00123AAC /* UIViewExtensions.swift in Sources */,
 				3036A7F921966BBA0084ECE9 /* GameMode.swift in Sources */,
 				30D1CEFB219E3C2400123AAC /* CurrentUser.swift in Sources */,
+				30D1CF01219E50C700123AAC /* BaseKeyboardViewController.swift in Sources */,
 				3036A7E8219668270084ECE9 /* MatchDetailViewController.swift in Sources */,
 				3051C2EE21976D3900D9390C /* MatchDetailHeaderView.swift in Sources */,
 				30E42618219D2FF200296618 /* SignUpViewModel.swift in Sources */,

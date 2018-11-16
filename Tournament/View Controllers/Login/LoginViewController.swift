@@ -10,11 +10,13 @@ import UIKit
 import RxSwift
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseKeyboardViewController {
 
     private let viewModel: LoginViewModel
     private let alertPresenter: AlertPresenter_Proto
     private let disposeBag = DisposeBag()
+    
+    //private var progress: MBProgressHUD!
     
     private lazy var loginView: LoginView = {
         return LoginView()
@@ -42,18 +44,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         title = "Login"
         bindRx()
-        hideKeyboard()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Binding
@@ -75,9 +65,12 @@ class LoginViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel
-            .didLogin
+            .login
+            .trackActivity(viewModel.activityIndicator)
             .subscribe(onNext: { [weak self](user) in
-                self?.loginSucessFully(withUser: user)
+                self?.navigationController?.dismiss(animated: true, completion: nil)
+                }, onError: { [unowned self](error) in
+                    self.alertPresenter.present(from: self, title: "", message: error.localizedDescription, dismissButtonTitle: "Ok")
             })
             .disposed(by: disposeBag)
         
@@ -87,29 +80,10 @@ class LoginViewController: UIViewController {
                 self.alertPresenter.present(from: self, title: "", message: message, dismissButtonTitle: "Ok")
             })
             .disposed(by: disposeBag)
-        
     }
     
     // MARK: - Private
-    
-    @objc private func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    @objc private func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += keyboardSize.height
-            }
-        }
-    }
-    
     private func loginSucessFully(withUser user: User) {
         navigationController?.dismiss(animated: true, completion: nil)
     }
-    
 }

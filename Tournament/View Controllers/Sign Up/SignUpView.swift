@@ -18,7 +18,8 @@ class SignUpView: BaseView {
         textField.setRightPaddingPoints(10)
         textField.addBottomSeperator()
         textField.roundedTopCorners(radius: 10)
-        textField.keyboardType = .emailAddress
+        //textField.keyboardType = .emailAddress
+        textField.autocapitalizationType = UITextAutocapitalizationType.none
         return textField
     }()
     
@@ -30,7 +31,7 @@ class SignUpView: BaseView {
         textField.setLeftPaddingPoints(10)
         textField.setRightPaddingPoints(10)
         textField.addBottomSeperator()
-        textField.isSecureTextEntry = true
+        //textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -42,7 +43,7 @@ class SignUpView: BaseView {
         textField.setLeftPaddingPoints(10)
         textField.setRightPaddingPoints(10)
         textField.roundedBottomCorners(radius: 10)
-        textField.isSecureTextEntry = true
+        //textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -88,7 +89,7 @@ class SignUpView: BaseView {
         loginButton.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-50)
+            make.bottom.equalTo(self.snp.bottom).offset(-50)
         }
         
         addSubview(stackView)

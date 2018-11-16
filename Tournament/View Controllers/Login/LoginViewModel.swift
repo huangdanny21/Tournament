@@ -12,10 +12,10 @@ import RxSwiftUtilities
 import Firebase
 
 class LoginViewModel {
-    private let didLoginSubject = PublishSubject<User>()
+    private let loginSubject = PublishSubject<User>()
     private let loginErrorSubject = PublishSubject<String>()
     
-    let didLogin: Observable<User>
+    let login: Observable<User>
     let loginError: Observable<String>
     let activityIndicator = ActivityIndicator()
     
@@ -24,7 +24,7 @@ class LoginViewModel {
     // MARK: - Constructor
     
     init() {
-        didLogin = didLoginSubject.asObservable()
+        login = loginSubject.asObservable()
         loginError = loginErrorSubject.asObservable()
     }
     
@@ -46,12 +46,8 @@ class LoginViewModel {
         LoginService
             .login(withEmail: email, password: password)
             .trackActivity(activityIndicator)
-            .asSingle()
-            .subscribe(onSuccess: { [weak self](user) in
-                self?.didLoginSubject.onNext(user)
-            }) { [weak self](error) in
-                self?.loginErrorSubject.onNext(error.localizedDescription)
-            }
+            .asObservable()
+            .bind(to: loginSubject)
             .disposed(by: disposeBag)
     }
 }

@@ -19,6 +19,7 @@ class LoginView: BaseView {
         textField.addBottomSeperator()
         textField.roundedTopCorners(radius: 10)
         textField.keyboardType = .emailAddress
+        textField.autocapitalizationType = UITextAutocapitalizationType.none
         return textField
     }()
     
@@ -30,7 +31,7 @@ class LoginView: BaseView {
         textField.setLeftPaddingPoints(10)
         textField.setRightPaddingPoints(10)
         textField.roundedBottomCorners(radius: 10)
-        textField.isSecureTextEntry = true
+        //textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -72,5 +73,4 @@ class LoginView: BaseView {
             make.height.equalTo(50)
         }
     }
-    
 }

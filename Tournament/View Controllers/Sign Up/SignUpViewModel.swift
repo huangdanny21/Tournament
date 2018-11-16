@@ -13,10 +13,10 @@ import Firebase
 
 class SignUpViewModel {
     
-    private let didSignUpSubject = PublishSubject<User>()
+    private let signUpSubject = PublishSubject<User>()
     private let signUpErrorSubject = PublishSubject<String>()
-
-    let didSignUp: Observable<User>
+    
+    let signUp: Observable<User>
     let signUpError: Observable<String>
     let activityIndicator = ActivityIndicator()
     
@@ -25,7 +25,7 @@ class SignUpViewModel {
     // MARK: - Constructor
     
     init() {
-        didSignUp = didSignUpSubject.asObservable()
+        signUp = signUpSubject.asObservable()
         signUpError = signUpErrorSubject.asObservable()
     }
     
@@ -55,11 +55,8 @@ class SignUpViewModel {
         SignUpService
             .createUser(withEmail: email, password: password)
             .trackActivity(activityIndicator)
-            .subscribe(onNext: { [weak self](user) in
-                self?.didSignUpSubject.onNext(user)
-            }, onError: { (error) in
-                self.signUpErrorSubject.onNext(error.localizedDescription)
-            })
+            .asObservable()
+            .bind(to: signUpSubject)
             .disposed(by: disposeBag)
     }
 }
