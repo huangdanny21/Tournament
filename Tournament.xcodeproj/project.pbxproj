@@ -74,6 +74,7 @@
 		30D1CEF9219E3AE100123AAC /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEF8219E3AE100123AAC /* SignUpService.swift */; };
 		30D1CEFB219E3C2400123AAC /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEFA219E3C2400123AAC /* CurrentUser.swift */; };
 		30D1CEFD219E401400123AAC /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEFC219E401400123AAC /* LoginService.swift */; };
+		30D1CEFF219E4E2100123AAC /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CEFE219E4E2100123AAC /* UIViewControllerExtensions.swift */; };
 		30E42614219D2D5E00296618 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42613219D2D5E00296618 /* SignUpView.swift */; };
 		30E42616219D2FE100296618 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42615219D2FE100296618 /* SignUpViewController.swift */; };
 		30E42618219D2FF200296618 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42617219D2FF200296618 /* SignUpViewModel.swift */; };
@@ -175,6 +176,7 @@
 		30D1CEF8219E3AE100123AAC /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		30D1CEFA219E3C2400123AAC /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		30D1CEFC219E401400123AAC /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		30D1CEFE219E4E2100123AAC /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		30E42613219D2D5E00296618 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		30E42615219D2FE100296618 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		30E42617219D2FF200296618 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				3059F916219CB981003F1050 /* MBProgressHUDExtensions.swift */,
 				30D1CEF0219E240A00123AAC /* UIViewExtensions.swift */,
 				30D1CEF2219E28C000123AAC /* UITextFieldExtensions.swift */,
+				30D1CEFE219E4E2100123AAC /* UIViewControllerExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -757,6 +760,7 @@
 				30A72C2B219D272C003D56B8 /* BattleCupViewController.swift in Sources */,
 				3059F91B219CC961003F1050 /* CircleImageView.swift in Sources */,
 				3036A7D1219643FE0084ECE9 /* ProMatchesView.swift in Sources */,
+				30D1CEFF219E4E2100123AAC /* UIViewControllerExtensions.swift in Sources */,
 				3036A7FE21966C190084ECE9 /* MatchPlayerMetaData.swift in Sources */,
 				3036A7D5219644180084ECE9 /* ProMatchesViewModel.swift in Sources */,
 				30D1CEEF219E1EE300123AAC /* LoginViewController.swift in Sources */,

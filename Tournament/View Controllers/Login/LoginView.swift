@@ -61,6 +61,7 @@ class LoginView: BaseView {
     // MARK: - Init
     
     override func commonInit() {
+        backgroundColor = UIColor.black
         addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)

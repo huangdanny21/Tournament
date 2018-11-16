@@ -43,6 +43,7 @@ class SignUpViewController: UIViewController {
         title = "Sign Up"
         addCloseButton()
         bindRx()
+        hideKeyboard()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,14 +98,6 @@ class SignUpViewController: UIViewController {
     }
     
     // MARK: - Private
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("Touched began")
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("Touched ended")
-    }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {

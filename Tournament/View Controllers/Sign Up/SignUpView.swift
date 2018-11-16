@@ -79,14 +79,11 @@ class SignUpView: BaseView {
         return stackView
     }()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        print("Frame: \(frame)")
-    }
-    
     // MARK: - Init
     
     override func commonInit() {
+        backgroundColor = UIColor.black
+        
         addSubview(loginButton)
         loginButton.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
