@@ -80,13 +80,13 @@ class SignUpViewController: BaseKeyboardViewController {
     }
     
     private func bindLoadingIndicator() {
-        let progress = MBProgressHUD(view: signUpView)
+        let progress = MBProgressHUD()
         progress.mode = .indeterminate
         progress.label.text = "Signing up..."
         
         viewModel
-            .activityIndicator.asObservable()
-            .bind(to: progress.rx_mbprogresshud_animating)
+            .activityIndicator.asDriver()
+            .drive(progress.rx_mbprogresshud_animating)
             .disposed(by: disposeBag)
     }
     

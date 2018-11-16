@@ -59,15 +59,14 @@ class ProMatchesViewController: UIViewController {
 
         proMatchesView.tableView.rx.modelSelected(ProMatchObjectViewModel.self)
             .subscribe(onNext: { [weak self](viewModel) in
-                let matchDetailViewModel = MatchDetailViewModel(withMatchId: viewModel.object.matchId)
-                let matchDetailVC = MatchDetailViewController(viewModel: matchDetailViewModel)
+                let matchDetailVC = MatchDetailViewController(matchId: viewModel.object.matchId)
                 self?.navigationController?.pushViewController(matchDetailVC, animated: true)
             })
             .disposed(by: disposeBag)
     }
     
     private func bindLoadingIndicator() {
-        let progress = MBProgressHUD(view: proMatchesView.tableView)
+        let progress = MBProgressHUD()
         progress.mode = .indeterminate
         progress.label.text = "Loading..."
         

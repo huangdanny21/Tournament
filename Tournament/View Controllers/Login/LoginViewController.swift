@@ -76,7 +76,7 @@ class LoginViewController: BaseKeyboardViewController {
     // MARK: - Private
     
     private func bindLoadingIndicator() {
-        let progress = MBProgressHUD(view: loginView)
+        let progress = MBProgressHUD()
         progress.mode = .indeterminate
         progress.label.text = "Logging in..."
         

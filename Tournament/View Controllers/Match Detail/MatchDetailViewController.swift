@@ -22,8 +22,8 @@ class MatchDetailViewController: UIViewController {
     
     // MARK: - Constructors
     
-    init(viewModel: MatchDetailViewModel) {
-        self.viewModel = viewModel
+    init(matchId: Int) {
+        self.viewModel = MatchDetailViewModel(withMatchId: matchId)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -49,7 +49,6 @@ class MatchDetailViewController: UIViewController {
     private func bindTableView() {
         viewModel
             .matchDetailData
-            .trackActivity(viewModel.activityIndicator)
             .subscribe(onNext: { [weak self](objectViewModel) in
                 self?.matchDetailView.objectViewModel = objectViewModel
             }, onError: { (error) in
@@ -59,7 +58,7 @@ class MatchDetailViewController: UIViewController {
     }
     
     private func bindLoadingIndicator() {
-        let progress = MBProgressHUD(view: matchDetailView)
+        let progress = MBProgressHUD()
         progress.mode = .indeterminate
         progress.label.text = "Loading..."
         

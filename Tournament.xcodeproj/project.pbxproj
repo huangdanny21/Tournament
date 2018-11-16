@@ -375,8 +375,8 @@
 			isa = PBXGroup;
 			children = (
 				3036A7CD2196433E0084ECE9 /* Cells */,
-				3036A7CE219643550084ECE9 /* ProMatchesViewController.swift */,
 				3036A7D0219643FE0084ECE9 /* ProMatchesView.swift */,
+				3036A7CE219643550084ECE9 /* ProMatchesViewController.swift */,
 				3036A7D4219644180084ECE9 /* ProMatchesViewModel.swift */,
 			);
 			path = "Pro Matches";
