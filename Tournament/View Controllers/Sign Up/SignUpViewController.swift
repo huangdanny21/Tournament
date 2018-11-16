@@ -45,6 +45,17 @@ class SignUpViewController: UIViewController {
         bindRx()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     // MARK: - Binding
     
     private func bindRx() {
@@ -73,7 +84,7 @@ class SignUpViewController: UIViewController {
         viewModel
             .didSignUp
             .subscribe(onNext: { [weak self](user) in
-                self?.signedUpSucessFully(withUser: user)
+                self?.navigationController?.dismiss(animated: true, completion: nil)
             })
             .disposed(by: disposeBag)
         
@@ -87,8 +98,28 @@ class SignUpViewController: UIViewController {
     
     // MARK: - Private
     
-    private func signedUpSucessFully(withUser user: User) {
-        navigationController?.dismiss(animated: true, completion: nil)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("Touched began")
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("Touched ended")
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
     }
     
     private func addCloseButton() {

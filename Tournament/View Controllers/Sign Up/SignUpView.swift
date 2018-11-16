@@ -18,18 +18,19 @@ class SignUpView: BaseView {
         textField.setRightPaddingPoints(10)
         textField.addBottomSeperator()
         textField.roundedTopCorners(radius: 10)
+        textField.keyboardType = .emailAddress
         return textField
     }()
     
     let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Password"
-
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = UIColor.white
         textField.setLeftPaddingPoints(10)
         textField.setRightPaddingPoints(10)
         textField.addBottomSeperator()
+        textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -41,6 +42,7 @@ class SignUpView: BaseView {
         textField.setLeftPaddingPoints(10)
         textField.setRightPaddingPoints(10)
         textField.roundedBottomCorners(radius: 10)
+        textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -76,6 +78,11 @@ class SignUpView: BaseView {
         stackView.spacing = 10
         return stackView
     }()
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        print("Frame: \(frame)")
+    }
     
     // MARK: - Init
     
