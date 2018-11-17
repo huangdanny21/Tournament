@@ -23,7 +23,6 @@
 		3036A7CF219643550084ECE9 /* ProMatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7CE219643550084ECE9 /* ProMatchesViewController.swift */; };
 		3036A7D1219643FE0084ECE9 /* ProMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7D0219643FE0084ECE9 /* ProMatchesView.swift */; };
 		3036A7D32196440E0084ECE9 /* ProMatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7D22196440E0084ECE9 /* ProMatchTableViewCell.swift */; };
-		3036A7D5219644180084ECE9 /* ProMatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7D4219644180084ECE9 /* ProMatchesViewModel.swift */; };
 		3036A7D7219644500084ECE9 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7D6219644500084ECE9 /* BaseView.swift */; };
 		3036A7DB219646F50084ECE9 /* ProMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7DA219646F50084ECE9 /* ProMatch.swift */; };
 		3036A7DD21964C3A0084ECE9 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7DC21964C3A0084ECE9 /* BaseTableViewCell.swift */; };
@@ -83,6 +82,11 @@
 		30E42614219D2D5E00296618 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42613219D2D5E00296618 /* SignUpView.swift */; };
 		30E42616219D2FE100296618 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42615219D2FE100296618 /* SignUpViewController.swift */; };
 		30E42618219D2FF200296618 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42617219D2FF200296618 /* SignUpViewModel.swift */; };
+		30F9E3D1219F78D400C0A928 /* ProMatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9E3D0219F78D400C0A928 /* ProMatchListViewModel.swift */; };
+		30F9E3D3219F79F300C0A928 /* SignUpViewModel_New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9E3D2219F79F300C0A928 /* SignUpViewModel_New.swift */; };
+		30F9E3D5219F7BE300C0A928 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9E3D4219F7BE300C0A928 /* NetworkRequest.swift */; };
+		30F9E3D7219F7CDC00C0A928 /* AsDriverLogError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9E3D6219F7CDC00C0A928 /* AsDriverLogError.swift */; };
+		30F9E3D9219F7D3900C0A928 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9E3D8219F7D3900C0A928 /* Request.swift */; };
 		E483B56F925E32C49FB79A1F /* Pods_Tournament.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,7 +132,6 @@
 		3036A7CE219643550084ECE9 /* ProMatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProMatchesViewController.swift; sourceTree = "<group>"; };
 		3036A7D0219643FE0084ECE9 /* ProMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProMatchesView.swift; sourceTree = "<group>"; };
 		3036A7D22196440E0084ECE9 /* ProMatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProMatchTableViewCell.swift; sourceTree = "<group>"; };
-		3036A7D4219644180084ECE9 /* ProMatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProMatchesViewModel.swift; sourceTree = "<group>"; };
 		3036A7D6219644500084ECE9 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		3036A7DA219646F50084ECE9 /* ProMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProMatch.swift; sourceTree = "<group>"; };
 		3036A7DC21964C3A0084ECE9 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -190,6 +193,11 @@
 		30E42613219D2D5E00296618 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		30E42615219D2FE100296618 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		30E42617219D2FF200296618 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		30F9E3D0219F78D400C0A928 /* ProMatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProMatchListViewModel.swift; sourceTree = "<group>"; };
+		30F9E3D2219F79F300C0A928 /* SignUpViewModel_New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel_New.swift; sourceTree = "<group>"; };
+		30F9E3D4219F7BE300C0A928 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		30F9E3D6219F7CDC00C0A928 /* AsDriverLogError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsDriverLogError.swift; sourceTree = "<group>"; };
+		30F9E3D8219F7D3900C0A928 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		B2321F0212BDBBDE0754F962 /* Pods-Tournament.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -293,6 +301,7 @@
 				3051C2F72197964400D9390C /* Team.swift */,
 				30A72C24219D0C37003D56B8 /* Player.swift */,
 				30D1CF03219E7EDA00123AAC /* DBUser.swift */,
+				30F9E3D8219F7D3900C0A928 /* Request.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -333,6 +342,8 @@
 				30D1CEF0219E240A00123AAC /* UIViewExtensions.swift */,
 				30D1CEF2219E28C000123AAC /* UITextFieldExtensions.swift */,
 				30D1CEFE219E4E2100123AAC /* UIViewControllerExtensions.swift */,
+				30F9E3D4219F7BE300C0A928 /* NetworkRequest.swift */,
+				30F9E3D6219F7CDC00C0A928 /* AsDriverLogError.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -387,7 +398,7 @@
 				3036A7CD2196433E0084ECE9 /* Cells */,
 				3036A7D0219643FE0084ECE9 /* ProMatchesView.swift */,
 				3036A7CE219643550084ECE9 /* ProMatchesViewController.swift */,
-				3036A7D4219644180084ECE9 /* ProMatchesViewModel.swift */,
+				30F9E3D0219F78D400C0A928 /* ProMatchListViewModel.swift */,
 			);
 			path = "Pro Matches";
 			sourceTree = "<group>";
@@ -539,6 +550,7 @@
 				30E42613219D2D5E00296618 /* SignUpView.swift */,
 				30E42615219D2FE100296618 /* SignUpViewController.swift */,
 				30E42617219D2FF200296618 /* SignUpViewModel.swift */,
+				30F9E3D2219F79F300C0A928 /* SignUpViewModel_New.swift */,
 			);
 			path = "Sign Up";
 			sourceTree = "<group>";
@@ -729,6 +741,7 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwiftUtilities/RxSwiftUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
@@ -751,6 +764,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
@@ -799,7 +813,9 @@
 				3023F9CB2197DEE8004CAF6F /* BattleCupMetadata.swift in Sources */,
 				30A72C25219D0C37003D56B8 /* Player.swift in Sources */,
 				3036A7A7219622AD0084ECE9 /* UInt64Extensions.swift in Sources */,
+				30F9E3D5219F7BE300C0A928 /* NetworkRequest.swift in Sources */,
 				30ACA98E219EBFE7006A2793 /* GenericError.swift in Sources */,
+				30F9E3D3219F79F300C0A928 /* SignUpViewModel_New.swift in Sources */,
 				3036A7D7219644500084ECE9 /* BaseView.swift in Sources */,
 				3036A7FA21966BBA0084ECE9 /* FactionSlot.swift in Sources */,
 				3036A7B6219626F70084ECE9 /* ODConstants.swift in Sources */,
@@ -813,10 +829,11 @@
 				3036A7D1219643FE0084ECE9 /* ProMatchesView.swift in Sources */,
 				30D1CEFF219E4E2100123AAC /* UIViewControllerExtensions.swift in Sources */,
 				3036A7FE21966C190084ECE9 /* MatchPlayerMetaData.swift in Sources */,
-				3036A7D5219644180084ECE9 /* ProMatchesViewModel.swift in Sources */,
+				30F9E3D7219F7CDC00C0A928 /* AsDriverLogError.swift in Sources */,
 				30D1CEEF219E1EE300123AAC /* LoginViewController.swift in Sources */,
 				30A72C2D219D2735003D56B8 /* ProfileViewController.swift in Sources */,
 				3036A7EF219668780084ECE9 /* MatchDetailViewModel.swift in Sources */,
+				30F9E3D1219F78D400C0A928 /* ProMatchListViewModel.swift in Sources */,
 				3059F915219CB8DC003F1050 /* MBProgressHUD.m in Sources */,
 				30E42614219D2D5E00296618 /* SignUpView.swift in Sources */,
 				3036A7B8219629850084ECE9 /* GenericRestService.swift in Sources */,
@@ -838,6 +855,7 @@
 				3051C2F421977F7100D9390C /* MatchDetailObjectViewModel.swift in Sources */,
 				3059F930219CD666003F1050 /* ItemService.swift in Sources */,
 				3036A7CF219643550084ECE9 /* ProMatchesViewController.swift in Sources */,
+				30F9E3D9219F7D3900C0A928 /* Request.swift in Sources */,
 				3059F91E219CD37B003F1050 /* Hero.swift in Sources */,
 				3036A7AF2196237F0084ECE9 /* DecodeOperation.swift in Sources */,
 				3059F90E219CAD98003F1050 /* DateUtil.swift in Sources */,

@@ -13,6 +13,7 @@ target 'Tournament' do
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
   pod "RxSwiftUtilities"
+  pod 'RxSwiftExt'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'

@@ -128,6 +128,10 @@ PODS:
   - RxCocoa (4.3.1):
     - RxSwift (~> 4.0)
   - RxSwift (4.3.1)
+  - RxSwiftExt (3.3.0):
+    - RxSwiftExt/Core (= 3.3.0)
+  - RxSwiftExt/Core (3.3.0):
+    - RxSwift (~> 4.0)
   - RxSwiftUtilities (2.0.1):
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
@@ -142,6 +146,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
+  - RxSwiftExt
   - RxSwiftUtilities
   - SnapKit (~> 4.0.0)
 
@@ -171,6 +176,7 @@ SPEC REPOS:
     - Protobuf
     - RxCocoa
     - RxSwift
+    - RxSwiftExt
     - RxSwiftUtilities
     - SnapKit
 
@@ -199,9 +205,10 @@ SPEC CHECKSUMS:
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
+  RxSwiftExt: 81afb48ab0602f503147417baeb3989d64c7687d
   RxSwiftUtilities: 0edb01ef16c527c10fb352485b62cbd951e4a04d
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
 
-PODFILE CHECKSUM: b815705073de89ef76775936d1c42f26433ae10a
+PODFILE CHECKSUM: 7731368690ebdbc1e554699cb598dd181e2fa2bf
 
 COCOAPODS: 1.5.3

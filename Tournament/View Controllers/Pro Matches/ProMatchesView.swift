@@ -18,11 +18,19 @@ class ProMatchesView: BaseView {
         return tableView
     }()
     
+    let refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        return refreshControl
+    }()
+    
+    // MARK: - Init
+    
     override func commonInit() {
         addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        tableView.refreshControl = refreshControl
         registerCells()
     }
     
