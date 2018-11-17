@@ -32,7 +32,6 @@
 		3036A7E8219668270084ECE9 /* MatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7E7219668270084ECE9 /* MatchDetailViewController.swift */; };
 		3036A7EB219668520084ECE9 /* PlayerSlotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7EA219668520084ECE9 /* PlayerSlotTableViewCell.swift */; };
 		3036A7ED2196686A0084ECE9 /* MatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7EC2196686A0084ECE9 /* MatchDetailView.swift */; };
-		3036A7EF219668780084ECE9 /* MatchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7EE219668780084ECE9 /* MatchDetailViewModel.swift */; };
 		3036A7F121966A120084ECE9 /* MatchDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7F021966A120084ECE9 /* MatchDetail.swift */; };
 		3036A7F921966BBA0084ECE9 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7F521966BBA0084ECE9 /* GameMode.swift */; };
 		3036A7FA21966BBA0084ECE9 /* FactionSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7F621966BBA0084ECE9 /* FactionSlot.swift */; };
@@ -87,6 +86,7 @@
 		30F9E3D5219F7BE300C0A928 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9E3D4219F7BE300C0A928 /* NetworkRequest.swift */; };
 		30F9E3D7219F7CDC00C0A928 /* AsDriverLogError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9E3D6219F7CDC00C0A928 /* AsDriverLogError.swift */; };
 		30F9E3D9219F7D3900C0A928 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9E3D8219F7D3900C0A928 /* Request.swift */; };
+		30F9E3DD219F93E200C0A928 /* MatchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9E3DC219F93E200C0A928 /* MatchDetailViewModel.swift */; };
 		E483B56F925E32C49FB79A1F /* Pods_Tournament.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,7 +141,6 @@
 		3036A7E7219668270084ECE9 /* MatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewController.swift; sourceTree = "<group>"; };
 		3036A7EA219668520084ECE9 /* PlayerSlotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSlotTableViewCell.swift; sourceTree = "<group>"; };
 		3036A7EC2196686A0084ECE9 /* MatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailView.swift; sourceTree = "<group>"; };
-		3036A7EE219668780084ECE9 /* MatchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewModel.swift; sourceTree = "<group>"; };
 		3036A7F021966A120084ECE9 /* MatchDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetail.swift; sourceTree = "<group>"; };
 		3036A7F521966BBA0084ECE9 /* GameMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		3036A7F621966BBA0084ECE9 /* FactionSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactionSlot.swift; sourceTree = "<group>"; };
@@ -198,6 +197,7 @@
 		30F9E3D4219F7BE300C0A928 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		30F9E3D6219F7CDC00C0A928 /* AsDriverLogError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsDriverLogError.swift; sourceTree = "<group>"; };
 		30F9E3D8219F7D3900C0A928 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		30F9E3DC219F93E200C0A928 /* MatchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewModel.swift; sourceTree = "<group>"; };
 		B2321F0212BDBBDE0754F962 /* Pods-Tournament.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -417,7 +417,7 @@
 				3051C2EC21976D0B00D9390C /* Views */,
 				3036A7E92196682D0084ECE9 /* Cells */,
 				3036A7E7219668270084ECE9 /* MatchDetailViewController.swift */,
-				3036A7EE219668780084ECE9 /* MatchDetailViewModel.swift */,
+				30F9E3DC219F93E200C0A928 /* MatchDetailViewModel.swift */,
 			);
 			path = "Match Detail";
 			sourceTree = "<group>";
@@ -832,7 +832,6 @@
 				30F9E3D7219F7CDC00C0A928 /* AsDriverLogError.swift in Sources */,
 				30D1CEEF219E1EE300123AAC /* LoginViewController.swift in Sources */,
 				30A72C2D219D2735003D56B8 /* ProfileViewController.swift in Sources */,
-				3036A7EF219668780084ECE9 /* MatchDetailViewModel.swift in Sources */,
 				30F9E3D1219F78D400C0A928 /* ProMatchListViewModel.swift in Sources */,
 				3059F915219CB8DC003F1050 /* MBProgressHUD.m in Sources */,
 				30E42614219D2D5E00296618 /* SignUpView.swift in Sources */,
@@ -861,6 +860,7 @@
 				3059F90E219CAD98003F1050 /* DateUtil.swift in Sources */,
 				30D1CEF3219E28C000123AAC /* UITextFieldExtensions.swift in Sources */,
 				3051C2F62197943000D9390C /* League.swift in Sources */,
+				30F9E3DD219F93E200C0A928 /* MatchDetailViewModel.swift in Sources */,
 				3036A7DB219646F50084ECE9 /* ProMatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

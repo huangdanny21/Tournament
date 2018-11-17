@@ -242,10 +242,7 @@ class PlayerSlotTableViewCell: BaseTableViewCell {
         request?.cancel()
         disposeBag = DisposeBag()
     }
-    
-    deinit {
-        disposeBag = DisposeBag()
-    }
+
     // MARK: - Populate
     
     private func populate(withData playerData: MatchPlayerData) {

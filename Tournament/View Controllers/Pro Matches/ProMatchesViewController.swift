@@ -9,13 +9,9 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxSwiftUtilities
 
 class ProMatchesViewController: UIViewController {
-
-    private var viewModelFactory: (ProMatchListViewModel.Inputs) -> ProMatchListViewModel = { _ in
-        fatalError("Must provide factory function first.")
-    }
+    private var viewModel: ProMatchListViewModel!
     
     private let alertPresenter: AlertPresenter_Proto
     private let disposeBag = DisposeBag()
@@ -57,7 +53,6 @@ class ProMatchesViewController: UIViewController {
         isNetworkActive
             .drive(progress.rx_mbprogresshud_animating)
             .disposed(by: disposeBag)
-
         
         let inputs = ProMatchListViewModel.Inputs(
             selectMatch: proMatchesView.tableView.rx.itemSelected.asObservable(),
@@ -65,18 +60,15 @@ class ProMatchesViewController: UIViewController {
             viewAppearTrigger: rx.methodInvoked(#selector(viewDidAppear(_:))).map { _ in }
         )
         
-        viewModelFactory =  { inputs -> ProMatchListViewModel in
-            let vm = ProMatchListViewModel(inputs, dataTask: dataTask)
-            vm.displayMatch
-                .drive(onNext: { (proMatch) in
-                    let matchDetailVC = MatchDetailViewController(matchId: proMatch.matchId)
-                    self.navigationController?.pushViewController(matchDetailVC, animated: true)
-                })
-                .disposed(by: self.disposeBag)
-            return vm
-        }
+        let viewModel = ProMatchListViewModel(inputs, dataTask: dataTask)
         
-        let viewModel = viewModelFactory(inputs)
+        viewModel
+            .displayMatch
+            .drive(onNext: { (proMatch) in
+                let matchDetailVC = MatchDetailViewController(matchId: proMatch.matchId)
+                self.navigationController?.pushViewController(matchDetailVC, animated: true)
+            })
+            .disposed(by: self.disposeBag)
         
         viewModel
             .proMatchObjectViewModels

@@ -12,9 +12,10 @@ import RxCocoa
 import RxSwiftUtilities
 
 class MatchDetailViewController: UIViewController {
-
-    private let viewModel: MatchDetailViewModel
+    private var viewModel: MatchDetailViewModel!
     private let disposeBag = DisposeBag()
+    
+    private let matchId: Int
     
     private lazy var matchDetailView: MatchDetailView = {
         return MatchDetailView()
@@ -23,7 +24,7 @@ class MatchDetailViewController: UIViewController {
     // MARK: - Constructors
     
     init(matchId: Int) {
-        self.viewModel = MatchDetailViewModel(withMatchId: matchId)
+        self.matchId = matchId
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -40,31 +41,31 @@ class MatchDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Match Detail"
-        bindLoadingIndicator()
-        bindTableView()
+        bindRx()
     }
     
-    // MARK: - Data
+    // MARK: - Private
     
-    private func bindTableView() {
-        viewModel
-            .matchDetailData
-            .subscribe(onNext: { [weak self](objectViewModel) in
-                self?.matchDetailView.objectViewModel = objectViewModel
-            }, onError: { (error) in
-                
-            })
-            .disposed(by: disposeBag)
-    }
-    
-    private func bindLoadingIndicator() {
+    private func bindRx() {
         let progress = MBProgressHUD()
         progress.mode = .indeterminate
         progress.label.text = "Loading..."
         
-        viewModel
-            .activityIndicator.asDriver()
+        isNetworkActive
             .drive(progress.rx_mbprogresshud_animating)
+            .disposed(by: disposeBag)
+
+        let inputs = MatchDetailViewModel.Inputs(
+            viewAppearTrigger: rx.methodInvoked(#selector(viewDidAppear(_:))).map { _ in }
+        )
+        
+        viewModel = MatchDetailViewModel(inputs, matchId, dataTask: dataTask)
+        
+        viewModel
+            .matchDetailObjectViewModel
+            .drive(onNext: { (objectViewModel) in
+                self.matchDetailView.objectViewModel = objectViewModel
+            })
             .disposed(by: disposeBag)
     }
 }
