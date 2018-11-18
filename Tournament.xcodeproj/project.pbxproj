@@ -82,7 +82,6 @@
 		30E42616219D2FE100296618 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42615219D2FE100296618 /* SignUpViewController.swift */; };
 		30E42618219D2FF200296618 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42617219D2FF200296618 /* SignUpViewModel.swift */; };
 		30F9E3D1219F78D400C0A928 /* ProMatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9E3D0219F78D400C0A928 /* ProMatchListViewModel.swift */; };
-		30F9E3D3219F79F300C0A928 /* SignUpViewModel_New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9E3D2219F79F300C0A928 /* SignUpViewModel_New.swift */; };
 		30F9E3D5219F7BE300C0A928 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9E3D4219F7BE300C0A928 /* NetworkRequest.swift */; };
 		30F9E3D7219F7CDC00C0A928 /* AsDriverLogError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9E3D6219F7CDC00C0A928 /* AsDriverLogError.swift */; };
 		30F9E3D9219F7D3900C0A928 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9E3D8219F7D3900C0A928 /* Request.swift */; };
@@ -193,7 +192,6 @@
 		30E42615219D2FE100296618 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		30E42617219D2FF200296618 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		30F9E3D0219F78D400C0A928 /* ProMatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProMatchListViewModel.swift; sourceTree = "<group>"; };
-		30F9E3D2219F79F300C0A928 /* SignUpViewModel_New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel_New.swift; sourceTree = "<group>"; };
 		30F9E3D4219F7BE300C0A928 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		30F9E3D6219F7CDC00C0A928 /* AsDriverLogError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsDriverLogError.swift; sourceTree = "<group>"; };
 		30F9E3D8219F7D3900C0A928 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -550,7 +548,6 @@
 				30E42613219D2D5E00296618 /* SignUpView.swift */,
 				30E42615219D2FE100296618 /* SignUpViewController.swift */,
 				30E42617219D2FF200296618 /* SignUpViewModel.swift */,
-				30F9E3D2219F79F300C0A928 /* SignUpViewModel_New.swift */,
 			);
 			path = "Sign Up";
 			sourceTree = "<group>";
@@ -815,7 +812,6 @@
 				3036A7A7219622AD0084ECE9 /* UInt64Extensions.swift in Sources */,
 				30F9E3D5219F7BE300C0A928 /* NetworkRequest.swift in Sources */,
 				30ACA98E219EBFE7006A2793 /* GenericError.swift in Sources */,
-				30F9E3D3219F79F300C0A928 /* SignUpViewModel_New.swift in Sources */,
 				3036A7D7219644500084ECE9 /* BaseView.swift in Sources */,
 				3036A7FA21966BBA0084ECE9 /* FactionSlot.swift in Sources */,
 				3036A7B6219626F70084ECE9 /* ODConstants.swift in Sources */,

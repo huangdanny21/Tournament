@@ -12,7 +12,7 @@ import Firebase
 
 class SignUpViewController: BaseKeyboardViewController {
 
-    private let viewModel: SignUpViewModel
+    private var viewModel: SignUpViewModel!
     private let alertPresenter: AlertPresenter_Proto
     private let disposeBag = DisposeBag()
 
@@ -22,8 +22,7 @@ class SignUpViewController: BaseKeyboardViewController {
     
     // MARK: - Constructors
     
-    init(alertPresenter: AlertPresenter_Proto = AlertPresenter(), viewModel: SignUpViewModel = SignUpViewModel()) {
-        self.viewModel = viewModel
+    init(alertPresenter: AlertPresenter_Proto = AlertPresenter()) {
         self.alertPresenter = alertPresenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -42,53 +41,29 @@ class SignUpViewController: BaseKeyboardViewController {
         super.viewDidLoad()
         title = "Sign Up"
         addCloseButton()
-        bindLoadingIndicator()
         bindRx()
     }
     
     // MARK: - Binding
     
     private func bindRx() {
-        signUpView.loginButton.rx.tap
-            .subscribe(onNext: { [weak self]() in
-                let loginVC = LoginViewController()
-                self?.navigationController?.pushViewController(loginVC, animated: true)
-            })
-            .disposed(by: disposeBag)
+        let inputs = SignUpViewModel.Inputs(
+            signUpTapped: signUpView.signUpButton.rx.tap.asObservable(),
+            loginTapped: signUpView.loginButton.rx.tap.asObservable(),
+            usernameText: signUpView.usernameTextField.rx.text.orEmpty.asObservable(),
+            emailText: signUpView.emailTextField.rx.text.orEmpty.asObservable(),
+            passwordText: signUpView.passwordTextField.rx.text.orEmpty.asObservable()
+        )
         
-        signUpView.signUpButton.rx.tap
-            .subscribe(onNext: { [weak self]() in
-                self?.viewModel.signUp(withUsername: self?.signUpView.usernameTextField.text, email: self?.signUpView.emailTextField.text, password: self?.signUpView.passwordTextField.text, confirmPassword: self?.signUpView.confirmPasswordTextField.text)
-            })
-            .disposed(by: disposeBag)
+        let viewModel = SignUpViewModel(inputs, dataTask: dataTask)
         
         viewModel
-            .signUp
-            .subscribe(onNext: { [unowned self](userResult) in
-                if let user = userResult.user {
-                    self.didSignUpSuccessFully(withUsername: self.signUpView.usernameTextField.text ?? "", user: user)
-                }
-                else if let error = userResult.error {
-                    self.alertPresenter.present(from: self, title: "", message: error.localizedDescription, dismissButtonTitle: "Ok")
-                }
-                else {
-                    self.alertPresenter.present(from: self, title: "", message: GenericError.unknown.localizedDescription, dismissButtonTitle: "Ok")
-                }
-            }, onError: { [unowned self](error) in
-                self.alertPresenter.present(from: self, title: "", message: error.localizedDescription, dismissButtonTitle: "Ok")
+            .errorMessage
+            .drive(onNext: { [unowned self] (error) in
+                self.alertPresenter.present(from: self, title: "", message: error, dismissButtonTitle: "Ok")
             })
             .disposed(by: disposeBag)
-    }
-    
-    private func bindLoadingIndicator() {
-        let progress = MBProgressHUD()
-        progress.mode = .indeterminate
-        progress.label.text = "Signing up..."
         
-        viewModel
-            .activityIndicator.asDriver()
-            .drive(progress.rx_mbprogresshud_animating)
-            .disposed(by: disposeBag)
     }
     
     // MARK: - Private

@@ -12,6 +12,7 @@ enum SignUpError: Error {
     case invalidUsername
     case invalidEmail
     case invalidPassword
+    case invalidConfirmPassword
     case passwordDoesNotMatch
     case usernameTaken
 }
@@ -25,6 +26,8 @@ extension SignUpError: LocalizedError {
             return NSLocalizedString("Please enter an email.", comment: "Sign Up Error")
         case .invalidPassword:
             return NSLocalizedString("Please enter password.", comment: "Sign Up Error")
+        case .invalidConfirmPassword:
+            return NSLocalizedString("Please confirm password.", comment: "Sign Up Error")
         case .passwordDoesNotMatch:
             return NSLocalizedString("Please make sure your password and confirm password match", comment: "Sign Up Error")
         case .usernameTaken:

@@ -45,20 +45,6 @@ class SignUpView: BaseView {
         textField.backgroundColor = UIColor.white
         textField.setLeftPaddingPoints(10)
         textField.setRightPaddingPoints(10)
-        textField.addBottomSeperator()
-        //textField.isSecureTextEntry = true
-        textField.autocapitalizationType = UITextAutocapitalizationType.none
-        return textField
-    }()
-    
-    let confirmPasswordTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Confirm Password"
-        textField.text = "one2three"
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = UIColor.white
-        textField.setLeftPaddingPoints(10)
-        textField.setRightPaddingPoints(10)
         textField.roundedBottomCorners(radius: 10)
         //textField.isSecureTextEntry = true
         textField.autocapitalizationType = UITextAutocapitalizationType.none
@@ -66,7 +52,7 @@ class SignUpView: BaseView {
     }()
     
     private lazy var textFieldStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [usernameTextField, emailTextField, passwordTextField, confirmPasswordTextField])
+        let stackView = UIStackView(arrangedSubviews: [usernameTextField, emailTextField, passwordTextField])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.spacing = 0

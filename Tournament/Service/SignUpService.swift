@@ -25,11 +25,11 @@ class SignUpService {
         })
     }
     
-    @discardableResult class func createUser(withEmail email: String, password: String) -> Observable<UserResult> {
+    @discardableResult class func createUser(withEmail email: String, password: String) -> Observable<User> {
         return Observable.create({ (observer) -> Disposable in
             Auth.auth().createUser(withEmail: email, password: password, completion: { (result, error) in
                 if let user = result?.user {
-                    observer.onNext((user, nil))
+                    observer.onNext((user))
                 }
                 else if let error = error {
                     observer.onError(error)
