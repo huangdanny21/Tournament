@@ -28,7 +28,9 @@ struct SignUpViewModel {
 
 extension SignUpViewModel {
     init(_ inputs: Inputs) {
+        
         let credentials = Observable.combineLatest(inputs.usernameText, inputs.emailText, inputs.passwordText)
+        let emailAndPassword = Observable.combineLatest(inputs.emailText, inputs.passwordText)
         
         let clientSideError = inputs.signUpTapped
             .withLatestFrom(credentials)
@@ -45,16 +47,23 @@ extension SignUpViewModel {
                 return ""
         }
         
-        let isUsernameAvailable = inputs.signUpTapped
+        let isUsernameTaken = inputs.signUpTapped
             .withLatestFrom(clientSideError)
             .filter{$0.isEmpty}
             .withLatestFrom(inputs.usernameText)
             .flatMapLatest{SignUpService.isUsernameTaken($0)}
             .share()
         
-        let usernameUnavailableError = isUsernameAvailable
+        let usernameUnavailableError = isUsernameTaken
             .filter{$0}
             .map{_ in SignUpError.usernameTaken.localizedDescription}
+        
+        let createUser = inputs.signUpTapped
+            .withLatestFrom(isUsernameTaken)
+            .filter{!$0}
+            .withLatestFrom(emailAndPassword)
+            .flatMapLatest{SignUpService.createUser(withEmail: $0, password: $1)}
+            .share()
         
         errorMessage = Observable.merge(clientSideError, usernameUnavailableError)
             .filter{!$0.isEmpty}
