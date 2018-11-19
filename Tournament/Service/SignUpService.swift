@@ -7,17 +7,18 @@
 //
 
 import RxSwift
+import Alamofire
 import Firebase
 
 class SignUpService {
-    @discardableResult class func isUsernameTaken(_ username: String) -> Observable<Bool> {
+    @discardableResult class func isUsernameTaken(_ username: String) -> Observable<Result<Bool>> {
         return Observable.create({ (observer) -> Disposable in
             let docRef = Firestore.firestore().collection("users").document(username)
             docRef.getDocument(completion: { (document, error) in
                 if let document = document, document.exists {
-                    observer.onNext(true)
+                    observer.onNext(.success(true))
                 } else {
-                    observer.onNext(false)
+                    observer.onNext(.success(false))
                 }
             })
             
@@ -25,15 +26,15 @@ class SignUpService {
         })
     }
     
-    @discardableResult class func createUser(withEmail email: String, password: String) -> Observable<User> {
+    @discardableResult class func createUser(withEmail email: String, password: String) -> Observable<Result<User>> {
         return Observable.create({ (observer) -> Disposable in
             Auth.auth().createUser(withEmail: email, password: password, completion: { (result, error) in
 
                 if let user = result?.user {
-                    observer.onNext((user))
+                    observer.onNext(.success(user))
                 }
                 else if let error = error {
-                    observer.onError(error)
+                    observer.onNext(.failure(error))
                 }
             })
             return Disposables.create()

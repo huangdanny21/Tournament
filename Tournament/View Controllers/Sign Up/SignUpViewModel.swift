@@ -55,17 +55,21 @@ extension SignUpViewModel {
             .share()
         
         let usernameUnavailableError = isUsernameTaken
-            .filter{$0}
+            .filter{$0.isSuccess && $0.value != nil && $0.value == true}
             .map{_ in SignUpError.usernameTaken.localizedDescription}
         
         let createUser = inputs.signUpTapped
             .withLatestFrom(isUsernameTaken)
-            .filter{!$0}
+            .filter{$0.isSuccess}
             .withLatestFrom(emailAndPassword)
             .flatMapLatest{SignUpService.createUser(withEmail: $0, password: $1)}
             .share()
         
-        errorMessage = Observable.merge(clientSideError, usernameUnavailableError)
+        let serverError = createUser
+            .filter{$0.isFailure}
+            .map{$0.error?.localizedDescription ?? ""}
+
+        errorMessage = Observable.merge(clientSideError, usernameUnavailableError, serverError)
             .filter{!$0.isEmpty}
             .asDriverLogError()
         

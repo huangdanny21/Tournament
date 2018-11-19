@@ -55,7 +55,7 @@ class SignUpViewController: BaseKeyboardViewController {
             passwordText: signUpView.passwordTextField.rx.text.orEmpty.asObservable()
         )
         
-        let viewModel = SignUpViewModel(inputs, dataTask: dataTask)
+        let viewModel = SignUpViewModel(inputs)
         
         viewModel
             .errorMessage

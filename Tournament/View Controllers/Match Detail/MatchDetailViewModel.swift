@@ -30,7 +30,6 @@ extension MatchDetailViewModel {
             .flatMapLatest {dataTask($0)}
             .share()
         
-        
         let matchDetailResponse = networkResponse
             .map{ $0.successResponse }
             .unwrap()
