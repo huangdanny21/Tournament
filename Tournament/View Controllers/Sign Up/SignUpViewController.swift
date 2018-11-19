@@ -11,8 +11,6 @@ import RxSwift
 import Firebase
 
 class SignUpViewController: BaseKeyboardViewController {
-
-    private var viewModel: SignUpViewModel!
     private let alertPresenter: AlertPresenter_Proto
     private let disposeBag = DisposeBag()
 
@@ -56,6 +54,14 @@ class SignUpViewController: BaseKeyboardViewController {
         )
         
         let viewModel = SignUpViewModel(inputs)
+
+        let progress = MBProgressHUD()
+        progress.mode = .indeterminate
+        progress.label.text = "Signing up..."
+
+        viewModel.isNetworkActive
+            .drive(progress.rx_mbprogresshud_animating)
+            .disposed(by: disposeBag)
         
         viewModel
             .errorMessage
@@ -64,6 +70,20 @@ class SignUpViewController: BaseKeyboardViewController {
             })
             .disposed(by: disposeBag)
         
+        viewModel
+            .userCreated
+            .drive(onNext: { (user) in
+                self.didSignUpSuccessFully(withUsername: user.0, user: user.1)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .toLogin
+            .drive(onNext:  { [weak self](_) in
+                let loginVC = LoginViewController()
+                self?.navigationController?.pushViewController(loginVC, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     // MARK: - Private

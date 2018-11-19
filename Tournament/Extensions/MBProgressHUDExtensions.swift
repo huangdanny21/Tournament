@@ -23,9 +23,7 @@ extension MBProgressHUD {
                     loadingNotification.mode = self.mode
                     loadingNotification.label.text = self.label.text
                 } else {
-                    DispatchQueue.main.async { 
-                        MBProgressHUD.hide(for: (UIApplication.shared.keyWindow?.subviews.last)!, animated: true)
-                    }
+                    MBProgressHUD.hide(for: (UIApplication.shared.keyWindow?.subviews.last)!, animated: true)
                 }
             case .error(let error):
                 let error = "Binding error to UI: \(error)"

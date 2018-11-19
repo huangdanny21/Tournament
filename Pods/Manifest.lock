@@ -8,6 +8,7 @@ PODS:
   - BoringSSL/Implementation (10.0.6):
     - BoringSSL/Interface (= 10.0.6)
   - BoringSSL/Interface (10.0.6)
+  - CodableFirebase (0.2.1)
   - Firebase/Auth (5.9.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.4)
@@ -140,6 +141,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage (~> 3.4)
+  - CodableFirebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
@@ -155,6 +157,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - BoringSSL
+    - CodableFirebase
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -184,6 +187,7 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
+  CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
   Firebase: 383fa29aca93e371cab776b48a5c66544d3c2003
   FirebaseAnalytics: 831f1f127f4a75698e9875a87bf7e2668730d953
   FirebaseAuth: 504b198ceb3472dca5c65bb95544ea44cfc9439e
@@ -209,6 +213,6 @@ SPEC CHECKSUMS:
   RxSwiftUtilities: 0edb01ef16c527c10fb352485b62cbd951e4a04d
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
 
-PODFILE CHECKSUM: 7731368690ebdbc1e554699cb598dd181e2fa2bf
+PODFILE CHECKSUM: d49908fe6970f38e97965014ce0c81da02645195
 
 COCOAPODS: 1.5.3
