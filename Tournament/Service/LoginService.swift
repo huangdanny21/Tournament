@@ -8,20 +8,24 @@
 
 import RxSwift
 import Firebase
+import Alamofire
 
 class LoginService {
-    @discardableResult class func login(withEmail email: String, password: String) -> Observable<User> {
-        return Observable<User>.create({ (observer) -> Disposable in
+    @discardableResult class func login(withEmail email: String, password: String) -> Observable<Result<User>> {
+        return Observable.create({ (observer) -> Disposable in
             Auth.auth().signIn(withEmail: email, password: password, completion: { (result, error) in
                 if let user = result?.user {
-                    observer.onNext(user)
+                    observer.onNext(.success(user))
+                    observer.onCompleted()
                 }
                 else if let error = error {
-                    observer.onError(error)
+                    observer.onNext(.failure(error))
+                    observer.onCompleted()
                 }
             })
 
             return Disposables.create()
         })
+        .trackActivity(firestoreNetworkActivity)
     }
 }

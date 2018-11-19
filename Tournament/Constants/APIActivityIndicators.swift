@@ -6,6 +6,11 @@
 //  Copyright © 2018 Danny. All rights reserved.
 //
 
+import RxCocoa
 import RxSwiftUtilities
+
+let isFirebaseNetworkActive: Driver<Bool> = {
+    return firestoreNetworkActivity.asDriver()
+}()
 
 let firestoreNetworkActivity = ActivityIndicator()

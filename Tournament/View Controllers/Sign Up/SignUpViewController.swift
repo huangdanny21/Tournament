@@ -57,17 +57,10 @@ class SignUpViewController: BaseKeyboardViewController {
 
         let progress = MBProgressHUD()
         progress.mode = .indeterminate
-        progress.label.text = "Signing up..."
+        progress.label.text = "Loggin in..."
 
-        viewModel.isNetworkActive
+        isFirebaseNetworkActive
             .drive(progress.rx_mbprogresshud_animating)
-            .disposed(by: disposeBag)
-        
-        viewModel
-            .errorMessage
-            .drive(onNext: { [unowned self] (error) in
-                self.alertPresenter.present(from: self, title: "", message: error, dismissButtonTitle: "Ok")
-            })
             .disposed(by: disposeBag)
         
         viewModel
@@ -84,6 +77,14 @@ class SignUpViewController: BaseKeyboardViewController {
                 self?.navigationController?.pushViewController(loginVC, animated: true)
             })
             .disposed(by: disposeBag)
+        
+        viewModel
+            .errorMessage
+            .drive(onNext: { [unowned self] (error) in
+                self.alertPresenter.present(from: self, title: "", message: error, dismissButtonTitle: "Ok")
+            })
+            .disposed(by: disposeBag)
+        
     }
     
     // MARK: - Private

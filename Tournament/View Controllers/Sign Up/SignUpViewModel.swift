@@ -25,14 +25,11 @@ struct SignUpViewModel {
     
     let errorMessage: Driver<String>
     let userCreated: Driver<(String, User)>
-    let isNetworkActive: Driver<Bool>
     let toLogin: Driver<Void>
 }
 
 extension SignUpViewModel {
     init(_ inputs: Inputs) {
-        isNetworkActive = firestoreNetworkActivity.asDriver()
-        
         let credentials = Observable.combineLatest(inputs.usernameText, inputs.emailText, inputs.passwordText)
         let emailAndPassword = Observable.combineLatest(inputs.emailText, inputs.passwordText)
         
