@@ -10,16 +10,18 @@ import UIKit
 import RxSwift
 
 class StartUpViewController: UIViewController {
+    private let disposeBag = DisposeBag()
     
     // MARK: - View Controller Life Cycle
-    private let disposeBag = DisposeBag()
-    private let viewModel = StartUpViewModel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let viewModel = StartUpViewModel()
+        
         viewModel
-            .toHomeObservable
-            .subscribe(onNext: { [weak self]() in
+            .toHome
+            .drive(onNext: { [weak self]() in
                 let homeVC = HomeViewController()
                 self?.navigationController?.pushViewController(homeVC, animated: false)
             })

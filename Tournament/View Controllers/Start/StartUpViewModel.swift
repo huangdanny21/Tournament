@@ -9,31 +9,21 @@
 import RxSwift
 import RxCocoa
 
-class StartUpViewModel {
-    private let goToHomeSubject = PublishSubject<Void>()
-    private let disposeBag = DisposeBag()
-    let toHomeObservable: Observable<Void>
+struct StartUpViewModel {
+    
+    // Output
+    let toHome: Driver<Void>
+}
 
-    // MARK: - Constructor
-    
+extension StartUpViewModel {
     init() {
-        toHomeObservable = goToHomeSubject.asObserver()
-        fetchData()
-    }
-    
-    // MARK: - API
-    
-    private func fetchData() {
-        Observable
+        toHome = Observable
             .zip(HeroService.getHeroList(), ItemService.getLocalItems())
-            .subscribe(onNext: { (result) in
+            .map { (result) -> Void in
                 HeroList.shared.setHeroes(withHeroes: result.0)
                 ItemList.shared.setItems(withItems: result.1)
-                self.goToHomeSubject.onNext(())
-            }, onError: { (error) in
-                self.goToHomeSubject.onNext(())
-            })
-            .disposed(by: disposeBag)
+            }
+            .asDriverLogError()
         
     }
 }
