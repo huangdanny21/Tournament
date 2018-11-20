@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300AC7E921A293E5005C9AD8 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300AC7E821A293E5005C9AD8 /* NetworkResult.swift */; };
 		3023F9CB2197DEE8004CAF6F /* BattleCupMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3023F9CA2197DEE8004CAF6F /* BattleCupMetadata.swift */; };
 		3036A765219618AF0084ECE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A764219618AF0084ECE9 /* AppDelegate.swift */; };
 		3036A76C219618B10084ECE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3036A76B219618B10084ECE9 /* Assets.xcassets */; };
@@ -110,6 +111,7 @@
 /* Begin PBXFileReference section */
 		080A074E54246D31DC6CC5DB /* Pods-Tournament.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.release.xcconfig"; sourceTree = "<group>"; };
 		26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tournament.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		300AC7E821A293E5005C9AD8 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		3023F9CA2197DEE8004CAF6F /* BattleCupMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleCupMetadata.swift; sourceTree = "<group>"; };
 		3036A761219618AF0084ECE9 /* Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tournament.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3036A764219618AF0084ECE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 				3036A7F721966BBA0084ECE9 /* LobbyType.swift */,
 				3036A7F821966BBA0084ECE9 /* MatchEnums.swift */,
 				30A72C1F219CF4D2003D56B8 /* Role.swift */,
+				300AC7E821A293E5005C9AD8 /* NetworkResult.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -864,6 +867,7 @@
 				3051C2F62197943000D9390C /* League.swift in Sources */,
 				30F9E3DD219F93E200C0A928 /* MatchDetailViewModel.swift in Sources */,
 				3036A7DB219646F50084ECE9 /* ProMatch.swift in Sources */,
+				300AC7E921A293E5005C9AD8 /* NetworkResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
