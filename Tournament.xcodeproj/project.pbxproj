@@ -39,6 +39,8 @@
 		3036A7FB21966BBA0084ECE9 /* LobbyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7F721966BBA0084ECE9 /* LobbyType.swift */; };
 		3036A7FC21966BBA0084ECE9 /* MatchEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7F821966BBA0084ECE9 /* MatchEnums.swift */; };
 		3036A7FE21966C190084ECE9 /* MatchPlayerMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A7FD21966C190084ECE9 /* MatchPlayerMetaData.swift */; };
+		3046529D21ACAA1800D16F34 /* BattleCupRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046529C21ACAA1800D16F34 /* BattleCupRequestView.swift */; };
+		3046529F21ACB22E00D16F34 /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046529E21ACB22E00D16F34 /* NSAttributedStringExtension.swift */; };
 		3051C2EE21976D3900D9390C /* MatchDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3051C2ED21976D3900D9390C /* MatchDetailHeaderView.swift */; };
 		3051C2F421977F7100D9390C /* MatchDetailObjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3051C2F321977F7100D9390C /* MatchDetailObjectViewModel.swift */; };
 		3051C2F62197943000D9390C /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3051C2F52197943000D9390C /* League.swift */; };
@@ -80,6 +82,8 @@
 		30D1CF01219E50C700123AAC /* BaseKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CF00219E50C700123AAC /* BaseKeyboardViewController.swift */; };
 		30D1CF04219E7EDA00123AAC /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CF03219E7EDA00123AAC /* DBUser.swift */; };
 		30D1CF08219E7F9200123AAC /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1CF07219E7F9200123AAC /* ProfileHeaderView.swift */; };
+		30E23F0921AB4C8D00A04908 /* BattleCupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E23F0821AB4C8D00A04908 /* BattleCupView.swift */; };
+		30E23F0B21AB4C9A00A04908 /* BattleCupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E23F0A21AB4C9A00A04908 /* BattleCupViewModel.swift */; };
 		30E42614219D2D5E00296618 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42613219D2D5E00296618 /* SignUpView.swift */; };
 		30E42616219D2FE100296618 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42615219D2FE100296618 /* SignUpViewController.swift */; };
 		30E42618219D2FF200296618 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E42617219D2FF200296618 /* SignUpViewModel.swift */; };
@@ -149,6 +153,8 @@
 		3036A7F721966BBA0084ECE9 /* LobbyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LobbyType.swift; sourceTree = "<group>"; };
 		3036A7F821966BBA0084ECE9 /* MatchEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchEnums.swift; sourceTree = "<group>"; };
 		3036A7FD21966C190084ECE9 /* MatchPlayerMetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchPlayerMetaData.swift; sourceTree = "<group>"; };
+		3046529C21ACAA1800D16F34 /* BattleCupRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleCupRequestView.swift; sourceTree = "<group>"; };
+		3046529E21ACB22E00D16F34 /* NSAttributedStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtension.swift; sourceTree = "<group>"; };
 		3051C2ED21976D3900D9390C /* MatchDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailHeaderView.swift; sourceTree = "<group>"; };
 		3051C2F321977F7100D9390C /* MatchDetailObjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailObjectViewModel.swift; sourceTree = "<group>"; };
 		3051C2F52197943000D9390C /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
@@ -192,6 +198,8 @@
 		30D1CF00219E50C700123AAC /* BaseKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseKeyboardViewController.swift; sourceTree = "<group>"; };
 		30D1CF03219E7EDA00123AAC /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		30D1CF07219E7F9200123AAC /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		30E23F0821AB4C8D00A04908 /* BattleCupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleCupView.swift; sourceTree = "<group>"; };
+		30E23F0A21AB4C9A00A04908 /* BattleCupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleCupViewModel.swift; sourceTree = "<group>"; };
 		30E42613219D2D5E00296618 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		30E42615219D2FE100296618 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		30E42617219D2FF200296618 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -374,6 +382,7 @@
 		3036A7B4219626E50084ECE9 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				3046529E21ACB22E00D16F34 /* NSAttributedStringExtension.swift */,
 				30ACA989219EAA9D006A2793 /* Errors */,
 				3036A7F421966BBA0084ECE9 /* Enums */,
 				3036A7B5219626F70084ECE9 /* ODConstants.swift */,
@@ -506,6 +515,9 @@
 			isa = PBXGroup;
 			children = (
 				30A72C2A219D272C003D56B8 /* BattleCupViewController.swift */,
+				30E23F0821AB4C8D00A04908 /* BattleCupView.swift */,
+				30E23F0A21AB4C9A00A04908 /* BattleCupViewModel.swift */,
+				3046529C21ACAA1800D16F34 /* BattleCupRequestView.swift */,
 			);
 			path = Battlecup;
 			sourceTree = "<group>";
@@ -811,6 +823,7 @@
 				3059F92C219CD574003F1050 /* StartUpViewModel.swift in Sources */,
 				30D1CEF9219E3AE100123AAC /* SignUpService.swift in Sources */,
 				30D1CEEB219E1AB100123AAC /* ProfileView.swift in Sources */,
+				3046529D21ACAA1800D16F34 /* BattleCupRequestView.swift in Sources */,
 				3059F917219CB981003F1050 /* MBProgressHUDExtensions.swift in Sources */,
 				30ACA98B219EAAAA006A2793 /* SignUpError.swift in Sources */,
 				3059F927219CD49A003F1050 /* LocalJSONParser.swift in Sources */,
@@ -819,7 +832,9 @@
 				30A72C25219D0C37003D56B8 /* Player.swift in Sources */,
 				3036A7A7219622AD0084ECE9 /* UInt64Extensions.swift in Sources */,
 				30F9E3D5219F7BE300C0A928 /* NetworkRequest.swift in Sources */,
+				30E23F0B21AB4C9A00A04908 /* BattleCupViewModel.swift in Sources */,
 				30ACA98E219EBFE7006A2793 /* GenericError.swift in Sources */,
+				30E23F0921AB4C8D00A04908 /* BattleCupView.swift in Sources */,
 				3036A7D7219644500084ECE9 /* BaseView.swift in Sources */,
 				3036A7FA21966BBA0084ECE9 /* FactionSlot.swift in Sources */,
 				3036A7B6219626F70084ECE9 /* ODConstants.swift in Sources */,
@@ -864,6 +879,7 @@
 				3036A7AF2196237F0084ECE9 /* DecodeOperation.swift in Sources */,
 				3059F90E219CAD98003F1050 /* DateUtil.swift in Sources */,
 				30D1CEF3219E28C000123AAC /* UITextFieldExtensions.swift in Sources */,
+				3046529F21ACB22E00D16F34 /* NSAttributedStringExtension.swift in Sources */,
 				3051C2F62197943000D9390C /* League.swift in Sources */,
 				30F9E3DD219F93E200C0A928 /* MatchDetailViewModel.swift in Sources */,
 				3036A7DB219646F50084ECE9 /* ProMatch.swift in Sources */,
