@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		300AC7E921A293E5005C9AD8 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300AC7E821A293E5005C9AD8 /* NetworkResult.swift */; };
+		3016D59B21AF857600AF30B6 /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3016D59A21AF857600AF30B6 /* PaddedTextField.swift */; };
 		3023F9CB2197DEE8004CAF6F /* BattleCupMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3023F9CA2197DEE8004CAF6F /* BattleCupMetadata.swift */; };
 		3036A765219618AF0084ECE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3036A764219618AF0084ECE9 /* AppDelegate.swift */; };
 		3036A76C219618B10084ECE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3036A76B219618B10084ECE9 /* Assets.xcassets */; };
@@ -118,6 +119,7 @@
 		080A074E54246D31DC6CC5DB /* Pods-Tournament.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tournament.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tournament/Pods-Tournament.release.xcconfig"; sourceTree = "<group>"; };
 		26F9AA3556C55E770F1FDB7E /* Pods_Tournament.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tournament.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		300AC7E821A293E5005C9AD8 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		3016D59A21AF857600AF30B6 /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		3023F9CA2197DEE8004CAF6F /* BattleCupMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleCupMetadata.swift; sourceTree = "<group>"; };
 		3036A761219618AF0084ECE9 /* Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tournament.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3036A764219618AF0084ECE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 				3036A7E421965F2F0084ECE9 /* BaseObjectViewModel.swift */,
 				3059F91A219CC961003F1050 /* CircleImageView.swift */,
 				30D1CF00219E50C700123AAC /* BaseKeyboardViewController.swift */,
+				3016D59A21AF857600AF30B6 /* PaddedTextField.swift */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -844,6 +847,7 @@
 				3059F927219CD49A003F1050 /* LocalJSONParser.swift in Sources */,
 				3036A7AE2196237F0084ECE9 /* ImageManager.swift in Sources */,
 				3023F9CB2197DEE8004CAF6F /* BattleCupMetadata.swift in Sources */,
+				3016D59B21AF857600AF30B6 /* PaddedTextField.swift in Sources */,
 				30A72C25219D0C37003D56B8 /* Player.swift in Sources */,
 				3036A7A7219622AD0084ECE9 /* UInt64Extensions.swift in Sources */,
 				30F9E3D5219F7BE300C0A928 /* NetworkRequest.swift in Sources */,

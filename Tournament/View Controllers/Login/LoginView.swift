@@ -9,13 +9,11 @@
 import SnapKit
 
 class LoginView: BaseView {
-    let emailTextField: UITextField = {
-        let textField = UITextField()
+    let emailTextField: PaddedTextField = {
+        let textField = PaddedTextField()
         textField.placeholder = "Email"
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = UIColor.white
-        textField.setLeftPaddingPoints(10)
-        textField.setRightPaddingPoints(10)
         textField.addBottomSeperator()
         textField.roundedTopCorners(radius: 10)
         textField.keyboardType = .emailAddress
@@ -23,13 +21,11 @@ class LoginView: BaseView {
         return textField
     }()
     
-    let passwordTextField: UITextField = {
-        let textField = UITextField()
+    let passwordTextField: PaddedTextField = {
+        let textField = PaddedTextField()
         textField.placeholder = "Password"
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = UIColor.white
-        textField.setLeftPaddingPoints(10)
-        textField.setRightPaddingPoints(10)
         textField.roundedBottomCorners(radius: 10)
         //textField.isSecureTextEntry = true
         textField.autocapitalizationType = UITextAutocapitalizationType.none

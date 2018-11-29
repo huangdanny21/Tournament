@@ -9,42 +9,36 @@
 import SnapKit
 
 class SignUpView: BaseView {
-    let usernameTextField: UITextField = {
-        let textField = UITextField()
+    let usernameTextField: PaddedTextField = {
+        let textField = PaddedTextField()
         textField.placeholder = "Username"
         textField.text = "huangdanny21"
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = UIColor.white
-        textField.setLeftPaddingPoints(10)
-        textField.setRightPaddingPoints(10)
         textField.addBottomSeperator()
         textField.roundedTopCorners(radius: 10)
         textField.autocapitalizationType = UITextAutocapitalizationType.none
         return textField
     }()
     
-    let emailTextField: UITextField = {
-        let textField = UITextField()
+    let emailTextField: PaddedTextField = {
+        let textField = PaddedTextField()
         textField.placeholder = "Email"
         textField.text = "huangdanny21@gmail.com"
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = UIColor.white
-        textField.setLeftPaddingPoints(10)
-        textField.setRightPaddingPoints(10)
         textField.addBottomSeperator()
         //textField.keyboardType = .emailAddress
         textField.autocapitalizationType = UITextAutocapitalizationType.none
         return textField
     }()
     
-    let passwordTextField: UITextField = {
-        let textField = UITextField()
+    let passwordTextField: PaddedTextField = {
+        let textField = PaddedTextField()
         textField.placeholder = "Password"
         textField.text = "one2three"
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = UIColor.white
-        textField.setLeftPaddingPoints(10)
-        textField.setRightPaddingPoints(10)
         textField.roundedBottomCorners(radius: 10)
         //textField.isSecureTextEntry = true
         textField.autocapitalizationType = UITextAutocapitalizationType.none

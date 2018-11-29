@@ -52,32 +52,37 @@ class BattleCupRequestView: BaseView {
     
     // Textfields
     
-    private let steamIdTextField: UITextField = {
-        let textfield = UITextField()
+    private let steamIdTextField: PaddedTextField = {
+        let textfield = PaddedTextField()
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.borderStyle = .line
-        textfield.setLeftPaddingPoints(10)
-        textfield.setRightPaddingPoints(10)
         return textfield
     }()
     
-    private let serverTextField: UITextField = {
-        let textfield = UITextField()
+    private let serverTextField: PaddedTextField = {
+        let textfield = PaddedTextField()
+        textfield.borderStyle = .line
+
         return textfield
     }()
     
-    private let tierTextField: UITextField = {
-        let textfield = UITextField()
+    private let tierTextField: PaddedTextField = {
+        let textfield = PaddedTextField()
+        textfield.borderStyle = .line
+
         return textfield
     }()
     
-    private let roleTextField: UITextField = {
-        let textfield = UITextField()
+    private let roleTextField: PaddedTextField = {
+        let textfield = PaddedTextField()
+        textfield.borderStyle = .line
+
         return textfield
     }()
     
-    private let otherInformationTextField: UITextField = {
-        let textfield = UITextField()
+    private let otherInformationTextField: PaddedTextField = {
+        let textfield = PaddedTextField()
+        textfield.borderStyle = .line
         return textfield
     }()
     
@@ -97,31 +102,25 @@ class BattleCupRequestView: BaseView {
         return button
     }()
     
-    private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [labelsStackView, textFieldStackView])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 7.5
-        stackView.distribution = .fill
-        stackView.axis = .horizontal
-        return stackView
-    }()
-    
     // MARK: - Init
     
     override func commonInit() {
        setAttributedText()
 
-        addSubview(stackView)
+        addSubview(labelsStackView)
         backgroundColor = UIColor.white
         
-        stackView.snp.makeConstraints { (make) in
-            make.left.equalTo(20)
-            make.right.equalToSuperview().offset(-20)
+        labelsStackView.snp.makeConstraints { (make) in
+            make.left.equalTo(10)
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
+            make.width.equalTo(otherInformationLabel.intrinsicContentSize.width)
         }
         
+        addSubview(textFieldStackView)
         textFieldStackView.snp.makeConstraints { (make) in
-            make.height.equalTo(labelsStackView.snp.height)
+            make.left.equalTo(labelsStackView.snp.right).offset(10)
+            make.right.equalToSuperview().offset(-10)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
         }
         
         addSubview(submitButton)
@@ -134,6 +133,21 @@ class BattleCupRequestView: BaseView {
             make.height.equalTo(steamIdLabel.snp.height)
         }
         
+        serverTextField.snp.makeConstraints { (make) in
+            make.height.equalTo(steamIdLabel.snp.height)
+        }
+        
+        tierTextField.snp.makeConstraints { (make) in
+            make.height.equalTo(steamIdLabel.snp.height)
+        }
+        
+        roleTextField.snp.makeConstraints { (make) in
+            make.height.equalTo(steamIdLabel.snp.height)
+        }
+        
+        otherInformationTextField.snp.makeConstraints { (make) in
+            make.height.equalTo(steamIdLabel.snp.height)
+        }
     }
     
     private func setAttributedText() {
