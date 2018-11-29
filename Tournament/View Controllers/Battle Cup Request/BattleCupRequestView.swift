@@ -54,6 +54,10 @@ class BattleCupRequestView: BaseView {
     
     private let steamIdTextField: UITextField = {
         let textfield = UITextField()
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        textfield.borderStyle = .line
+        textfield.setLeftPaddingPoints(10)
+        textfield.setRightPaddingPoints(10)
         return textfield
     }()
     
@@ -78,17 +82,26 @@ class BattleCupRequestView: BaseView {
     }()
     
     private lazy var textFieldStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [steamIdLabel, serverLabel, tierLabel, roleLabel, otherInformationLabel])
+        let stackView = UIStackView(arrangedSubviews: [steamIdTextField, serverTextField, tierTextField, roleTextField, otherInformationTextField])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 7.5
         stackView.axis = .vertical
         return stackView
     }()
     
+    let submitButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Submit", for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.backgroundColor = UIColor.green
+        return button
+    }()
+    
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [labelsStackView, textFieldStackView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 10
+        stackView.spacing = 7.5
+        stackView.distribution = .fill
         stackView.axis = .horizontal
         return stackView
     }()
@@ -96,27 +109,52 @@ class BattleCupRequestView: BaseView {
     // MARK: - Init
     
     override func commonInit() {
+       setAttributedText()
+
         addSubview(stackView)
         backgroundColor = UIColor.white
         
+        stackView.snp.makeConstraints { (make) in
+            make.left.equalTo(20)
+            make.right.equalToSuperview().offset(-20)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
+        }
+        
+        textFieldStackView.snp.makeConstraints { (make) in
+            make.height.equalTo(labelsStackView.snp.height)
+        }
+        
+        addSubview(submitButton)
+        submitButton.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(labelsStackView.snp.bottom).offset(20)
+        }
+        
+        steamIdTextField.snp.makeConstraints { (make) in
+            make.height.equalTo(steamIdLabel.snp.height)
+        }
+        
+    }
+    
+    private func setAttributedText() {
         let steamIdAttributedText = NSMutableAttributedString()
-        steamIdAttributedText.bold("Steam ID:", 25)
+        steamIdAttributedText.bold("Steam ID:", 15)
         steamIdLabel.attributedText = steamIdAttributedText
         
         let serverAttributedText = NSMutableAttributedString()
-        serverAttributedText.bold("Server:", 25)
+        serverAttributedText.bold("Server:", 15)
         serverLabel.attributedText = serverAttributedText
         
         let tierAttributedText = NSMutableAttributedString()
-        tierAttributedText.bold("Tier:", 25)
+        tierAttributedText.bold("Tier:", 15)
         tierLabel.attributedText = tierAttributedText
         
         let roleAttributedText = NSMutableAttributedString()
-        roleAttributedText.bold("Preferred Role:", 25)
+        roleAttributedText.bold("Preferred Role:", 15)
         roleLabel.attributedText = roleAttributedText
         
         let otherInformationAttributedText = NSMutableAttributedString()
-        otherInformationAttributedText.bold("Other Information:", 25)
+        otherInformationAttributedText.bold("Other Information:", 15)
         otherInformationLabel.attributedText = otherInformationAttributedText
     }
     

@@ -8,6 +8,7 @@
 
 import RxSwift
 import RxCocoa
+
 struct BattleCupViewModel {
     struct Inputs {
         let createRequest: Observable<Void>
@@ -16,11 +17,13 @@ struct BattleCupViewModel {
     }
     
     // Outputs
+    
+    let toCreateRequest: Driver<Void>
 }
 
 
 extension BattleCupViewModel {
     init (_ inputs: Inputs) {
-        
+        toCreateRequest = inputs.createRequest.asDriverLogError()
     }
 }
