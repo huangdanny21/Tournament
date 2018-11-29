@@ -326,13 +326,13 @@
 			isa = PBXGroup;
 			children = (
 				30D08C6321AF693500E3FEF0 /* Battle Cup Request */,
-				30D1CEED219E1ED500123AAC /* Login */,
-				30E42612219D2D3E00296618 /* Sign Up */,
-				30A72C29219D271D003D56B8 /* Profile */,
 				30A72C28219D2712003D56B8 /* Battlecup */,
-				3059F928219CD519003F1050 /* Start */,
+				30D1CEED219E1ED500123AAC /* Login */,
 				3036A7E6219668130084ECE9 /* Match Detail */,
 				3036A7CC219643200084ECE9 /* Pro Matches */,
+				30A72C29219D271D003D56B8 /* Profile */,
+				30E42612219D2D3E00296618 /* Sign Up */,
+				3059F928219CD519003F1050 /* Start */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

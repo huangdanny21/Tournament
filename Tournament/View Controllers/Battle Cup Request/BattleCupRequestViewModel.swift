@@ -6,10 +6,34 @@
 //  Copyright © 2018 Danny. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+import RxCocoa
 
 struct BattleCupRequestViewModel {
-    struct Input {
-         
+    struct Inputs {
+        let steamIdText: Observable<String>
+        let serverText: Observable<String>
+        let tierText: Observable<String>
+        let roleText: Observable<String>
+        let otherInformationText: Observable<String>
+    }
+    
+    // Outputs
+    
+    let enableSubmitButton: Driver<Bool>
+    //let errorMessage: Driver<String>
+    //let submitted: Driver<Void>
+}
+
+extension BattleCupRequestViewModel {
+    init (_ inputs: Inputs) {
+        let metadataObs = Observable.combineLatest(inputs.steamIdText, inputs.serverText, inputs.tierText, inputs.roleText, inputs.otherInformationText)
+        
+        enableSubmitButton = metadataObs
+            .map{ !$0.0.isEmpty && !$0.1.isEmpty && !$0.2.isEmpty && !$0.3.isEmpty && !$0.4.isEmpty}
+            .asDriverLogError()
+        
+        
+        
     }
 }

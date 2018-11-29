@@ -47,40 +47,41 @@ class BattleCupRequestView: BaseView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 7.5
         stackView.axis = .vertical
+        stackView.distribution = .fillEqually
         return stackView
     }()
     
     // Textfields
     
-    private let steamIdTextField: PaddedTextField = {
+    let steamIdTextField: PaddedTextField = {
         let textfield = PaddedTextField()
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.borderStyle = .line
         return textfield
     }()
     
-    private let serverTextField: PaddedTextField = {
+    let serverTextField: PaddedTextField = {
         let textfield = PaddedTextField()
         textfield.borderStyle = .line
 
         return textfield
     }()
     
-    private let tierTextField: PaddedTextField = {
+    let tierTextField: PaddedTextField = {
         let textfield = PaddedTextField()
         textfield.borderStyle = .line
 
         return textfield
     }()
     
-    private let roleTextField: PaddedTextField = {
+    let roleTextField: PaddedTextField = {
         let textfield = PaddedTextField()
         textfield.borderStyle = .line
 
         return textfield
     }()
     
-    private let otherInformationTextField: PaddedTextField = {
+    let otherInformationTextField: PaddedTextField = {
         let textfield = PaddedTextField()
         textfield.borderStyle = .line
         return textfield
@@ -91,6 +92,7 @@ class BattleCupRequestView: BaseView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 7.5
         stackView.axis = .vertical
+        stackView.distribution = .fillEqually
         return stackView
     }()
     
@@ -98,7 +100,6 @@ class BattleCupRequestView: BaseView {
         let button = UIButton()
         button.setTitle("Submit", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
-        button.backgroundColor = UIColor.green
         return button
     }()
     
