@@ -57,32 +57,34 @@ class BattleCupRequestView: BaseView {
         let textfield = PaddedTextField()
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.borderStyle = .line
+        textfield.placeholder = "Required"
         return textfield
     }()
     
     let serverTextField: PaddedTextField = {
         let textfield = PaddedTextField()
         textfield.borderStyle = .line
-
+        textfield.placeholder = "Required"
         return textfield
     }()
     
     let tierTextField: PaddedTextField = {
         let textfield = PaddedTextField()
         textfield.borderStyle = .line
-
+        textfield.placeholder = "Required"
         return textfield
     }()
     
     let roleTextField: PaddedTextField = {
         let textfield = PaddedTextField()
         textfield.borderStyle = .line
-
+        textfield.placeholder = "Optional"
         return textfield
     }()
     
     let otherInformationTextField: PaddedTextField = {
         let textfield = PaddedTextField()
+        textfield.placeholder = "Optional"
         textfield.borderStyle = .line
         return textfield
     }()
@@ -100,6 +102,8 @@ class BattleCupRequestView: BaseView {
         let button = UIButton()
         button.setTitle("Submit", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
+        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderWidth = 1.0
         return button
     }()
     
